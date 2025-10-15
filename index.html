@@ -1,111 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="Crypto, Crypto Wallet, Crypto Mobile Wallet, Blockchain, Web3">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Vastlink - A next generation wallet as a service for mass adoption for humans and AI</title>
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"
-        crossorigin="anonymous"></script>
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet">
-    <!-- Fonts CSS-->
-    <link rel="stylesheet" href="css/heading.css">
-    <link rel="stylesheet" href="css/body.css">
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vastlink — a next generation wallet as a protocol for mass adoption for humans & AI</title>
+  <meta name="description" content="Vastlink is an open, verifiable wallet‑as‑a‑protocol (WaaP) that powers modern keyless wallets, policy controls, and secure treasury automation across BTC, Ethereum, Solana, and more." />
+  <link rel="icon" href="assets/img/favicon.png" />
+  <link rel="canonical" href="https://vastlink.xyz/" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vastlink — a next generation wallet as a protocol" />
+  <meta property="og:description" content="Open and verifiable crypto wallet infrastructure with policy controls and automation. Built for individuals, teams, treasuries, and funds." />
+  <meta property="og:url" content="https://vastlink.xyz/" />
+  <meta property="og:image" content="https://vastlink.xyz/assets/img/Vastlink_logo/Dark%20mode.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@vastlinkxyz" />
+  <meta name="twitter:title" content="Vastlink — a next generation wallet as a protocol" />
+  <meta name="twitter:description" content="Verifiable MPC/AA wallet infrastructure with policy controls and automation." />
+  <meta name="twitter:image" content="https://vastlink.xyz/assets/img/Vastlink_logo/Dark%20mode.png" />
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Schema.org JSON‑LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vastlink",
+    "url": "https://vastlink.xyz/",
+    "logo": "https://vastlink.xyz/assets/img/Vastlink_logo/Dark%20mode.png",
+    "sameAs": [
+      "https://twitter.com/vastlinkxyz",
+      "https://www.linkedin.com/company/vastlink/",
+      "https://github.com/vastlink",
+      "https://vastlink.medium.com/",
+      "https://t.me/vastlink",
+      "https://www.youtube.com/@vastlink"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Vastlink",
+    "url": "https://vastlink.xyz/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://vastlink.xyz/search?q={query}",
+      "query-input": "required name=query"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Vastlink Wallet‑as‑a‑Service",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Web",
+    "description": "Open, verifiable MPC/AA wallet infrastructure with policy controls and automation for teams and treasuries.",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What is Vastlink?","acceptedAnswer":{"@type":"Answer","text":"Vastlink is an open, verifiable Wallet‑as‑a‑Service that powers MPC/AA wallets, policy controls, and automation across multiple chains."}},
+      {"@type":"Question","name":"Who is it for?","acceptedAnswer":{"@type":"Answer","text":"Teams, treasuries, DAOs, funds, PayFi operators, and developers who need secure, auditable wallet infrastructure."}},
+      {"@type":"Question","name":"How is it different from black‑box wallets?","acceptedAnswer":{"@type":"Answer","text":"Vastlink emphasizes open design, verifiability, and policy‑driven controls. You can self‑host, extend, and audit key flows."}},
+      {"@type":"Question","name":"Which chains are supported?","acceptedAnswer":{"@type":"Answer","text":"BTC, Ethereum, Solana, BNB Chain, Polygon to start—plus a modular path to more via the SDK."}}
+    ]
+  }
+  </script>
+
+  <!-- Simple styles for background gradient -->
+  <style>
+    :root { --brand-start: #52C41A; --brand-end: #3AA312; }
+    .glow { box-shadow: 0 0 80px rgba(82,196,26,0.25); }
+    .brand-gradient { background-image: linear-gradient(90deg, var(--brand-start), var(--brand-end)); }
+    .brand-text { background: linear-gradient(90deg, var(--brand-start), var(--brand-end)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    /* Scroll‑reveal animations */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in-view { opacity: 1; transform: none; }
+    .reveal[data-delay="100"] { transition-delay: .1s; }
+    .reveal[data-delay="200"] { transition-delay: .2s; }
+    .reveal[data-delay="300"] { transition-delay: .3s; }
+    /* Fancy underline for section headings */
+    .section-underline::after { content: ""; display: block; width: 72px; height: 4px; border-radius: 9999px; margin-top: 12px; background-image: linear-gradient(90deg, var(--brand-start), var(--brand-end)); }
+    .link-brand{position:relative;transition:color .2s ease;}
+    .link-brand:hover{color:#fff}
+    .link-brand::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background-image:linear-gradient(90deg,var(--brand-start),var(--brand-end));transition:width .25s ease}
+    .link-brand:hover::after{width:100%}
+    .link-cta{background-image:linear-gradient(90deg,var(--brand-start),var(--brand-end));color:#fff}
+    .link-cta:hover{opacity:.92}
+    .tile-float{will-change:transform,box-shadow;transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease}
+    .tile-float.in-view{transform:translateY(0)}
+    .tile-float:hover{transform:translateY(-3px)}
+    .tile-float.parallax{transform:translateY(var(--float-y,0))}
+    /* Animated gradient border utility */
+    .border-anim{position:relative}
+    .border-anim::before{content:"";position:absolute;inset:-1px;border-radius:1.5rem;padding:1px;background:linear-gradient(90deg,var(--brand-start),var(--brand-end));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.6;transition:opacity .3s ease}
+    .border-anim:hover::before{opacity:1}
+  </style>
 </head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2"><img src="https://vastlink.xyz/assets/img/Vastlink_logo/Dark%20mode.png" alt="Vastlink" class="h-8 w-auto rounded"/><span class="sr-only">Vastlink</span></a>
+      <nav class="hidden md:flex gap-6 text-slate-300">
+        <a href="#features" class="link-brand">Features</a>
+        <a href="#use-cases" class="link-brand">Use cases</a>
+        <a href="#library" class="link-brand">Library</a>
+        <a href="#benchmarks" class="link-brand">Benchmarks</a>
+        <a href="#faq" class="link-brand">FAQ</a>
+      </nav>
+      <div class="flex gap-3">
+        <a href="#waitlist" class="px-4 py-2 rounded-xl brand-gradient text-white font-medium hover:opacity-90 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500/60">Join waitlist</a>
+      </div>
+    </div>
+  </header>
 
-<body id="page-top">
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#portfolio"></a>
-                    </li>
-                </ul>
-            </div>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-green-500/10 via-transparent to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-6 pt-24 pb-16 grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-semibold leading-tight brand-text">A next generation wallet as a protocol</h1>
+        <p class="mt-4 text-slate-300 text-lg">
+            Keyless wallets powered by MPC, no single point of failure<br/>
+            Enterprise-grade security wiht MFA and policy controls<br/>
+            Self‑hosted or cloud-based<br/>
+            Built for individuals, teams, treasuries, and funds</p>
+      </div>
+      <div class="relative">
+        <div class="relative rounded-3xl border border-slate-800 bg-slate-900 glow overflow-hidden border-anim">
+          <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-green-500/20 blur-3xl"></div>
+          <img alt="Vastlink logo" src="assets/img/banner.png" class="relative w-full" />
         </div>
-    </nav>
+      </div>
+    </div>
+  </section>
 
-    <section class="page-section" id="contact" style="text-align: center;">
-        <img src="assets/img/Vastlink_logo/Dark mode.png" style="width: 50%;"/>
-        <p style="font-size: 20pt; color: #52C41A; padding: 10px 60px;"> 
-            A next generation wallet as a service for mass adoption for both humans and AI
+  <!-- Social proof / badges -->
+  <section class="py-10 border-y border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-center gap-6">
+      <span class="mb-4 p-4 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center">Open source</span>
+      <span class="mb-4 p-4 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center">Self‑custodial</span>
+      <span class="mb-4 p-4 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center">Enterprise‑grade security</span>
+      <span class="mb-4 p-4 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center">Developer‑friendly SDK</span>
+      <span class="mb-4 p-4 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center">Multi-coin</span>
+      <span class="mb-4 p-4 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center">Cross-chain</span>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 mt-6 flex items-center justify-center gap-8 text-slate-500 reveal" aria-label="Supported networks">
+      <img class="w-8 sm:w-8" src="assets/img/crypto/logo-btc.svg" title="BTC" />
+      <img class="w-5 sm:w-4" src="assets/img/crypto/logo-eth.svg" title="ETH" />
+      <img class="w-8 sm:w-8" src="assets/img/crypto/logo-usdt.svg" title="USDT" />
+      <img class="w-8 sm:w-8" src="assets/img/crypto/logo-usdc.svg" title="USDC" />
+      <img class="w-8 sm:w-8" src="assets/img/crypto/logo-sol.svg" title="SOL" />
+      <img class="w-6 sm:w-6" src="assets/img/crypto/logo-sui.svg" title="SUI" />
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="max-w-7xl mx-auto px-6 py-20">
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">Why Vastlink</h2>
+    <div class="mt-8 grid md:grid-cols-3 gap-8">
+      <div class="p-8 rounded-3xl border border-slate-800 hover:border-green-500/40 transition-colors bg-slate-900/50 reveal tile-float" data-delay="100">
+        <div class="mb-4 w-10 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3l7 4v5c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V7l7-4z" stroke="currentColor" class="text-green-400" stroke-width="1.5"/></svg>
+        </div>
+        <h3 class="font-semibold">Keyless powered by MPC</h3>
+        <p class="text-sm mt-2 text-slate-300">
+            No single point of failure<br/> 
+            Self‑hosted or cloud-based<br/>
+            No vendor lock‑in</p>
+      </div>
+      <div class="p-8 rounded-3xl border border-slate-800 hover:border-green-500/40 transition-colors bg-slate-900/50 reveal tile-float" data-delay="100">
+        <div class="mb-4 w-10 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 7h12M6 12h8M6 17h14" stroke="currentColor" class="text-green-400" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="font-semibold">Enterprise-grade security</h3>
+        <p class="text-sm mt-2 text-slate-300">
+            Multiple factor authentication<br/>
+            Spend limits<br/>
+            Multisig approvals
         </p>
+      </div>
+      <div class="p-8 rounded-3xl border border-slate-800 hover:border-green-500/40 transition-colors bg-slate-900/50 reveal tile-float" data-delay="100">
+        <div class="mb-4 w-10 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 17l-4-5 4-5M16 7l4 5-4 5" stroke="currentColor" class="text-green-400" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-semibold">Developer‑first SDK</h3>
+        <p class="text-sm mt-2 text-slate-300">
+            Simple APIs<br/>
+            Clean documentations<br/>
+            Live examples
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use cases -->
+  <section id="use-cases" class="max-w-7xl mx-auto px-6 pb-24 reveal">
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline">Use cases</h2>
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+      <div class="p-8 rounded-3xl border border-slate-800 hover:border-green-500/40 transition-colors bg-slate-900/50 reveal tile-float" data-delay="100">
+        <div class="mb-4 w-10 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3l7 4v5c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V7l7-4z" stroke="currentColor" class="text-green-400" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="currentColor" class="text-green-400" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="font-semibold">Treasury management</h3>
+        <p class="text-sm mt-2 text-slate-300">
+            Manage holdings across chains<br/>
+            Multisig approvals<br/>
+            Payouts at ease<br/>
+            Earning options powered by AI
+        </p>
+      </div>
+      <div class="p-8 rounded-3xl border border-slate-800 hover:border-green-500/40 transition-colors bg-slate-900/50 reveal tile-float" data-delay="100">
+        <div class="mb-4 w-10 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" class="text-green-400" stroke-width="1.5"/><path d="M3 10h18" stroke="currentColor" class="text-green-400" stroke-width="1.5"/></svg>
+        </div>
+        <h3 class="font-semibold">Payments</h3>
+        <p class="text-sm mt-2 text-slate-300">
+            On-ramp and off-ramp<br/> 
+            KYC / KYB / KYT<br/>
+            Cross-border B2B payments under regulatory compliance
+        </p>
+      </div>
+      <div class="p-8 rounded-3xl border border-slate-800 hover:border-green-500/40 transition-colors bg-slate-900/50 reveal tile-float" data-delay="100">
+        <div class="mb-4 w-10 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="7" width="16" height="10" rx="2" stroke="currentColor" class="text-green-400" stroke-width="1.5"/><path d="M8 11h8M8 14h5" stroke="currentColor" class="text-green-400" stroke-width="1.5"/></svg>          
+        </div>
+        <h3 class="font-semibold">Real world assets</h3>
+        <p class="text-sm mt-2 text-slate-300">
+            RWA project setup and user onboarding<br/>
+            On-click RWA token issuance<br/>
+            RWA token management
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 border-y border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-center gap-6">
+        <img class="h-100 md:h-80 w-full max-w-xl object-contain" src="assets/img/vastlink_architecture.png" alt="Vastlink Architecture Diagram" />
+    </div>
+  </section>
+
+    <!-- Waitlist -->
+    <section id="waitlist" class="max-w-3xl mx-auto px-6 pb-24">
+        <div class="launchlist-widget" data-key-id="qxnK4A" data-height="180px"></div>
     </section>
 
-    <section class="page-section" id="contact" style="text-align: center;">
-        <p>
-            <img src="assets/img/vastlink_architecture.png"
-                 style="max-width: 100%; width: 60%; height: auto; border-radius: 10px; border-style: dashed; border-width: 1px; border-color: #FFF;"
-                 alt="Vastlink Architecture Diagram"
-                 class="img-fluid" />
-        </p>
-        <br/>
-        <p>
-            <a href="https://poc.vastwallet.j-labs.xyz/" target="_blank"
-               class="btn btn-primary"
-               style="margin-top: 20px; background-color: #52C41A; border-color: #52C41A;
-                      font-size: clamp(0.8rem, 4vw, 1rem); padding: 10px clamp(1.5rem, 8vw, 2.5rem);">
-                🚀 Launch the proof of concept app
-            </a>
-        </p>
-    </section>
+  <!-- Library / Resources -->
+  <section id="library" class="pt-20 max-w-7xl mx-auto px-6 pb-24 reveal">
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline">Library</h2>
+    <p class="mt-2 text-slate-300">Evergreen guides and templates to help teams ship secure wallet ops.</p>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <a class="p-6 rounded-2xl border border-slate-800 bg-slate-900/50 hover:border-green-500/40 transition-colors reveal tile-float" data-delay="100" href="/library/open-waas-buyers-guide">
+        <h3 class="font-semibold">Open WaaS Buyer’s Guide (2025)</h3>
+        <p class="mt-2 text-slate-400">MPC vs AA, policy engines, recovery, and vendor due diligence.</p>
+      </a>
+      <a class="p-6 rounded-2xl border border-slate-800 bg-slate-900/50 hover:border-green-500/40 transition-colors reveal tile-float" data-delay="200" href="/library/treasury-policy-matrix">
+        <h3 class="font-semibold">Treasury Policy Matrix</h3>
+        <p class="mt-2 text-slate-400">Limits × assets × destinations × roles — copy‑paste templates.</p>
+      </a>
+      <a class="p-6 rounded-2xl border border-slate-800 bg-slate-900/50 hover:border-green-500/40 transition-colors reveal tile-float" data-delay="300" href="/library/approval‑risk‑checker">
+        <h3 class="font-semibold">Approval Risk Checker (beta)</h3>
+        <p class="mt-2 text-slate-400">Paste address/tx to get quick risk heuristics (demo utility).</p>
+      </a>
+    </div>
+  </section>
 
+  <!-- FAQ -->
+  <section id="faq" class="max-w-5xl mx-auto px-6 pb-28 reveal">
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline">FAQ</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="p-6 rounded-2xl border border-slate-800 hover:border-green-500/40 transition-colors bg-slate-900/50">
+        <h3 class="font-semibold">Is it open source?</h3>
+        <p class="mt-2 text-slate-300">Core SDKs and reference deployments are open and auditable; enterprise add‑ons are available for scale.</p>
+      </div>
+      <div class="p-6 rounded-2xl border border-slate-800 hover:border-green-500/40 transition-colors bg-slate-900/50">
+        <h3 class="font-semibold">How do you make money?</h3>
+        <p class="mt-2 text-slate-300">Managed hosting, enterprise support, and advanced policy/compliance features while keeping the core verifiable.</p>
+      </div>
+      <div class="p-6 rounded-2xl border border-slate-800 hover:border-green-500/40 transition-colors bg-slate-900/50">
+        <h3 class="font-semibold">Can we self‑host?</h3>
+        <p class="mt-2 text-slate-300">Yes. Deploy on‑prem or private cloud with your policy + audit stack.</p>
+      </div>
+      <div class="p-6 rounded-2xl border border-slate-800 hover:border-green-500/40 transition-colors bg-slate-900/50">
+        <h3 class="font-semibold">Which regions?</h3>
+        <p class="mt-2 text-slate-300">APAC first (AU, SG, HK), expanding globally via partners.</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="page-section" id="contact" style="text-align: center;">
-        <p>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://t.me/VastlinkCommunity" target="_blank" title="Vaslink community on Telegram">
-                <i class="fab fa-fw fa-telegram"></i>
-            </a>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://www.youtube.com/@vastlink" title="Vastlink videos on YouTube"
-                target="_blank">
-                <i class="fab fa-fw fa-youtube"></i>
-            </a>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/thevastlink" title="Vastlink on Twitter"
-            target="_blank">
-                <i class="fab fa-fw fa-twitter"></i>
-            </a>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/company/104843132" title="Vastlink on LinkedIn"
-            target="_blank">
-                <i class="fab fa-fw fa-linkedin"></i>
-            </a>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/orgs/vastlink-xyz" target="_blank" title="Vastlink on GitHub">
-                <i class="fab fa-fw fa-github"></i>
-            </a>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://vastlink.medium.com" target="_blank" title="Vastlink on Medium">
-                <i class="fab fa-fw fa-medium"></i>
-            </a>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://vastlink.gitbook.io/vastlink-whitepaper" target="_blank" title="Vastlink whitepaper">
-                <i class="fa-solid fa-book-open"></i>
-            </a>
-        </p>
+  <!-- Footer -->
+  <footer class="border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-6 text-slate-400">
+      <div>
+        <div class="text-white font-semibold">Vastlink</div>
+        <p class="mt-2">A next generation Wallet‑as‑a‑Service for mass adoption—for humans and AI.</p>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200">Company</div>
+        <ul class="mt-2 space-y-2">
+          <li><a href="#library" class="link-brand">Library</a></li>
+          <li><a href="#benchmarks" class="link-brand">Benchmarks</a></li>
+          <li><a href="#faq" class="link-brand">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200">Follow</div>
+        <ul class="mt-2 space-y-2">
+          <li><a href="https://twitter.com/vastlinkxyz" class="link-brand">Twitter</a></li>
+          <li><a href="https://www.linkedin.com/company/vastlink/" class="link-brand">LinkedIn</a></li>
+          <li><a href="https://github.com/vastlink" class="link-brand">GitHub</a></li>
+          <li><a href="https://vastlink.medium.com/" class="link-brand">Medium</a></li>
+          <li><a href="https://t.me/vastlink" class="link-brand">Telegram</a></li>
+          <li><a href="https://www.youtube.com/@vastlink" class="link-brand">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center text-slate-500 pb-8">Dubai · Hong Kong · Singapore · Sydney · © Vastlink 2024 ~ 2025</div>
+  </footer>
 
-        <br/>
+  <!-- GA4 placeholder: replace with your Measurement ID -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    // Brand links also get keyboard-visible focus ring
+    document.querySelectorAll('a.link-brand, .brand-gradient').forEach(a=>{
+      a.classList.add('focus:outline-none','focus:ring-2','focus:ring-green-500/60','focus:ring-offset-0');
+    });
 
-        <p style="font-size: 12pt; color: #FFF;">Dubai &nbsp | &nbsp Hongkong &nbsp | &nbsp Singapore &nbsp | &nbsp Sydney</p>
-        <p style="font-size: 12pt; color: #FFF;">Copyright © Vastlink 2024~2025 &nbsp | &nbsp
-            <a href="terms_and_conditions.html" target="_blank" style="font-size: 12pt; color: #FFF; text-decoration: underline;"> Terms & Conditions</a> &nbsp | &nbsp
-            <a href="privacy.html" target="_blank" style="font-size: 12pt; color: #FFF; text-decoration: underline;"> Privacy</a>
-        </p>
-    </section>
-        
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
-    <div class="scroll-to-top d-lg-none position-fixed"><a
-            class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i
-                class="fa fa-chevron-up"></i></a></div>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    // Parallax float for tiles on scroll
+    const tiles = Array.from(document.querySelectorAll('.tile-float'));
+    const onScrollParallax = () => {
+      const vh = window.innerHeight;
+      tiles.forEach(el => {
+        const r = el.getBoundingClientRect();
+        const centerDist = (r.top + r.height/2) - vh/2; // px from viewport center
+        const offset = Math.max(Math.min(centerDist / 40, 10), -10); // clamp
+        el.style.setProperty('--float-y', `${-offset}px`);
+        el.classList.add('parallax');
+      });
+    };
+    document.addEventListener('scroll', onScrollParallax, { passive: true });
+    window.addEventListener('resize', onScrollParallax);
+    onScrollParallax();
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+  <script>
+    // Add shadow to header on scroll
+    const header = document.querySelector('header');
+    const onScrollHeader = () => {
+      if (window.scrollY > 10) header.classList.add('shadow-lg','border-slate-700');
+      else header.classList.remove('shadow-lg','border-slate-700');
+    };
+    document.addEventListener('scroll', onScrollHeader, { passive: true });
+    onScrollHeader();
+
+    // IntersectionObserver to reveal elements
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
 </body>
-
 </html>
