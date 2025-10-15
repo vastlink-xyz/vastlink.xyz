@@ -108,6 +108,8 @@
     .border-anim::before{content:"";position:absolute;inset:-1px;border-radius:1.5rem;padding:1px;background:linear-gradient(90deg,var(--brand-start),var(--brand-end));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.6;transition:opacity .3s ease}
     .border-anim:hover::before{opacity:1}
   </style>
+
+    <script src="https://getlaunchlist.com/js/widget.js" defer></script>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased">
   <!-- Header -->
@@ -121,7 +123,7 @@
         <a href="#faq" class="link-brand">FAQ</a>
       </nav>
       <div class="flex gap-3">
-        <a href="#waitlist" class="px-4 py-2 rounded-xl brand-gradient text-white font-medium hover:opacity-90 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500/60">Join waitlist</a>
+        <a href="#waitlist" class="px-4 py-2 rounded-xl brand-gradient text-white font-medium hover:opacity-90 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500/60">Join now</a>
       </div>
     </div>
   </header>
@@ -247,19 +249,13 @@
     </div>
   </section>
 
-  <section class="py-10 border-y border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-center gap-6">
-        <img class="h-100 md:h-80 w-full max-w-xl object-contain" src="assets/img/vastlink_architecture.png" alt="Vastlink Architecture Diagram" />
-    </div>
+  <!-- Waitlist -->
+  <section id="waitlist" class="pt-26">
+    <div class="launchlist-widget" data-key-id="qxnK4A" data-height="180px"></div>
   </section>
 
-    <!-- Waitlist -->
-    <section id="waitlist" class="max-w-3xl mx-auto px-6 pb-24">
-        <div class="launchlist-widget" data-key-id="qxnK4A" data-height="180px"></div>
-    </section>
-
   <!-- Library / Resources -->
-  <section id="library" class="max-w-7xl mx-auto px-6 pb-24 reveal">
+  <section id="library" class="pt-16 max-w-7xl mx-auto px-6 pb-24 reveal">
     <h2 class="text-2xl md:text-3xl font-semibold section-underline">Library</h2>
     <p class="mt-2 text-slate-300"></p>
     <div class="mt-6 grid md:grid-cols-3 gap-6">
