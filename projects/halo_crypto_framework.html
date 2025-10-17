@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HALO crypto framework</title>
+  <style>
+    :root{
+      --halo-blue: #2563EB;
+      --halo-black: #0B0F1A;
+      --ink: #111827;
+      --text: #1F2937;
+      --muted: #4B5563;
+      --panel: #F5F7FF;
+      --panel-2: #EEF4FF;
+      --line: rgba(17,24,39,.14);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+      background-color: #000000;
+      color: var(--text);
+      padding: 24px;
+    }
+    .sheet{
+      max-width: 980px; margin: 0 auto; background: #fff; border: 1px solid var(--line);
+      border-radius: 16px; box-shadow: 0 10px 30px rgba(2,6,23,.12); padding: 28px; position: relative; overflow: hidden;
+    }
+    .sheet::before{
+      content:""; position:absolute; inset:0;
+      background-size: 40px 40px, 40px 40px; pointer-events:none;
+    }
+    .sheet::after{
+      content:""; position:absolute; left:50%; top:-90px; width:280px; height:280px;
+      transform: translateX(-50%);
+      background: radial-gradient(closest-side, rgba(37,99,235,.22), transparent 70%);
+      filter: blur(12px); pointer-events:none;
+    }
+    .brand-kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      background: linear-gradient(90deg, var(--halo-black), #1d4ed8, #3b82f6);
+      color:#fff; font-weight:700; text-transform:uppercase; font-size:12px; letter-spacing:.08em;
+      padding:6px 10px; border-radius: 999px;
+    }
+    h1{
+      margin:10px 0 0 0; font-size: 32px; line-height:1.15; font-weight: 800;
+      color: transparent; background: linear-gradient(90deg, #111827, #1e3a8a, var(--halo-blue));
+      -webkit-background-clip:text; background-clip:text;
+    }
+    .divider{height:1px; background:var(--line); margin:12px 0 18px 0}
+    .grid-3{display:grid; grid-template-columns: 1fr; gap:14px; margin:20px 0;}
+    @media (min-width: 860px){ .grid-3{ grid-template-columns: repeat(3, 1fr); } }
+    .grid-2{display:grid; grid-template-columns:1fr; gap:12px;}
+    @media (min-width: 860px){ .grid-2{ grid-template-columns:1fr 1fr; } }
+    .card{background: linear-gradient(180deg, #fff, var(--panel)); border: 1px solid var(--line);
+      border-radius: 16px; padding: 16px;}
+    .panel{background: linear-gradient(180deg, #fff, var(--panel-2)); border: 1px solid var(--line);
+      border-radius: 16px; padding: 16px;}
+    .title-row{display:flex; align-items:center; gap:10px; margin-bottom:10px;}
+    .dot{width:18px; height:18px; border-radius:50%; background:var(--halo-blue); box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+    h2{margin:0; font-size: 20px; color: var(--ink)}
+    h3{margin:0 0 8px 0; font-size: 16px; color: var(--ink)}
+    .list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
+    .list li{display:flex; gap:10px; align-items:flex-start}
+    .bullet{width:10px; height:10px; margin-top:6px; border-radius:2px; background:var(--halo-blue); box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+    .list span{color: var(--text)}
+    .feature{border:1px solid var(--line); border-radius:12px; padding:12px; background:#fff}
+    .feature h4{margin:0 0 4px 0; font-size:15px; color:var(--ink)}
+    .feature p{margin:0; font-size:14px; color:var(--text)}
+    footer{border-top:1px solid var(--line); margin-top:14px; padding-top:10px}
+    small{color: #4B5563}
+    @media print{
+      body{ background: #fff; padding:0 }
+      .sheet{ box-shadow:none; border-radius:0; border:0 }
+      .sheet::before, .sheet::after{ display:none }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet" role="document" aria-label="HALO one‑pager">
+
+    <!-- HEADER -->
+    <div class="brand-kicker">HALO Bangkok</div>
+    <h1>HALO Crypto Framework</h1>
+    <div class="divider"></div>
+
+    <section>
+      <img src="HALO_Bangkok.png" style="width:100%;max-width:100%;height:auto;display:block;" alt="HALO Bangkok"/>
+    </section>
+
+    <!-- GOALS / SOLUTIONS / EXECUTIONS -->
+    <section class="grid-3" aria-label="Goals, Solutions, Executions">
+      <article class="card">
+        <div class="title-row">
+          <img src="goals-svgrepo-com.svg" alt="Goals Icon" style="width:22px;height:22px;">
+          <h2 style="color:#2563EB">Goals</h2>
+        </div>
+        <ul class="list">
+          <li><span><b>Full sovereignty</b> - Retain complete control over infrastructures, code, data, and product development.</span></li>
+          <li><span><b>User friendly</b> — Deliver a user‑friendly, community‑driven ecosystem that is inclusive, extensible, and scalable for rapid global expansion.</span></li>
+          <li><span><b>Scalable</b> — Use integrations, vendors, and partnerships only when they demonstrably (a) consolidate sovereignty, (b) enhance security, (c) improve productivity, (d) enable scalability, (e) reduce cost, or (f) reduce risk.</span></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="title-row">
+          <img src="problem-process-solution-svgrepo-com.svg" alt="Solutions Icon" style="width:22px;height:22px;">
+          <h2 style="color:#2563EB">Solutions</h2>
+        </div>
+        <ul class="list">
+          <li><span><b>Full control over core infrastructures</b> - Self-hosted key management, clouds with backup and redundancy or private clouds.</span></li>
+          <li><span><b>Full ownership of data</b> - With privacy protection and regulatory compliance.</span></li>
+          <li><span><b>Full ownership of systems</b> - Source code, product artifacts, and intellectual property.</span></li>
+          <li><span><b>Easy onboarding</b> - Sign up and sign in with email, mobile, QR, social networks.</span></li>
+          <li><span><b>Cross‑platform</b> - Mobile, Web, desktop, handheld devices.</span></li>
+          <li><span><b>Multi‑language and multi‑geolocation</b></span></li>
+          <li><span><b>Web2 + Web3</b> - Slck Web2 user experience, no Web3 tedious like private key, seed phrase, address, gas, chain.</span></li>
+          <li><span><b>Bank‑grade security.</b></span></li>
+          <li><span><b>Modular design, composable products in the marketplace.</b></span></li>
+          <li><span><b>Cross-chain</b></span></li>
+          <li><span><b>Infrastructure independent and no vendor lock-in.</b></span></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="title-row">
+          <img src="tasks-done-svgrepo-com.svg" alt="Solutions Icon" style="width:22px;height:22px;">
+          <h2 style="color:#2563EB">Executions</h2></div>
+        <ul class="list">
+          <li><span>Vastlink would help HALO build up its own tech team, tech stack, and infrastructures.</span></li>
+          <li><span>Vastlink would help HALO build the desired user experience cross multiple platforms.</span></li>
+          <li><span>Vastlink’s vendor‑independent, modular, inclusive architecture with a marketplace serves as the foundation for new HALO services.</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- ALIGNMENT -->
+    <section class="panel" aria-label="Alignment & Positioning">
+      <h3>How Vastlink aligns with HALO’s “Smart Wallet Ecosystem”</h3>
+      <div class="grid-2">
+        <div class="feature">
+          <img src="HALO_token.png" style="width:100%;max-width:100%;height:auto;display:block;" alt="HALO Bangkok"/>
+        </div>
+        <div class="feature">
+          <img src="HALO_map.png" style="width:100%;max-width:100%;height:auto;display:block;" alt="HALO Bangkok"/>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="feature">
+          <h4>Universal access</h4>
+          <p>Supports Web browsers today; the WaaS architecture enables rapid expansion to mobile and other form factors (handheld devices and cards).</p>
+        </div>
+        <div class="feature">
+          <h4>Instant funds</h4>
+          <p>Supports stablecoins, ETH, BTC, and RWAs. Gasless flows via $VAST (and future HALO token). Transactions are instant and cost‑efficient.</p>
+        </div>
+        <div class="feature">
+          <h4>Ecosystem built for growth</h4>
+          <p>An ecosystem to onboard products, service offers, and rewards from HALO and HALO partners.</p>
+        </div>
+        <div class="feature">
+          <h4>Activities rewarded</h4>
+          <p>Reward mechanisms already exist to reward user activities in $VAST within the Vastlink ecosystem. Vastlink could help HALO build $HALO token.</p>
+        </div>
+        <div class="feature">
+          <h4>Frictionless engagement</h4>
+          <p>Onboarding takes &lt;10 seconds; Web2‑friendly onboarding. Anyone with an email or mobile can use it.</p>
+        </div>
+        <div class="feature">
+          <h4>100M+ members worldwide</h4>
+          <p>Vendor‑independent WaaS integrating Fireblocks, Web3Auth, Lit Protocol, and more. Aggregates strengths of each for resilient scale across scenarios.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="panel" style="margin-top:12px" aria-label="Team">
+      <h3>Vastlink Team Background and Experience</h3>
+      <div class="grid-2">
+        <div class="feature">
+          <img src="vastlink_team.png" style="width:100%;max-width:100%;height:auto;display:block;" alt="HALO Bangkok"/>
+        </div>
+        <div class="feature">
+          <img src="vastlink_testimonials.png" style="width:100%;max-width:100%;height:auto;display:block;" alt="HALO Bangkok"/>
+        </div>
+      <p><a style="color:#2563EB" href="https://j-labs.xyz/" target="_blank" rel="noreferrer">J Labs</a> is the dev team behind <a style="color:#2563EB" href="https://vastlink.xyz/" target="_blank" rel="noreferrer">Vastlink</a> </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <small><b>HALO</b>’s crypto ecosystem is powered by <b>Vastlink</b>'s Wallet‑as‑a‑Protocol (WaaP) </small>
+    </footer>
+  </main>
+</body>
+</html>
