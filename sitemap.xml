@@ -18,10 +18,4 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  <url>
-    <loc>https://vastlink.xyz/projects/halo_crypto_framework.html</loc>
-    <lastmod>2025-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 </urlset>
