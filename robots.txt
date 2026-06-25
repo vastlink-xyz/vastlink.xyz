@@ -1,0 +1,27 @@
+# robots.txt for vastlink.xyz
+
+User-agent: *
+Allow: /
+Sitemap: https://vastlink.xyz/sitemap.xml
+
+# AI Search Crawlers — explicitly allowed for GEO visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
