@@ -202,6 +202,18 @@ def clean_medium_html(html_content: str) -> str:
         r'<a[^>]*href="[^"]*\?source=rss[^"]*"[^>]*>Continue reading[^<]*</a>',
         "", content, flags=re.IGNORECASE
     )
+    # Replace Medium Embedly iframes with direct YouTube embeds
+    def _replace_embedly_iframe(match):
+        src = match.group(0)
+        yt_match = re.search(r'youtube\.com%2Fembed%2F([a-zA-Z0-9_-]+)', src)
+        if yt_match:
+            video_id = yt_match.group(1)
+            return f'<iframe width="640" height="480" src="https://www.youtube.com/embed/{video_id}" frameborder="0" allowfullscreen></iframe>'
+        return ""  # Remove non-YouTube Embedly iframes
+    content = re.sub(
+        r'<iframe[^>]*src="https://cdn\.embedly\.com/[^"]*"[^>]*>.*?</iframe>',
+        _replace_embedly_iframe, content, flags=re.IGNORECASE
+    )
     return content.strip()
 
 
