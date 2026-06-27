@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{title}} — Vastlink</title>
+  <meta name="description" content="{{meta_description}}" />
+  <link rel="icon" href="../../assets/img/favicon.png" />
+  <link rel="canonical" href="https://vastlink.xyz/blog/{{slug}}/" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{title}} — Vastlink" />
+  <meta property="og:description" content="{{meta_description}}" />
+  <meta property="og:url" content="https://vastlink.xyz/blog/{{slug}}/" />
+  <meta property="og:image" content="{{og_image}}" />
+  <meta property="article:published_time" content="{{date_iso}}" />
+  <meta property="article:author" content="Vastlink" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@thevastlink" />
+  <meta name="twitter:title" content="{{title}} — Vastlink" />
+  <meta name="twitter:description" content="{{meta_description}}" />
+  <meta name="twitter:image" content="{{og_image}}" />
+
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"
+  crossorigin="anonymous"></script>
+
+  <!-- Tailwind CSS (CDN) with typography plugin -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+
+  <!-- Schema.org JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{title}}",
+    "url": "https://vastlink.xyz/blog/{{slug}}/",
+    "datePublished": "{{date_iso}}",
+    "dateModified": "{{date_iso}}",
+    "author": {
+      "@type": "Organization",
+      "name": "Vastlink",
+      "url": "https://vastlink.xyz/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Vastlink",
+      "url": "https://vastlink.xyz/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://vastlink.xyz/assets/img/Vastlink_logo/Dark%20mode.png"
+      }
+    },
+    "image": "{{og_image}}",
+    "description": "{{meta_description}}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://vastlink.xyz/blog/{{slug}}/"
+    }
+  }
+  </script>
+
+  <!-- Schema.org JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://vastlink.xyz/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://vastlink.xyz/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{{title}}",
+        "item": "https://vastlink.xyz/blog/{{slug}}/"
+      }
+    ]
+  }
+  </script>
+
+  {{faq_schema}}
+
+  <!-- Custom Styles -->
+  <style>
+    :root { --brand-start: #52C41A; --brand-end: #3AA312; }
+    .glow { box-shadow: 0 0 80px rgba(82,196,26,0.25); }
+    .brand-gradient { background-image: linear-gradient(90deg, var(--brand-start), var(--brand-end)); }
+    .brand-text { background: linear-gradient(90deg, var(--brand-start), var(--brand-end)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in-view { opacity: 1; transform: none; }
+    .reveal[data-delay="100"] { transition-delay: .1s; }
+    .reveal[data-delay="200"] { transition-delay: .2s; }
+    .reveal[data-delay="300"] { transition-delay: .3s; }
+    .section-underline::after { content: ""; display: block; width: 72px; height: 4px; border-radius: 9999px; margin-top: 12px; background-image: linear-gradient(90deg, var(--brand-start), var(--brand-end)); }
+    .link-brand{position:relative;transition:color .2s ease;}
+    .link-brand:hover{color:#fff}
+    .link-brand::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background-image:linear-gradient(90deg,var(--brand-start),var(--brand-end));transition:width .25s ease}
+    .link-brand:hover::after{width:100%}
+    .link-cta{background-image:linear-gradient(90deg,var(--brand-start),var(--brand-end));color:#fff}
+    .link-cta:hover{opacity:.92}
+    .tile-float{will-change:transform,box-shadow;transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease}
+    .tile-float.in-view{transform:translateY(0)}
+    .tile-float:hover{transform:translateY(-3px)}
+
+    /* Article prose overrides */
+    .prose img { border-radius: 0.75rem; margin-top: 1.5rem; margin-bottom: 1.5rem; }
+    .prose a { color: #52C41A; text-decoration: underline; text-underline-offset: 3px; }
+    .prose a:hover { color: #3AA312; }
+    .prose h1, .prose h2, .prose h3, .prose h4 { color: #f1f5f9; }
+    .prose blockquote { border-left-color: #52C41A; }
+    .prose code { color: #86efac; }
+    .prose pre { background: #0f172a; border: 1px solid #1e293b; border-radius: 0.75rem; }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y830MJMX1L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y830MJMX1L');
+  </script>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+
+{{header}}
+
+  <!-- Breadcrumb -->
+  <nav class="max-w-4xl mx-auto px-6 pt-8 text-sm text-slate-400" aria-label="Breadcrumb">
+    <ol class="flex items-center gap-2">
+      <li><a href="https://vastlink.xyz/" class="link-brand">Home</a></li>
+      <li class="text-slate-600">/</li>
+      <li><a href="https://vastlink.xyz/blog/" class="link-brand">Blog</a></li>
+      <li class="text-slate-600">/</li>
+      <li class="text-slate-300 truncate max-w-xs">{{title}}</li>
+    </ol>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="max-w-4xl mx-auto px-6 pt-10 pb-8">
+    <h1 class="text-3xl md:text-4xl font-bold text-white reveal">{{title}}</h1>
+    <div class="mt-4 flex items-center gap-4 text-sm text-slate-400 reveal" data-delay="100">
+      <time datetime="{{date_iso}}">{{date_display}}</time>
+      <span>&middot;</span>
+      <span>{{read_time}} min read</span>
+    </div>
+  </header>
+
+  <!-- Article Content -->
+  <article class="max-w-4xl mx-auto px-6 pb-12">
+    <div class="prose prose-invert prose-slate max-w-none">
+      {{content}}
+    </div>
+  </article>
+
+  <!-- CTA: Waitlist -->
+  <section class="max-w-4xl mx-auto px-6 pb-16">
+    <div class="p-8 rounded-2xl brand-gradient text-center">
+      <h2 class="text-2xl font-bold text-white">Ready to secure your digital assets?</h2>
+      <p class="mt-2 text-white/80">Join the Vastlink waitlist for early access to next-generation wallet infrastructure.</p>
+      <a href="https://vastlink.xyz/#waitlist" class="inline-block mt-4 px-6 py-3 bg-white text-green-700 font-semibold rounded-xl hover:bg-slate-100 transition-colors shadow-lg">Join the waitlist</a>
+    </div>
+  </section>
+
+  <!-- Related Articles -->
+  <section class="max-w-4xl mx-auto px-6 pb-24">
+    <h2 class="text-xl font-semibold text-white mb-6 section-underline">Related articles</h2>
+    <div class="grid md:grid-cols-3 gap-6 mt-8">
+{{related_articles}}
+    </div>
+  </section>
+
+{{footer}}

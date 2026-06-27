@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 """
-Fetch Vastlink's Medium RSS feed and regenerate blog/index.html + update sitemap.xml.
+Fetch Vastlink's Medium RSS feed and regenerate:
+  - blog/index.html          (listing page with internal links)
+  - blog/{slug}/index.html   (full article pages)
+  - sitemap.xml              (add article URLs)
 
 Usage:
-    python3 scripts/update-blog.py          # run from site root
-    python3 scripts/update-blog.py --dry-run  # preview without writing files
+    python3 scripts/update-blog.py              # run from site root
+    python3 scripts/update-blog.py --dry-run    # preview without writing files
+    python3 scripts/update-blog.py --force      # regenerate all article pages
 """
 
 import datetime
+import hashlib
 import html
 import json
 import os
@@ -24,10 +29,31 @@ from urllib.parse import urlparse, urlunparse, urlencode
 # ---------------------------------------------------------------------------
 FEED_URL = "https://medium.com/feed/@vastlink"
 SITE_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BLOG_HTML = os.path.join(SITE_ROOT, "blog", "index.html")
+BLOG_DIR = os.path.join(SITE_ROOT, "blog")
+BLOG_HTML = os.path.join(BLOG_DIR, "index.html")
 SITEMAP_XML = os.path.join(SITE_ROOT, "sitemap.xml")
 BLOG_URL = "https://vastlink.xyz/blog/"
+SITE_URL = "https://vastlink.xyz"
 INDEXNOW_KEY = "ba150392df6bc02b73933b68989bdacd"
+
+HEADER_PARTIAL = os.path.join(BLOG_DIR, "_header.html")
+FOOTER_PARTIAL = os.path.join(BLOG_DIR, "_footer.html")
+ARTICLE_TEMPLATE = os.path.join(BLOG_DIR, "_article.html")
+FEED_CACHE = os.path.join(BLOG_DIR, "_feed_cache.xml")
+
+DEFAULT_OG_IMAGE = "https://vastlink.xyz/assets/img/Vastlink_logo/Dark%20mode.png"
+
+# Clean slug overrides for known articles
+SLUG_OVERRIDES = {
+    "Digital Asset Management Landscape Research 2025": "digital-asset-management-landscape-2025",
+    "The fundamental problem with current crypto wallets (1)": "fundamental-problem-crypto-wallets",
+    "Vastbase FAQ": "vastbase-faq",
+    # Keys with em-dash and smart quotes — include both Unicode and ASCII variants
+    "What can we learn from the biggest crypto hack in history \u2014 #Bybit\u2019s 1.4B hack": "bybit-hack-crypto-security",
+    "What can we learn from the biggest crypto hack in history — #Bybit's 1.4B hack": "bybit-hack-crypto-security",
+    "Decentralized MPC \u2014 The Future Infrastructure for Crypto Wallets": "decentralized-mpc-future-infrastructure",
+    "Decentralized MPC — The Future Infrastructure for Crypto Wallets": "decentralized-mpc-future-infrastructure",
+}
 
 # ---------------------------------------------------------------------------
 # RSS helpers
@@ -48,7 +74,6 @@ def _ssl_context() -> ssl.SSLContext:
         )
         return ctx
     except Exception:
-        # macOS Python often lacks system certs; fall back to unverified
         ctx = ssl.create_default_context()
         ctx.check_hostname = False
         ctx.verify_mode = ssl.CERT_NONE
@@ -67,7 +92,6 @@ def strip_html(text: str) -> str:
     """Remove HTML tags and decode entities."""
     text = re.sub(r"<[^>]+>", "", text)
     text = html.unescape(text)
-    # collapse whitespace
     text = re.sub(r"\s+", " ", text).strip()
     return text
 
@@ -80,9 +104,7 @@ def clean_link(url: str) -> str:
 
 def parse_date(date_str: str) -> datetime.date:
     """Parse RSS pubDate like 'Sat, 22 Feb 2025 07:01:23 GMT'."""
-    # Remove day-of-week prefix and timezone suffix for simpler parsing
     parts = date_str.strip().split()
-    # Expected: ['Sat,', '22', 'Feb', '2025', '07:01:23', 'GMT']
     if len(parts) >= 5:
         day = int(parts[1])
         month_str = parts[2]
@@ -93,7 +115,6 @@ def parse_date(date_str: str) -> datetime.date:
         }
         month = months.get(month_str, 1)
         return datetime.date(year, month, day)
-    # fallback: try ISO
     return datetime.date.fromisoformat(date_str[:10])
 
 
@@ -105,7 +126,161 @@ def truncate(text: str, length: int = 200) -> str:
     return truncated.rstrip(".,;:!? ") + "..."
 
 
-def parse_feed(xml_bytes: bytes) -> list[dict]:
+# ---------------------------------------------------------------------------
+# New helpers: slug, read time, HTML cleaning, templates
+# ---------------------------------------------------------------------------
+
+def _normalize_title(title: str) -> str:
+    """Normalize Unicode chars for slug lookup (hair spaces, smart quotes, etc.)."""
+    t = title
+    t = t.replace("\u200a", " ")   # hair space → regular space
+    t = t.replace("\u200b", "")    # strip zero-width space
+    t = t.replace("\u00a0", " ")   # non-breaking space → regular space
+    t = t.replace("\u2019", "'")   # right single quote → apostrophe
+    t = t.replace("\u2018", "'")   # left single quote → apostrophe
+    t = t.replace("\u201c", '"')   # left double quote
+    t = t.replace("\u201d", '"')   # right double quote
+    # Collapse multiple spaces
+    t = re.sub(r"  +", " ", t)
+    return t
+
+
+def slugify(title: str) -> str:
+    """Convert title to URL slug. Uses SLUG_OVERRIDES first, then mechanical."""
+    if title in SLUG_OVERRIDES:
+        return SLUG_OVERRIDES[title]
+    # Try normalized version for Unicode-variant matches
+    normalized = _normalize_title(title)
+    if normalized in SLUG_OVERRIDES:
+        return SLUG_OVERRIDES[normalized]
+    # Also check normalized override keys against normalized title
+    for key, slug_val in SLUG_OVERRIDES.items():
+        if _normalize_title(key) == normalized:
+            return slug_val
+    slug = title.lower()
+    slug = re.sub(r"[^\w\s-]", "", slug)       # strip special chars
+    slug = re.sub(r"[\s_]+", "-", slug)         # spaces/underscores to hyphens
+    slug = re.sub(r"-+", "-", slug)             # collapse hyphens
+    slug = slug.strip("-")
+    return slug[:60]
+
+
+def estimate_read_time(html_content: str) -> int:
+    """Estimate read time in minutes from HTML content."""
+    text = strip_html(html_content)
+    word_count = len(text.split())
+    return max(1, round(word_count / 200))
+
+
+def extract_first_image(html_content: str) -> str:
+    """Extract the first <img src="..."> URL from HTML. Falls back to site logo."""
+    match = re.search(r'<img[^>]+src="([^"]+)"', html_content)
+    if match:
+        return match.group(1)
+    return DEFAULT_OG_IMAGE
+
+
+def clean_medium_html(html_content: str) -> str:
+    """Strip Medium tracking pixels, empty paragraphs, and other cruft."""
+    content = html_content
+    # Remove tracking pixel images (1x1, hidden, etc.)
+    content = re.sub(
+        r'<img[^>]*(?:width="1"|height="1"|class="[^"]*tracking[^"]*")[^>]*/?>',
+        "", content, flags=re.IGNORECASE
+    )
+    # Remove Medium tracking pixels (typically 1x1 images at the end)
+    content = re.sub(
+        r'<img[^>]+src="https://medium\.com/_/stat[^"]*"[^>]*/?>',
+        "", content, flags=re.IGNORECASE
+    )
+    # Remove empty paragraphs
+    content = re.sub(r"<p>\s*</p>", "", content)
+    # Remove empty divs
+    content = re.sub(r"<div>\s*</div>", "", content)
+    # Remove Medium's "Continue reading" links
+    content = re.sub(
+        r'<a[^>]*href="[^"]*\?source=rss[^"]*"[^>]*>Continue reading[^<]*</a>',
+        "", content, flags=re.IGNORECASE
+    )
+    return content.strip()
+
+
+def load_template(path: str) -> str:
+    """Read a template file."""
+    with open(path, "r", encoding="utf-8") as f:
+        return f.read()
+
+
+def render_template(template: str, variables: dict) -> str:
+    """Replace {{key}} placeholders with values. Simple str.replace approach."""
+    result = template
+    for key, value in variables.items():
+        result = result.replace("{{" + key + "}}", str(value))
+    return result
+
+
+def load_faq_schema(slug: str) -> str:
+    """Read optional blog/{slug}/meta.yaml for FAQ schema. Returns empty string if none."""
+    meta_path = os.path.join(BLOG_DIR, slug, "meta.yaml")
+    if not os.path.exists(meta_path):
+        return ""
+    try:
+        import yaml
+        with open(meta_path, "r", encoding="utf-8") as f:
+            meta = yaml.safe_load(f)
+        faqs = meta.get("faq", [])
+        if not faqs:
+            return ""
+        entities = []
+        for faq in faqs:
+            entities.append({
+                "@type": "Question",
+                "name": faq["q"],
+                "acceptedAnswer": {"@type": "Answer", "text": faq["a"]},
+            })
+        schema = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": entities,
+        }
+        return (
+            '  <script type="application/ld+json">\n'
+            f"  {json.dumps(schema, indent=2, ensure_ascii=False)}\n"
+            "  </script>"
+        )
+    except ImportError:
+        # PyYAML not installed — skip gracefully
+        return ""
+    except Exception:
+        return ""
+
+
+def content_hash(content: str) -> str:
+    """MD5 hash of content for change detection."""
+    return hashlib.md5(content.encode("utf-8")).hexdigest()
+
+
+def read_existing_hash(slug: str) -> str:
+    """Read the content hash from a previously generated article page."""
+    page_path = os.path.join(BLOG_DIR, slug, "index.html")
+    if not os.path.exists(page_path):
+        return ""
+    try:
+        with open(page_path, "r", encoding="utf-8") as f:
+            first_lines = f.read(500)
+        match = re.search(r"<!-- content-hash: ([a-f0-9]{32}) -->", first_lines)
+        if match:
+            return match.group(1)
+    except Exception:
+        pass
+    return ""
+
+
+# ---------------------------------------------------------------------------
+# RSS parsing (extended)
+# ---------------------------------------------------------------------------
+
+def parse_feed(xml_bytes: bytes) -> list:
     """Parse RSS XML and return list of article dicts sorted newest-first."""
     root = ET.fromstring(xml_bytes)
     items = []
@@ -113,31 +288,35 @@ def parse_feed(xml_bytes: bytes) -> list[dict]:
         title_el = item.find("title")
         link_el = item.find("link")
         pub_date_el = item.find("pubDate")
-        # Medium puts HTML content in content:encoded; description has a short version
         desc_el = item.find("description")
-        # content:encoded namespace
         content_el = item.find("{http://purl.org/rss/1.0/modules/content/}encoded")
 
         title = title_el.text.strip() if title_el is not None and title_el.text else "Untitled"
         link = clean_link(link_el.text.strip()) if link_el is not None and link_el.text else ""
         pub_date = parse_date(pub_date_el.text) if pub_date_el is not None and pub_date_el.text else datetime.date.today()
 
-        # Extract description: prefer content:encoded (richer), fall back to description
-        raw_desc = ""
+        # Full HTML content from content:encoded
+        content_html = ""
         if content_el is not None and content_el.text:
-            raw_desc = content_el.text
-        elif desc_el is not None and desc_el.text:
-            raw_desc = desc_el.text
+            content_html = content_el.text
+
+        # Short description for cards
+        raw_desc = content_html or (desc_el.text if desc_el is not None and desc_el.text else "")
         description = truncate(strip_html(raw_desc), 200)
+
+        slug = slugify(title)
+        read_time = estimate_read_time(content_html) if content_html else 1
 
         items.append({
             "title": title,
             "link": link,
             "date": pub_date,
             "description": description,
+            "content_html": content_html,
+            "slug": slug,
+            "read_time": read_time,
         })
 
-    # Sort newest first
     items.sort(key=lambda x: x["date"], reverse=True)
     return items
 
@@ -151,54 +330,102 @@ def format_date_display(d: datetime.date) -> str:
     return d.strftime("%b %-d, %Y") if sys.platform != "win32" else d.strftime("%b %d, %Y").replace(" 0", " ")
 
 
-def make_article_card(article: dict, delay: int = 0) -> str:
-    """Generate one article card HTML block."""
+def make_article_card_internal(article: dict, delay: int = 0) -> str:
+    """Generate one article card HTML linking to internal /blog/{slug}/ page."""
     delay_attr = f' data-delay="{delay}"' if delay else ""
     date_display = format_date_display(article["date"])
     date_iso = article["date"].isoformat()
     title_escaped = html.escape(article["title"])
     desc_escaped = html.escape(article["description"])
-    link_escaped = html.escape(article["link"])
+    slug = article["slug"]
 
-    # 6-space indent to sit inside the grid container
     return (
         f'      <a class="p-6 rounded-2xl border border-slate-800 bg-slate-900/50 hover:border-green-500/40 transition-colors reveal tile-float flex flex-col"{delay_attr}\n'
-        f'         href="{link_escaped}"\n'
-        f'         target="_blank" rel="noopener">\n'
+        f'         href="/blog/{slug}/">\n'
         f'        <div class="flex items-start gap-3">\n'
-        f'          <img src="../assets/img/icon_article.svg" width="22" height="22" alt="" aria-hidden="true" class="border-green-500 pt-1" />\n'
+        f'          <img src="/assets/img/icon_article.svg" width="22" height="22" alt="" aria-hidden="true" class="border-green-500 pt-1" />\n'
         f'          <h2 class="font-semibold">{title_escaped}</h2>\n'
         f'        </div>\n'
         f'        <p class="text-sm mt-2 text-slate-400 flex-1">{desc_escaped}</p>\n'
         f'        <div class="mt-4 flex items-center justify-between text-xs text-slate-500">\n'
         f'          <time datetime="{date_iso}">{date_display}</time>\n'
-        f'          <span class="text-green-400 font-medium">Read on Medium &rarr;</span>\n'
+        f'          <span class="text-green-400 font-medium">Read article &rarr;</span>\n'
         f'        </div>\n'
         f'      </a>'
     )
 
 
-def make_json_ld_posts(articles: list[dict]) -> str:
-    """Generate the blogPost JSON-LD array entries."""
+def make_json_ld_posts(articles: list) -> str:
+    """Generate the blogPost JSON-LD array entries with internal URLs."""
     posts = []
     for a in articles:
         posts.append({
             "@type": "BlogPosting",
             "headline": a["title"],
-            "url": a["link"],
+            "url": f"https://vastlink.xyz/blog/{a['slug']}/",
             "datePublished": a["date"].isoformat(),
             "author": {"@type": "Organization", "name": "Vastlink"},
         })
     return json.dumps(posts, indent=6, ensure_ascii=False)
 
 
-def build_blog_html(articles: list[dict]) -> str:
-    """Build the complete blog/index.html content."""
+def build_related_articles(current_slug: str, all_articles: list) -> str:
+    """Pick up to 3 other articles and render as internal cards."""
+    others = [a for a in all_articles if a["slug"] != current_slug][:3]
+    cards = []
+    for i, article in enumerate(others):
+        delay = i * 100
+        cards.append(make_article_card_internal(article, delay))
+    return "\n\n".join(cards)
+
+
+def build_article_page(article: dict, all_articles: list) -> str:
+    """Load template + partials and render a full article page."""
+    template = load_template(ARTICLE_TEMPLATE)
+    header_html = load_template(HEADER_PARTIAL)
+    footer_html = load_template(FOOTER_PARTIAL)
+
+    cleaned_content = clean_medium_html(article["content_html"])
+    og_image = extract_first_image(article["content_html"])
+    faq_schema = load_faq_schema(article["slug"])
+    related = build_related_articles(article["slug"], all_articles)
+    meta_desc = html.escape(article["description"])
+
+    variables = {
+        "title": html.escape(article["title"]),
+        "meta_description": meta_desc,
+        "slug": article["slug"],
+        "date_iso": article["date"].isoformat(),
+        "date_display": format_date_display(article["date"]),
+        "read_time": str(article["read_time"]),
+        "og_image": og_image,
+        "content": cleaned_content,
+        "header": header_html,
+        "footer": footer_html,
+        "faq_schema": faq_schema,
+        "related_articles": related,
+    }
+
+    rendered = render_template(template, variables)
+
+    # Inject content hash as HTML comment after <!DOCTYPE html>
+    c_hash = content_hash(article["content_html"])
+    rendered = rendered.replace(
+        "<!DOCTYPE html>",
+        f"<!DOCTYPE html>\n<!-- content-hash: {c_hash} -->",
+        1,
+    )
+
+    return rendered
+
+
+def build_blog_html(articles: list) -> str:
+    """Build the complete blog/index.html content with internal links."""
     # Build article cards with staggered delay pattern (per row of 3)
     cards = []
     for i, article in enumerate(articles):
-        delay = (i % 3) * 100  # 0, 100, 200, 0, 100, 200, ...
-        cards.append(make_article_card(article, delay))
+        delay = (i % 3) * 100
+        cards.append(make_article_card_internal(article, delay))
 
     article_cards = "\n\n".join(cards)
     json_ld_posts = make_json_ld_posts(articles)
@@ -374,28 +601,44 @@ def build_blog_html(articles: list[dict]) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Sitemap updater
+# Sitemap updater (extended for article URLs)
 # ---------------------------------------------------------------------------
 
-def update_sitemap(sitemap_path: str, today: str) -> bool:
-    """Update the lastmod for /blog/ in sitemap.xml. Returns True if changed."""
+def update_sitemap(sitemap_path: str, articles: list, today: str) -> bool:
+    """Update sitemap.xml: update /blog/ lastmod and add article URLs. Returns True if changed."""
     with open(sitemap_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Match the <url> block containing /blog/
+    original = content
+
+    # Update /blog/ lastmod
     pattern = r"(<url>\s*<loc>https://vastlink\.xyz/blog/</loc>\s*<lastmod>)(\d{4}-\d{2}-\d{2})(</lastmod>)"
-    match = re.search(pattern, content)
-    if not match:
-        print("  [warn] Could not find /blog/ entry in sitemap.xml")
+    content = re.sub(pattern, rf"\g<1>{today}\3", content)
+
+    # Update homepage lastmod too
+    pattern_home = r"(<url>\s*<loc>https://vastlink\.xyz/</loc>\s*<lastmod>)(\d{4}-\d{2}-\d{2})(</lastmod>)"
+    content = re.sub(pattern_home, rf"\g<1>{today}\3", content)
+
+    # Add article URLs if not already present
+    for article in articles:
+        article_url = f"https://vastlink.xyz/blog/{article['slug']}/"
+        if article_url not in content:
+            article_entry = (
+                f"  <url>\n"
+                f"    <loc>{article_url}</loc>\n"
+                f"    <lastmod>{article['date'].isoformat()}</lastmod>\n"
+                f"    <changefreq>monthly</changefreq>\n"
+                f"    <priority>0.7</priority>\n"
+                f"  </url>\n"
+            )
+            # Insert before closing </urlset>
+            content = content.replace("</urlset>", article_entry + "</urlset>")
+
+    if content == original:
         return False
 
-    old_date = match.group(2)
-    if old_date == today:
-        return False
-
-    new_content = re.sub(pattern, rf"\g<1>{today}\3", content)
     with open(sitemap_path, "w", encoding="utf-8") as f:
-        f.write(new_content)
+        f.write(content)
     return True
 
 
@@ -403,20 +646,21 @@ def update_sitemap(sitemap_path: str, today: str) -> bool:
 # IndexNow ping
 # ---------------------------------------------------------------------------
 
-def ping_indexnow(url: str, key: str | None = None):
-    """Ping IndexNow with the given URL. Best-effort, errors are logged."""
+def ping_indexnow(urls: list, key: str | None = None):
+    """Ping IndexNow with the given URLs. Best-effort, errors are logged."""
     if not key:
         print("  [skip] IndexNow: no API key configured")
         return
-    try:
-        ctx = _ssl_context()
-        params = urlencode({"url": url, "key": key})
-        ping_url = f"https://api.indexnow.org/indexnow?{params}"
-        req = urllib.request.Request(ping_url, headers={"User-Agent": "VastlinkBlogUpdater/1.0"})
-        with urllib.request.urlopen(req, timeout=10, context=ctx) as resp:
-            print(f"  IndexNow response: {resp.status}")
-    except Exception as e:
-        print(f"  [warn] IndexNow ping failed: {e}")
+    for url in urls:
+        try:
+            ctx = _ssl_context()
+            params = urlencode({"url": url, "key": key})
+            ping_url = f"https://api.indexnow.org/indexnow?{params}"
+            req = urllib.request.Request(ping_url, headers={"User-Agent": "VastlinkBlogUpdater/1.0"})
+            with urllib.request.urlopen(req, timeout=10, context=ctx) as resp:
+                print(f"  IndexNow [{url}]: {resp.status}")
+        except Exception as e:
+            print(f"  [warn] IndexNow ping failed for {url}: {e}")
 
 
 # ---------------------------------------------------------------------------
@@ -425,6 +669,7 @@ def ping_indexnow(url: str, key: str | None = None):
 
 def main():
     dry_run = "--dry-run" in sys.argv
+    force = "--force" in sys.argv
 
     print("=" * 60)
     print("Vastlink Blog Updater")
@@ -433,48 +678,83 @@ def main():
     print(f"Date: {today}")
     print(f"Site root: {SITE_ROOT}")
     print(f"Dry run: {dry_run}")
+    print(f"Force regenerate: {force}")
     print()
 
-    # 1. Read existing article links for diff detection
-    existing_links = set()
-    if os.path.exists(BLOG_HTML):
-        with open(BLOG_HTML, "r", encoding="utf-8") as f:
-            for m in re.finditer(r'href="(https://vastlink\.medium\.com/[^"]+)"', f.read()):
-                existing_links.add(clean_link(m.group(1)))
+    # 0. Verify templates exist
+    for tpl_path, tpl_name in [
+        (HEADER_PARTIAL, "_header.html"),
+        (FOOTER_PARTIAL, "_footer.html"),
+        (ARTICLE_TEMPLATE, "_article.html"),
+    ]:
+        if not os.path.exists(tpl_path):
+            print(f"  [error] Template not found: blog/{tpl_name}")
+            sys.exit(1)
+    print("Templates verified.")
+    print()
 
-    # 2. Fetch RSS feed
+    # 1. Fetch RSS feed (with caching)
     print("Fetching RSS feed...")
     try:
         xml_bytes = fetch_feed(FEED_URL)
+        # Cache the feed
+        if not dry_run:
+            with open(FEED_CACHE, "wb") as f:
+                f.write(xml_bytes)
     except urllib.error.URLError as e:
-        print(f"  [error] Failed to fetch feed: {e}")
-        sys.exit(1)
+        print(f"  [warn] Failed to fetch feed: {e}")
+        # Try cached feed
+        if os.path.exists(FEED_CACHE):
+            print("  Using cached feed...")
+            with open(FEED_CACHE, "rb") as f:
+                xml_bytes = f.read()
+        else:
+            print("  [error] No cached feed available.")
+            sys.exit(1)
     print(f"  Feed fetched ({len(xml_bytes)} bytes)")
 
-    # 3. Parse articles
+    # 2. Parse articles
     articles = parse_feed(xml_bytes)
     print(f"  Found {len(articles)} articles")
     for a in articles:
         print(f"    - [{a['date']}] {a['title']}")
+        print(f"      slug: {a['slug']} | read_time: {a['read_time']}min | content: {len(a['content_html'])} chars")
     print()
 
-    # 4. Detect new articles
-    new_links = set(a["link"] for a in articles)
-    added = new_links - existing_links
-    removed = existing_links - new_links
-    if added:
-        print(f"New articles detected ({len(added)}):")
-        for link in sorted(added):
-            print(f"  + {link}")
-    if removed:
-        print(f"Articles no longer in feed ({len(removed)}):")
-        for link in sorted(removed):
-            print(f"  - {link}")
-    if not added and not removed:
-        print("No new articles detected (feed matches existing page).")
+    # 3. Generate article pages
+    print("Generating article pages...")
+    new_article_urls = []
+    for article in articles:
+        slug = article["slug"]
+        if not article["content_html"]:
+            print(f"  [skip] {slug}: no content_html in feed")
+            continue
+
+        existing_hash = read_existing_hash(slug)
+        current_hash = content_hash(article["content_html"])
+
+        if not force and existing_hash == current_hash:
+            print(f"  [skip] {slug}: unchanged (hash match)")
+            continue
+
+        print(f"  Generating: blog/{slug}/index.html")
+        page_html = build_article_page(article, articles)
+
+        if not dry_run:
+            article_dir = os.path.join(BLOG_DIR, slug)
+            os.makedirs(article_dir, exist_ok=True)
+            page_path = os.path.join(article_dir, "index.html")
+            with open(page_path, "w", encoding="utf-8") as f:
+                f.write(page_html)
+            print(f"    Written ({len(page_html)} bytes)")
+        else:
+            print(f"    [dry-run] Would write {len(page_html)} bytes")
+
+        article_url = f"{SITE_URL}/blog/{slug}/"
+        new_article_urls.append(article_url)
     print()
 
-    # 5. Generate blog HTML
+    # 4. Generate blog listing HTML
     print("Generating blog/index.html...")
     blog_html = build_blog_html(articles)
     if not dry_run:
@@ -485,21 +765,24 @@ def main():
     else:
         print(f"  [dry-run] Would write {len(blog_html)} bytes")
 
-    # 6. Update sitemap.xml
+    # 5. Update sitemap.xml
     print("Updating sitemap.xml...")
     if not dry_run:
-        changed = update_sitemap(SITEMAP_XML, today)
+        changed = update_sitemap(SITEMAP_XML, articles, today)
         if changed:
-            print(f"  Updated lastmod to {today}")
+            print(f"  Updated (lastmod={today}, added article URLs)")
         else:
-            print(f"  Already up to date ({today})")
+            print(f"  Already up to date")
     else:
-        print(f"  [dry-run] Would update lastmod to {today}")
+        print(f"  [dry-run] Would update sitemap")
 
-    # 7. Ping IndexNow
+    # 6. Ping IndexNow for new/changed articles
     print("Pinging IndexNow...")
-    if not dry_run:
-        ping_indexnow(BLOG_URL, INDEXNOW_KEY)
+    if not dry_run and new_article_urls:
+        all_urls = [BLOG_URL] + new_article_urls
+        ping_indexnow(all_urls, INDEXNOW_KEY)
+    elif not new_article_urls:
+        print("  No new/changed articles to ping")
     else:
         print("  [dry-run] Would ping IndexNow")
 
@@ -508,11 +791,12 @@ def main():
     print("=" * 60)
     print("Summary")
     print("=" * 60)
-    print(f"  Total articles: {len(articles)}")
-    print(f"  New articles:   {len(added)}")
-    print(f"  Removed:        {len(removed)}")
-    print(f"  blog/index.html: {'updated' if not dry_run else 'dry-run'}")
-    print(f"  sitemap.xml:     {'updated' if not dry_run else 'dry-run'}")
+    print(f"  Total articles:       {len(articles)}")
+    print(f"  Articles generated:   {len(new_article_urls)}")
+    print(f"  blog/index.html:      {'updated' if not dry_run else 'dry-run'}")
+    print(f"  sitemap.xml:          {'updated' if not dry_run else 'dry-run'}")
+    for a in articles:
+        print(f"  /blog/{a['slug']}/")
     print("Done.")
 
 

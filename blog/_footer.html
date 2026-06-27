@@ -1,0 +1,50 @@
+  <!-- Footer -->
+  <footer class="border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-6 text-slate-400">
+      <div>
+        <div class="text-white font-semibold">Vastlink</div>
+        <p class="mt-2">A next generation Wallet-as-a-Protocol for mass adoption for humans and AI.</p>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200">Company</div>
+        <ul class="mt-2 space-y-2">
+          <li><a href="https://vastlink.xyz/terms_and_conditions.html" class="link-brand" target="_blank">Terms and conditions</a></li>
+          <li><a href="https://vastlink.xyz/privacy.html" class="link-brand" target="_blank">Privacy</a></li>
+          <li><a href="https://vastlink.xyz/blog/" class="link-brand">Blog</a></li>
+          <li><a href="https://vastlink.xyz/#faq" class="link-brand">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200">Follow</div>
+        <ul class="mt-2 space-y-2">
+          <li><a class="link-brand" href="https://x.com/thevastlink" target="_blank"><i class="fab fa-fw fa-twitter"></i> Twitter</a></li>
+          <li><a class="link-brand" href="https://www.linkedin.com/company/104843132" target="_blank"><i class="fab fa-fw fa-linkedin"></i> LinkedIn</a></li>
+          <li><a class="link-brand" href="https://github.com/vastlink-xyz" target="_blank"><i class="fab fa-fw fa-github"></i> GitHub</a></li>
+          <li><a class="link-brand" href="https://vastlink.medium.com/" target="_blank"><i class="fab fa-fw fa-medium"></i> Medium</a></li>
+          <li><a class="link-brand" href="https://t.me/VastlinkCommunity" target="_blank"><i class="fab fa-fw fa-telegram"></i> Telegram</a></li>
+          <li><a class="link-brand" href="https://www.youtube.com/@vastlink" target="_blank"><i class="fab fa-fw fa-youtube"></i> YouTube</a></li>
+          <li><a class="link-brand" href="https://vastlink.gitbook.io/vastlink-whitepaper" target="_blank">&nbsp;<i class="fa fa-book"></i> Whitepaper</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center text-slate-500 pb-8">Dubai &middot; Hong Kong &middot; Singapore &middot; Sydney &middot; &copy; Vastlink 2024 ~ 2026</div>
+  </footer>
+
+  <script>
+    // Add shadow to header on scroll
+    const header = document.querySelector('header');
+    const onScrollHeader = () => {
+      if (window.scrollY > 10) header.classList.add('shadow-lg','border-slate-700');
+      else header.classList.remove('shadow-lg','border-slate-700');
+    };
+    document.addEventListener('scroll', onScrollHeader, { passive: true });
+    onScrollHeader();
+
+    // IntersectionObserver to reveal elements
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
