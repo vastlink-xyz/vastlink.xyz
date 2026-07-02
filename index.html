@@ -106,6 +106,7 @@
     .border-anim{position:relative}
     .border-anim::before{content:"";position:absolute;inset:-1px;border-radius:1.5rem;padding:1px;background:linear-gradient(90deg,var(--brand-start),var(--brand-end));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.6;transition:opacity .3s ease}
     .border-anim:hover::before{opacity:1}
+    [id] { scroll-margin-top: 5rem; }
   </style>
 
     <script src="https://getlaunchlist.com/js/widget.js" defer></script>
@@ -260,9 +261,12 @@
   </section>
 
   <!-- Waitlist -->
-  <section id="waitlist" class="px-10">
+  <section id="waitlist" class="px-4 md:px-10">
     <div class="launchlist-widget" data-key-id="qxnK4A" data-height="180px" style="max-width:40%; margin:0 auto;"></div>
-    <style>@media(max-width:768px){#waitlist-actual .launchlist-widget{max-width:90%!important;}}</style>
+    <style>
+      @media(max-width:768px){#waitlist .launchlist-widget{max-width:100%!important;}}
+      #waitlist input::placeholder{font-size:0.75rem;}
+    </style>
   </section>
 
   <section id="placeholder" class="max-w-7xl mx-auto px-6 pb-24 reveal">
