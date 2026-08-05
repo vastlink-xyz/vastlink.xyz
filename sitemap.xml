@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vastlink.xyz/</loc>
-    <lastmod>2026-07-05</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -20,9 +20,15 @@
   </url>
   <url>
     <loc>https://vastlink.xyz/blog/</loc>
-    <lastmod>2026-07-05</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vastlink.xyz/blog/coldcard-entropy-bug-88m-lessons/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://vastlink.xyz/blog/crypto-custody-for-business/</loc>
