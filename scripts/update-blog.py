@@ -18,6 +18,7 @@ import json
 import os
 import re
 import ssl
+import subprocess
 import sys
 import urllib.request
 import urllib.error
@@ -788,7 +789,15 @@ def main():
     else:
         print(f"  [dry-run] Would update sitemap")
 
-    # 6. Ping IndexNow for new/changed articles
+    # 6. Regenerate llms.txt / llms-full.txt from the blog pages on disk
+    print("Updating llms.txt and llms-full.txt...")
+    llms_cmd = [sys.executable, os.path.join(SITE_ROOT, "scripts", "update-llms.py")]
+    if dry_run:
+        llms_cmd.append("--dry-run")
+    subprocess.run(llms_cmd, check=False)
+    print()
+
+    # 7. Ping IndexNow for new/changed articles
     print("Pinging IndexNow...")
     if not dry_run and new_article_urls:
         all_urls = [BLOG_URL] + new_article_urls
@@ -807,6 +816,7 @@ def main():
     print(f"  Articles generated:   {len(new_article_urls)}")
     print(f"  blog/index.html:      {'updated' if not dry_run else 'dry-run'}")
     print(f"  sitemap.xml:          {'updated' if not dry_run else 'dry-run'}")
+    print(f"  llms.txt:             {'updated' if not dry_run else 'dry-run'}")
     for a in articles:
         print(f"  /blog/{a['slug']}/")
     print("Done.")

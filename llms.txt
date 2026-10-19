@@ -1,0 +1,49 @@
+# Vastlink
+
+> Vastlink is an open-source, verifiable digital asset operating system (DAOS) for humans and AI. It powers keyless, self-custodial MPC / account-abstraction (AA) wallets with multi-factor authentication, policy controls (spend limits, multisig approvals) and treasury automation across BTC, Ethereum, Solana, BNB Chain, Polygon and more. It can be self-hosted or used as a cloud service.
+
+Key facts:
+
+- **Category:** digital asset operating system (DAOS). A DAOS manages the entire lifecycle of digital assets, whereas wallet-as-a-service (WaaS) and wallet-as-a-protocol (WaaP) only cover one component, the wallet. The relationship is similar to that of an operating system and a database.
+- **Keyless, powered by MPC:** no private key or seed phrase for users to manage, and no single point of failure. Users sign in with familiar methods such as email.
+- **Security:** enterprise-grade security with MFA, spend limits and multisig approvals.
+- **Deployment:** self-hosted on your own infrastructure or cloud-based. No vendor lock-in.
+- **Open:** fully open source and decentralized, powered by tokenomics. Key flows can be self-hosted, extended and audited.
+- **Pricing:** pay-as-you-go / gas-fee model. You pay only for what you consume, with no fixed price, subscription or upfront fee.
+- **Developers:** a developer-first SDK with simple APIs, documentation and live examples, plus a modular path to more chains.
+- **Who it is for:** individuals, teams, treasuries, DAOs, funds, PayFi operators and developers who need secure, auditable wallet infrastructure.
+- **Use cases:** treasury management (multi-chain holdings, multisig approvals, payouts, AI-powered earning options); payments (on-ramp/off-ramp, KYC/KYB/KYT, compliant cross-border B2B payments); real-world assets (RWA project setup, user onboarding, token issuance and management).
+- **Products:** Vastbase, a multisig wallet built on Vastlink and Lit Protocol for crypto treasuries, RWAs, DAOs and VC funds, with email onboarding and email-driven approval workflows.
+- **Locations:** Dubai, Hong Kong, Singapore, Sydney.
+
+## Core pages
+
+- [Vastlink home](https://vastlink.xyz/): product overview, features, use cases and FAQ
+- [Whitepaper](https://vastlink.gitbook.io/vastlink-whitepaper): architecture, design and tokenomics of Vastlink
+- [Vastbase](https://vastbase.vastlink.xyz/): next-generation multisig wallet built on Vastlink
+- [Vastbase product explainer](https://vastbase.vastlink.xyz/product-explainer.html): how Vastbase works, step by step
+- [Blog](https://vastlink.xyz/blog/): all articles from the Vastlink team
+- [Full text of all articles](https://vastlink.xyz/llms-full.txt): every blog article as Markdown, in one file
+
+## Blog articles
+
+- [Digital Asset Custody Platforms Compared: Why Security Technology Is No Longer the Differentiator](https://vastlink.xyz/blog/digital-asset-custody-platforms-compared-2026/): Ridgeway Financial Services compared 10 institutional custody platforms — Fireblocks, BitGo, Copper, Anchorage and more. The finding: security tech is commoditized. Audit-readiness, controls, and reconciliation now decide the winner. (2026-09-09)
+- [What the $88 Million Coldcard Hack Teaches Us About Single-Vendor Custody Risk](https://vastlink.xyz/blog/coldcard-entropy-bug-88m-lessons/): A firmware bug silently weakened Coldcard wallet seeds for five years, leading to an $88.6M Bitcoin theft. What single-vendor custody risk really means — and why governance closes the gap. (2026-08-05)
+- [Crypto Custody for Business: A Practical Guide for 2026](https://vastlink.xyz/blog/crypto-custody-for-business/): 61% of businesses holding crypto use multiple custodians but have no unified governance. A practical guide to choosing, implementing, and governing crypto custody for your business. (2026-07-05)
+- [Crypto Custody Solutions: What Institutions Need to Know in 2026](https://vastlink.xyz/blog/crypto-custody-solutions-guide-2026/): $3.4 billion in crypto was stolen in 2025. Custody is not a technology problem — it is a governance problem. A practical guide for fund managers, treasury operators, and CEOs. (2026-07-01)
+- [Digital Asset Management Landscape Research 2025](https://vastlink.xyz/blog/digital-asset-management-landscape-2025/): research on the convergence of TradFi and DeFi in digital asset management. (2025-12-02)
+- [The fundamental problem with current crypto wallets (1)](https://vastlink.xyz/blog/fundamental-problem-crypto-wallets/): why key management is hard, and how MPC, TSS and account abstraction let users keep control without managing keys. (2025-10-29)
+- [Vastbase FAQ](https://vastlink.xyz/blog/vastbase-faq/): what Vastbase is, the problems it solves, why it is built with Lit Protocol and how it works. (2025-09-05)
+- [What can we learn from the biggest crypto hack in history — #Bybit’s 1.4B hack](https://vastlink.xyz/blog/bybit-hack-crypto-security/): lessons from the Safe{Wallet} and Bybit $1.4B hack, and the risk of concentrating assets in a single wallet. (2025-02-22)
+- [Decentralized MPC — The Future Infrastructure for Crypto Wallets](https://vastlink.xyz/blog/decentralized-mpc-future-infrastructure/): explains MPC, threshold signature schemes (TSS) and decentralized MPC networks, and why they are the future of wallet infrastructure. (2024-12-04)
+
+## Optional
+
+- [GitHub](https://github.com/vastlink-xyz): open-source code
+- [Medium](https://vastlink.medium.com/): Vastlink on Medium, where earlier articles were first published
+- [X / Twitter](https://x.com/thevastlink)
+- [LinkedIn](https://www.linkedin.com/company/104843132)
+- [Telegram community](https://t.me/VastlinkCommunity)
+- [YouTube](https://www.youtube.com/@vastlink)
+- [Terms and conditions](https://vastlink.xyz/terms_and_conditions.html)
+- [Privacy policy](https://vastlink.xyz/privacy.html)
