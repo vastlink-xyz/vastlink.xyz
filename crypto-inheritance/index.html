@@ -57,7 +57,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Crypto Inheritance Without Giving Up Your Keys",
-    "description": "How to plan crypto and bitcoin inheritance so your non-technical family can recover your assets, without handing a key to any company.",
+    "description": "How to plan crypto and bitcoin inheritance so your non-technical family can recover your crypto, without handing a key to any company.",
     "url": "https://vastlink.xyz/crypto-inheritance/",
     "datePublished": "2026-10-23",
     "dateModified": "2026-10-23",
@@ -87,8 +87,9 @@
     "offers": [
       {"@type": "Offer", "name": "Self-Guided", "price": "249", "priceCurrency": "USD", "url": "https://vastlink.xyz/crypto-inheritance/#pricing", "availability": "https://schema.org/PreOrder",
        "priceSpecification": {"@type": "UnitPriceSpecification", "price": "249", "priceCurrency": "USD", "unitText": "year"}},
-      {"@type": "Offer", "name": "Guided (first year)", "price": "499", "priceCurrency": "USD", "url": "https://vastlink.xyz/crypto-inheritance/#pricing", "availability": "https://schema.org/PreOrder",
-       "description": "$499 for the first year, then $249 per year. Founding families: $299 first year, 100% refundable."},
+      {"@type": "Offer", "name": "Guided", "price": "249", "priceCurrency": "USD", "url": "https://vastlink.xyz/crypto-inheritance/#pricing", "availability": "https://schema.org/PreOrder",
+       "priceSpecification": {"@type": "UnitPriceSpecification", "price": "249", "priceCurrency": "USD", "unitText": "year"},
+       "description": "$249 per year plus a one-time $249 setup fee. First 20 founding families: setup fee waived, 100% refundable."},
       {"@type": "Offer", "name": "Legacy", "price": "1900", "priceCurrency": "USD", "url": "https://vastlink.xyz/crypto-inheritance/#pricing", "availability": "https://schema.org/PreOrder",
        "priceSpecification": {"@type": "UnitPriceSpecification", "price": "1900", "priceCurrency": "USD", "unitText": "year"}}
     ]
@@ -129,27 +130,34 @@
     "@type": "FAQPage",
     "mainEntity": [
       {"@type": "Question", "name": "Can my family inherit my crypto if they can't log in to my wallet?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Yes. There's nothing to log in to and no seed phrase to find. Control is split into pieces kept on different devices, and no complete key ever exists. That's why a plan has to state which pieces are held by whom and in what order they are combined. The full procedure goes in a handbook written for your heirs."}},
+       "acceptedAnswer": {"@type": "Answer", "text": "Yes. There's nothing to log in to and no seed phrase or private key to find. Control is split into pieces kept on different devices, and no complete key ever exists. That's why a plan has to state which pieces are held by whom and in what order they are combined. The full procedure goes in a handbook written for your heirs."}},
+      {"@type": "Question", "name": "When I die, how will my family know who to contact?",
+       "acceptedAnswer": {"@type": "Answer", "text": "That's why the first step of setup is a list of people, not technology: who is the executor, who helps with the technical side, and who is the backup contact. The list goes in the handbook. Your will points to the handbook, never to a seed phrase."}},
       {"@type": "Question", "name": "Should I put my seed phrase in my will?",
        "acceptedAnswer": {"@type": "Answer", "text": "It's the most common approach and the most dangerous one. After death, a will usually goes through probate, and many people may see it. Anyone who sees a seed phrase can take everything. Your will should say who inherits and where to find the pieces, not the seed phrase itself."}},
       {"@type": "Question", "name": "How is this different from a crypto trust?",
        "acceptedAnswer": {"@type": "Answer", "text": "A trust deals with legal title: who is legally entitled to inherit. A key-split plan deals with technical execution: how your family actually gets the coins. They don't conflict, and you need both. If you already have a trust or a will, this plan is the execution layer underneath it."}},
+      {"@type": "Question", "name": "Isn't a social recovery wallet enough?",
+       "acceptedAnswer": {"@type": "Answer", "text": "Social recovery helps you get back into your own wallet if you lose a device. Inheritance is a different problem: someone else needs access after you're gone, with legal authority and instructions they can follow. A recovery setup can be part of an inheritance plan, but on its own it isn't one."}},
+      {"@type": "Question", "name": "Can't I just set up multisig myself with Sparrow or other free tools?",
+       "acceptedAnswer": {"@type": "Answer", "text": "Yes, as long as you'll always be around, always clear-headed, and willing to write a handbook for your family. We don't sell software. Multisig tools like Sparrow, and the tools we use, are free and open source, and you can use them yourself whenever you like. You pay for the parts that aren't code: choosing who holds which piece so your heirs can't act without you, writing down where the backups are and what proof releases them, running a rehearsal with your family, and keeping all of it current when a device is lost, a piece is reissued, or someone joins or leaves the family. The result: on the day something happens to you, your family has a document they can follow and a person they can ask. If you'd rather do that yourself, Self-Guided gives you the templates."}},
+      {"@type": "Question", "name": "Will you hold any of my keys?",
+       "acceptedAnswer": {"@type": "Answer", "text": "No, not a single one. This is where we differ from Casa and Unchained, who each hold a backup key for recovery or emergency co-signing. Our setup has no Vastlink key at all. The trade-off is that we can't recover your funds for you, which is why every setup includes a real rehearsal."}},
+      {"@type": "Question", "name": "Could someone claim my crypto while I'm still alive?",
+       "acceptedAnswer": {"@type": "Answer", "text": "No. No single piece can move funds, and there is no company backup key. Pieces are placed so your heirs can't reach the threshold without you. For example, in a 3-of-4 setup you hold two pieces (your phone and a backup in your own safe), so an heir and your lawyer together hold only two of the three needed. Your backup is released to your executor under your will."}},
+      {"@type": "Question", "name": "What happens if Vastlink shuts down?",
+       "acceptedAnswer": {"@type": "Answer", "text": "Nothing changes for your coins. We never hold a key, the tools are open source, and the handbook only uses software your family can get for free. Signing happens between your own devices: a relay can pass encrypted messages between phones that are far apart, but it can't move funds, it can be self-hosted, and phones on the same WiFi can sign without it. Your plan keeps working without us."}},
       {"@type": "Question", "name": "I hold ETH and stablecoins, not bitcoin. Does this work for me?",
        "acceptedAnswer": {"@type": "Answer", "text": "Yes. The same inheritance logic applies to Bitcoin, Ethereum and the major stablecoins (USDT, USDC). Tell us what you hold during the gap review and we'll confirm the setup for each asset."}},
       {"@type": "Question", "name": "Do I need to be technical?",
        "acceptedAnswer": {"@type": "Answer", "text": "No. Creating the wallet takes a few minutes in a mobile app, and approving a transfer means scanning a QR code with a second phone. The app handles the cryptography. What it can't decide for you is who holds which piece, where the backups are kept, and what your family does first. That's what the plan and the short handbook cover, tested in a real rehearsal."}},
       {"@type": "Question", "name": "How much does crypto inheritance planning cost?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Self-Guided is $249 per year. Guided is $499 for the first year, then $249 per year. Legacy is $1,900 per year. The first 20 founding families pay $299 for the first year of Guided, 100% refundable. For comparison, Casa's inheritance plans are listed at $250, $2,100 and $7,500 per year, and a lawyer-drafted crypto trust typically costs $2,000 to $10,000 one-off."}},
-      {"@type": "Question", "name": "Could someone claim my crypto while I'm still alive?",
-       "acceptedAnswer": {"@type": "Answer", "text": "No. No single piece can move funds, and there is no company backup key. Pieces are placed so your heirs can't reach the threshold without you. For example, in a 3-of-4 setup you hold two pieces (your phone and a backup in your own safe), so an heir and your lawyer together hold only two of the three needed. Your backup is released to your executor under your will."}},
-      {"@type": "Question", "name": "What happens if Vastlink shuts down?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Nothing changes for your coins. We never hold a key, the tools are open source, and the handbook only uses software your family can get for free. Signing happens between your own devices: a relay can pass encrypted messages between phones that are far apart, but it can't move funds, it can be self-hosted, and phones on the same WiFi can sign without it. Your plan keeps working without us."}},
-      {"@type": "Question", "name": "Isn't a social recovery wallet enough?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Social recovery helps you get back into your own wallet if you lose a device. Inheritance is a different problem: someone else needs access after you're gone, with legal authority and instructions they can follow. A recovery setup can be part of an inheritance plan, but on its own it isn't one."}}
+       "acceptedAnswer": {"@type": "Answer", "text": "Self-Guided is $249 per year. Guided is $249 per year plus a one-time $249 setup fee. Legacy is $1,900 per year. The first 20 founding families get the Guided setup fee waived, 100% refundable. For comparison, Casa's inheritance plans are listed at $250, $2,100 and $7,500 per year, and a lawyer-drafted crypto trust typically costs $2,000 to $10,000 one-off."}}
     ]
   }
   </script>
 
+  <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window)document.documentElement.classList.add('js');</script>
   <style>
     :root { --brand-start: #52C41A; --brand-end: #3AA312; }
     .glow { box-shadow: 0 0 80px rgba(82,196,26,0.25); }
@@ -166,6 +174,87 @@
     table.compare th, table.compare td { padding: .75rem 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid #1e293b; }
     table.compare th { color: #e2e8f0; font-weight: 600; }
     table.compare tr.ours td { background: rgba(82,196,26,0.08); }
+    /* ===== Visual effects ===== */
+    #scroll-progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background-image:linear-gradient(90deg,var(--brand-start),#86efac);z-index:60;pointer-events:none}
+    .js .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+    .js .reveal.in{opacity:1;transform:none}
+    .js .section-underline::after{width:0;transition:width .9s cubic-bezier(.2,.7,.2,1) .25s}
+    .js .section-underline.in::after{width:72px}
+    /* Hero ambient blobs */
+    .blob{position:absolute;border-radius:9999px;filter:blur(70px);opacity:.35;pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+    .blob-a{width:420px;height:420px;background:#52C41A;top:-140px;right:-80px}
+    .blob-b{width:300px;height:300px;background:#0ea5e9;top:22%;left:-170px;opacity:.14;animation-duration:24s}
+    @keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-40px,30px) scale(1.08)}100%{transform:translate(30px,-20px) scale(.95)}}
+    .chip{transition:transform .2s ease,border-color .2s ease,background-color .2s ease}
+    .chip:hover{transform:translateY(-2px);border-color:rgba(82,196,26,.55);background-color:rgba(82,196,26,.18)}
+    /* Cards: lift + cursor spotlight */
+    .card-fx{position:relative;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s ease,box-shadow .35s ease;
+      background-image:radial-gradient(420px circle at var(--mx,-999px) var(--my,-999px),rgba(82,196,26,.11),transparent 45%)}
+    .card-fx:hover{transform:translateY(-6px);border-color:rgba(82,196,26,.45);box-shadow:0 18px 50px -18px rgba(82,196,26,.35)}
+    /* Gradient button shine */
+    a.brand-gradient{position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease}
+    a.brand-gradient:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(82,196,26,.6)}
+    a.brand-gradient::after{content:"";position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .6s ease}
+    a.brand-gradient:hover::after{left:130%}
+    nav a.link-brand.active{color:#fff}
+    nav a.link-brand.active::after{width:100%}
+    /* Three things illustrations */
+    .tt-ico{width:88px;height:88px;border-radius:1.25rem;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,rgba(82,196,26,.22),rgba(82,196,26,.05) 70%);border:1px solid rgba(82,196,26,.25);position:relative}
+    .tt-ico::after{content:"";position:absolute;inset:-6px;border-radius:1.6rem;border:1px solid rgba(82,196,26,.35);opacity:0;transform:scale(.9);transition:opacity .4s ease,transform .4s ease}
+    .card-fx:hover .tt-ico::after{opacity:1;transform:scale(1)}
+    .tt-ico svg{width:64px;height:64px;overflow:visible}
+    .tt-tag{display:inline-block;white-space:nowrap;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#86efac;padding:.2rem .6rem;border-radius:9999px;background:rgba(82,196,26,.1);border:1px solid rgba(82,196,26,.25)}
+    .tt-shackle{transform:translateY(-7px);transition:transform .5s cubic-bezier(.5,1.8,.5,1) .5s}
+    .in .tt-shackle,.card-fx:hover .tt-shackle{transform:translateY(0)}
+    .card-fx:hover .tt-shield{animation:pulse-shield 1.2s ease}
+    @keyframes pulse-shield{0%,100%{filter:none}50%{filter:drop-shadow(0 0 8px rgba(82,196,26,.8))}}
+    .tt-trail{stroke-dasharray:3 6;animation:march 1.4s linear infinite}
+    @keyframes march{to{stroke-dashoffset:-18}}
+    .tt-pin{transform-box:fill-box;transform-origin:50% 100%;animation:pin-bob 2.4s ease-in-out infinite}
+    @keyframes pin-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    .tt-wheel{transform-box:fill-box;transform-origin:50% 50%;transition:transform 1.2s cubic-bezier(.3,1.4,.5,1)}
+    .in .tt-wheel{transform:rotate(90deg)}
+    .card-fx:hover .tt-wheel{transform:rotate(270deg)}
+    .tt-arrow{animation:nudge 1.6s ease-in-out infinite}
+    @keyframes nudge{0%,100%{transform:translateX(0);opacity:.7}50%{transform:translateX(6px);opacity:1}}
+    /* Comparison table colouring */
+    table.compare tbody tr{transition:background-color .2s ease}
+    table.compare tbody tr:hover{background:rgba(148,163,184,.06)}
+    table.compare td.good,table.compare td.bad,table.compare td.mixed{position:relative;padding-left:2.6rem;transition:background-color .2s ease}
+    table.compare td.good{background:rgba(34,197,94,.13);color:#d1fae5}
+    table.compare td.bad{background:rgba(239,68,68,.15);color:#fee2e2}
+    table.compare td.mixed{background:rgba(245,158,11,.13);color:#fef3c7}
+    table.compare tr:hover td.good{background:rgba(34,197,94,.2)}
+    table.compare tr:hover td.bad{background:rgba(239,68,68,.22)}
+    table.compare tr:hover td.mixed{background:rgba(245,158,11,.2)}
+    table.compare td.good::before,table.compare td.bad::before,table.compare td.mixed::before{position:absolute;left:.9rem;top:.8rem;width:1.15rem;height:1.15rem;border-radius:9999px;display:grid;place-items:center;font-size:.7rem;font-weight:700;line-height:1}
+    table.compare td.good::before{content:"\2713";background:rgba(34,197,94,.25);color:#4ade80;box-shadow:0 0 0 1px rgba(74,222,128,.4)}
+    table.compare td.bad::before{content:"\2715";background:rgba(239,68,68,.25);color:#f87171;box-shadow:0 0 0 1px rgba(248,113,113,.4)}
+    table.compare td.mixed::before{content:"!";background:rgba(245,158,11,.25);color:#fbbf24;box-shadow:0 0 0 1px rgba(251,191,36,.4)}
+    table.compare tr.ours td{background:rgba(82,196,26,.14)}
+    table.compare tr.ours td:first-child{box-shadow:inset 4px 0 0 #52C41A}
+    table.compare tr.ours:hover td{background:rgba(82,196,26,.2)}
+    .legend-dot{display:inline-grid;place-items:center;width:1rem;height:1rem;border-radius:9999px;font-size:.62rem;font-weight:700;margin-right:.35rem;vertical-align:-2px}
+    /* FAQ cards */
+    .faq-card{display:flex;gap:1.25rem;align-items:flex-start;padding:1.5rem 1.5rem 1.5rem 1.75rem;border-radius:1.25rem;border:1px solid #1e293b;background-color:rgba(15,23,42,.55);overflow:hidden}
+    .faq-card::before{content:"";position:absolute;left:0;top:0;width:4px;height:0;background-image:linear-gradient(180deg,var(--brand-start),#86efac);border-radius:0 4px 4px 0;transition:height .6s cubic-bezier(.2,.7,.2,1) .2s}
+    .faq-card.in::before,.faq-card:hover::before{height:100%}
+    .faq-card:hover{transform:translateX(4px) translateY(-3px)}
+    .faq-ico{flex:none;width:2.75rem;height:2.75rem;border-radius:.9rem;display:grid;place-items:center;color:#fff;font-size:1.05rem;
+      background-image:linear-gradient(135deg,var(--brand-start),var(--brand-end));box-shadow:0 8px 24px -8px rgba(82,196,26,.7);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+    .faq-card:hover .faq-ico{transform:rotate(-8deg) scale(1.1)}
+    .faq-card h3{transition:color .25s ease}
+    .faq-card:hover h3{color:#bbf7d0}
+    /* Back to top */
+    #to-top{position:fixed;right:1.25rem;bottom:1.25rem;width:2.75rem;height:2.75rem;border-radius:9999px;display:grid;place-items:center;color:#fff;z-index:55;
+      background-image:linear-gradient(135deg,var(--brand-start),var(--brand-end));box-shadow:0 10px 30px -10px rgba(82,196,26,.8);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+    #to-top.show{opacity:1;transform:none;pointer-events:auto}
+    #to-top:hover{transform:translateY(-3px)}
+    @media (prefers-reduced-motion: reduce){
+      *,*::before,*::after{animation:none!important;transition:none!important}
+      .js .reveal{opacity:1;transform:none}
+      .js .section-underline::after{width:72px}
+    }
   </style>
 
   <!-- Google tag (gtag.js) -->
@@ -178,6 +267,10 @@
   </script>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased">
+  <div id="scroll-progress" aria-hidden="true"></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+    <linearGradient id="vlg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#86efac"/><stop offset="1" stop-color="#3AA312"/></linearGradient>
+  </defs></svg>
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -198,39 +291,40 @@
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-green-500/10 via-transparent to-transparent"></div>
+    <div class="blob blob-a" aria-hidden="true"></div><div class="blob blob-b" aria-hidden="true"></div>
     <div class="relative max-w-4xl mx-auto px-6 pt-20 pb-14">
-      <p class="text-sm uppercase tracking-widest text-green-400 font-medium">Crypto inheritance &middot; Crypto estate planning</p>
-      <h1 class="mt-4 text-4xl md:text-5xl font-semibold leading-tight">
+      <p class="text-sm uppercase tracking-widest text-green-400 font-medium reveal" style="--d:90ms">Crypto inheritance &middot; Crypto estate planning</p>
+      <h1 class="mt-4 text-4xl md:text-5xl font-semibold leading-tight reveal" style="--d:180ms">
         <span class="brand-text">Your crypto should outlive you.</span><br/>
       </h1>
-      <h1 class="mt-4 text-2xl md:text-3xl font-semibold leading-tight">
+      <h1 class="mt-4 text-2xl md:text-3xl font-semibold leading-tight reveal" style="--d:270ms">
         No one else, but you and your family, should ever hold your keys.
       </h1>
               
-      <p class="mt-6 text-lg text-slate-300 leading-relaxed">
+      <p class="mt-6 text-lg text-slate-300 leading-relaxed reveal" style="--d:360ms">
         A crypto inheritance plan built for <strong class="text-white">your family members who aren't technical</strong>.
         You keep your keys. We give you an open-source and self-custodial setup, a short handbook for your heirs,
         and a real rehearsal with your family. If our company disappeared tomorrow, your setup would still work.
       </p>
-      <div class="mt-8 flex flex-col sm:flex-row gap-4">
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 reveal" style="--d:450ms">
         <a href="#book" data-cta="hero_book_review" class="px-6 py-3 rounded-xl brand-gradient text-white font-semibold text-center hover:opacity-90 shadow-md">Book a free 15-min inheritance gap review</a>
         <a href="#checklist" data-cta="hero_checklist" class="px-6 py-3 rounded-xl border border-slate-700 text-slate-200 text-center hover:border-green-500/40 hover:text-white">Get the Crypto Inheritance Checklist</a>
       </div>
-      <ul class="mt-8 flex flex-wrap gap-3 text-sm text-slate-300" aria-label="Key facts">
-        <li class="px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">Open source</li>
-        <li class="px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">Non-custodial: we hold zero keys</li>
-        <li class="px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">BTC &middot; ETH &middot; USDT &middot; USDC</li>
-        <li class="px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">100% refundable</li>
+      <ul class="mt-8 flex flex-wrap gap-3 text-sm text-slate-300 reveal" style="--d:540ms" aria-label="Key facts">
+        <li class="chip px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">Open source</li>
+        <li class="chip px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">Non-custodial: we hold zero keys</li>
+        <li class="chip px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">BTC &middot; ETH &middot; USDT &middot; USDC</li>
+        <li class="chip px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">100% refundable</li>
       </ul>
     </div>
   </section>
 
   <!-- Short answer (quotable summary) -->
   <section class="max-w-4xl mx-auto px-6 pb-12">
-    <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/60">
+    <div class="card-fx reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/60">
       <h2 class="font-semibold text-white">What is crypto inheritance planning?</h2>
       <p class="mt-2 text-slate-300 leading-relaxed">
-        Crypto inheritance planning makes sure the right people can access your bitcoin and other digital assets after you die,
+        Crypto inheritance planning makes sure the right people can access your Bitcoin and other digital assets after you die,
         and that nobody can access them while you're alive. A complete plan covers three things: keeping control of your keys
         during your lifetime, making sure your heirs can find what you left, and giving them a way to actually move the funds.
         Without a plan, crypto held in self-custody is usually lost for good when its owner dies.
@@ -240,36 +334,64 @@
 
   <!-- Three things -->
   <section id="three-things" class="max-w-7xl mx-auto px-6 py-16">
-    <h2 class="text-2xl md:text-3xl font-semibold section-underline">A complete crypto inheritance plan has to solve three things</h2>
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">A complete crypto inheritance plan has to solve three things</h2>
     <div class="mt-8 grid md:grid-cols-3 gap-6">
-      <div class="p-8 rounded-3xl border border-slate-800 bg-slate-900/50">
-        <div class="text-green-400 font-semibold text-sm">1</div>
-        <h3 class="mt-1 text-lg font-semibold">Nobody can take it while you're alive</h3>
+      <div class="card-fx reveal p-8 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:0ms">
+        <div class="flex items-center justify-between">
+          <div class="tt-ico"><svg viewBox="0 0 96 96" aria-hidden="true">
+            <path class="tt-shield" d="M48 8 L80 20 V44 C80 64 66 79 48 88 C30 79 16 64 16 44 V20 Z" fill="rgba(82,196,26,.08)" stroke="url(#vlg)" stroke-width="3" stroke-linejoin="round"/>
+            <path class="tt-shackle" d="M39 46 V38 a9 9 0 0 1 18 0 V46" fill="none" stroke="url(#vlg)" stroke-width="4" stroke-linecap="round"/>
+            <rect x="33" y="45" width="30" height="22" rx="5" fill="url(#vlg)"/>
+            <circle cx="48" cy="54" r="3" fill="#0f172a"/><rect x="46.6" y="55" width="2.8" height="7" rx="1.4" fill="#0f172a"/>
+          </svg></div>
+          <span class="tt-tag">Secure</span>
+        </div>
+        <h3 class="mt-6 text-lg font-semibold">Nobody can take it while you're alive</h3>
         <p class="mt-3 text-slate-300">Your keys stay with you. Pieces are placed so that nobody (your heirs included) can reach the threshold without you,
           and your own backup is released only under your will. No company holds a spare key, and there's no &ldquo;emergency co-sign&rdquo; backdoor.</p>
       </div>
-      <div class="p-8 rounded-3xl border border-slate-800 bg-slate-900/50">
-        <div class="text-green-400 font-semibold text-sm">2</div>
-        <h3 class="mt-1 text-lg font-semibold">Your family can find it</h3>
+      <div class="card-fx reveal p-8 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:140ms">
+        <div class="flex items-center justify-between">
+          <div class="tt-ico"><svg viewBox="0 0 96 96" aria-hidden="true">
+            <path d="M10 26 L32 17 L62 27 L86 18 V70 L62 79 L32 69 L10 78 Z" fill="rgba(82,196,26,.08)" stroke="url(#vlg)" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M32 17 V69 M62 27 V79" stroke="rgba(134,239,172,.3)" stroke-width="2"/>
+            <path class="tt-trail" d="M20 66 C28 56 38 66 46 56 S58 56 64 58" fill="none" stroke="#86efac" stroke-width="3" stroke-linecap="round"/>
+            <g class="tt-pin"><path d="M66 24 c-7.5 0 -13 5.5 -13 13 c0 9.5 13 21 13 21 s13 -11.5 13 -21 c0 -7.5 -5.5 -13 -13 -13z" fill="url(#vlg)"/><circle cx="66" cy="37" r="5" fill="#0f172a"/></g>
+          </svg></div>
+          <span class="tt-tag">Findable</span>
+        </div>
+        <h3 class="mt-6 text-lg font-semibold">Your family can find it</h3>
         <p class="mt-3 text-slate-300">Your family knows where things are, who to contact and what to do first.
-          &ldquo;The bitcoin is on my Trezor&rdquo; doesn't help someone who isn't technical.</p>
+          &ldquo;The Bitcoin is on my Trezor&rdquo; doesn't help someone who isn't technical.</p>
       </div>
-      <div class="p-8 rounded-3xl border border-slate-800 bg-slate-900/50">
-        <div class="text-green-400 font-semibold text-sm">3</div>
-        <h3 class="mt-1 text-lg font-semibold">They can actually get it out</h3>
+      <div class="card-fx reveal p-8 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:280ms">
+        <div class="flex items-center justify-between">
+          <div class="tt-ico"><svg viewBox="0 0 96 96" aria-hidden="true">
+            <rect x="8" y="18" width="60" height="60" rx="9" fill="rgba(82,196,26,.08)" stroke="url(#vlg)" stroke-width="3"/>
+            <rect x="15" y="78" width="9" height="6" rx="2" fill="url(#vlg)"/><rect x="52" y="78" width="9" height="6" rx="2" fill="url(#vlg)"/>
+            <g class="tt-wheel">
+              <circle cx="38" cy="48" r="13" fill="none" stroke="url(#vlg)" stroke-width="3"/>
+              <path d="M38 27 V69 M17 48 H59 M23.2 33.2 L52.8 62.8 M52.8 33.2 L23.2 62.8" stroke="url(#vlg)" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="38" cy="48" r="5" fill="url(#vlg)"/>
+            </g>
+            <g class="tt-arrow"><path d="M73 48 H90 M83 41 L90 48 L83 55" fill="none" stroke="#86efac" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
+          </svg></div>
+          <span class="tt-tag">Usable</span>
+        </div>
+        <h3 class="mt-6 text-lg font-semibold">They can actually get it out</h3>
         <p class="mt-3 text-slate-300">Your heirs shouldn't need to understand private keys or use a command line.
           They need steps written in order, a person they can call, and a setup where one mistake can't lock the funds away forever.</p>
       </div>
     </div>
-    <p class="mt-8 text-lg text-slate-200">Most inheritance plans solve only the first problem, or only the second.
+    <p class="reveal mt-8 text-lg text-slate-200">Most inheritance plans solve only the first problem, or only the second.
       <strong class="text-white">Securing your keys without a way for heirs to use them is like locking your money in a safe that only you can open.</strong></p>
   </section>
 
   <!-- How it works -->
   <section id="how-it-works" class="max-w-7xl mx-auto px-6 py-16">
-    <h2 class="text-2xl md:text-3xl font-semibold section-underline">How it works</h2>
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">How it works</h2>
     <ol class="mt-8 grid md:grid-cols-3 gap-6">
-      <li class="p-8 rounded-3xl border border-slate-800 bg-slate-900/50">
+      <li class="card-fx reveal p-8 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:0ms">
         <div class="text-3xl font-semibold brand-text">01</div>
         <h3 class="mt-2 text-lg font-semibold">Set up (wallet in minutes, full plan in one sitting)</h3>
         <p class="mt-3 text-slate-300">Creating the wallet takes a few minutes in a free mobile app. Control is split into pieces, for example 3-of-4:
@@ -277,13 +399,13 @@
           No single piece can move funds, and your heirs can't reach the threshold without you. The rest of the sitting (about two hours) goes on
           the <em>key-split and beneficiary plan</em>, storing the backup pieces in separate places, and the family rehearsal.</p>
       </li>
-      <li class="p-8 rounded-3xl border border-slate-800 bg-slate-900/50">
+      <li class="card-fx reveal p-8 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:140ms">
         <div class="text-3xl font-semibold brand-text">02</div>
         <h3 class="mt-2 text-lg font-semibold">Maintain (a check-in every 6 months)</h3>
         <p class="mt-3 text-slate-300">Every 6 months we remind you to confirm three things: the pieces are still where they should be,
           the beneficiary list is up to date, and your family can still find the handbook.</p>
       </li>
-      <li class="p-8 rounded-3xl border border-slate-800 bg-slate-900/50">
+      <li class="card-fx reveal p-8 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:280ms">
         <div class="text-3xl font-semibold brand-text">03</div>
         <h3 class="mt-2 text-lg font-semibold">Execute (no technical skills needed)</h3>
         <p class="mt-3 text-slate-300">Your family uses the same free mobile app: open it on two phones and approve with a QR code.
@@ -296,10 +418,10 @@
 
   <!-- Comparison -->
   <section id="compare" class="max-w-7xl mx-auto px-6 py-16">
-    <h2 class="text-2xl md:text-3xl font-semibold section-underline">Crypto inheritance options compared</h2>
-    <p class="mt-6 text-slate-300 max-w-3xl">There are four common ways to pass on crypto. They differ in who holds a key,
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">Crypto inheritance options compared</h2>
+    <p class="reveal mt-6 text-slate-300 max-w-3xl">There are four common ways to pass on crypto. They differ in who holds a key,
       whether your heirs can realistically carry out the plan, and what happens if the provider goes away.</p>
-    <div class="mt-8 overflow-x-auto rounded-2xl border border-slate-800">
+    <div class="reveal mt-8 overflow-x-auto rounded-2xl border border-slate-800">
       <table class="compare w-full text-sm text-slate-300 min-w-[760px]">
         <thead class="bg-slate-900">
           <tr>
@@ -313,70 +435,42 @@
         <tbody>
           <tr>
             <td class="font-medium text-slate-100">Seed phrase written in a will</td>
-            <td>Anyone who reads the will</td>
-            <td>Sometimes, but probate can expose the seed phrase to many people</td>
+            <td class="bad">Anyone who reads the will</td>
+            <td class="bad">Sometimes, but probate can expose the seed phrase / private keyto many people</td>
             <td>Not applicable</td>
-            <td>Cost of a will</td>
+            <td class="good">Cost of a will</td>
           </tr>
           <tr>
             <td class="font-medium text-slate-100">DIY multisig (e.g. Sparrow + hardware wallets)</td>
-            <td>Only you</td>
-            <td>Rarely, without written instructions and a rehearsal</td>
+            <td class="good">Only you</td>
+            <td class="bad">Rarely, without written instructions and a rehearsal</td>
             <td>Not applicable</td>
-            <td>Free software + $100&ndash;$500 of hardware</td>
+            <td class="good">Free software + $100&ndash;$500 of hardware</td>
           </tr>
           <tr>
             <td class="font-medium text-slate-100">Collaborative custody (e.g. Casa, Unchained)</td>
-            <td>You <em>and</em> the provider, who holds one key for recovery or co-signing</td>
-            <td>Yes, with the provider's help</td>
-            <td>You fall back to your own keys; recovery help ends</td>
-            <td>Casa lists $250, $2,100 and $7,500 / year</td>
+            <td class="bad">You <em>and</em> the provider, who holds one key for recovery or co-signing</td>
+            <td class="mixed">Yes, with the provider's help</td>
+            <td class="mixed">You fall back to your own keys; recovery help ends</td>
+            <td class="mixed">Casa lists $250, $2,100 and $7,500 / year</td>
           </tr>
           <tr class="ours">
             <td class="font-semibold text-white">Vastlink inheritance plan</td>
-            <td><strong class="text-white">Only you and the people you choose. We hold zero keys.</strong></td>
-            <td>Yes: a mobile app, a short handbook and a real rehearsal</td>
-            <td>Nothing changes: open-source tools, no Vastlink key involved</td>
-            <td>$249&ndash;$1,900 / year</td>
+            <td class="good"><strong class="text-white">Only you and the people you choose. Vastlink holds no keys.</strong></td>
+            <td class="good">Yes: a mobile app, a short handbook and a real rehearsal</td>
+            <td class="good">Nothing changes: open-source tools, no Vastlink key involved</td>
+            <td class="good">$249&ndash;$1,900 / year</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="mt-3 text-xs text-slate-500">Competitor details are taken from their public pages as of October 2026 (casa.io/inheritance, unchained.com/inheritance) and may change. Please check them yourself.</p>
-  </section>
-
-  <!-- Objections -->
-  <section id="objections" class="max-w-4xl mx-auto px-6 py-16">
-    <h2 class="text-2xl md:text-3xl font-semibold section-underline">FAQ</h2>
-
-    <h3 class="mt-10 text-xl font-semibold">Can't I just set up multisig myself with Sparrow?</h3>
-    <p class="mt-3 text-slate-300 leading-relaxed">Yes, as long as you'll always be around, always clear-headed, and willing to write a handbook for your family.
-      We don't sell multisig. Multisig is free and open source, and you can set it up yourself whenever you like.
-      What we sell is this: <strong class="text-white">on the day something happens to you, your family has a document they can follow and a person they can ask.</strong>
-      The technology isn't the hard part. Carrying out the plan is.</p>
-
-    <h3 class="mt-10 text-xl font-semibold">If the software is open source, what am I paying for?</h3>
-    <p class="mt-3 text-slate-300 leading-relaxed">Not the software. Anyone can use it for free, and so can you.
-      You pay for the parts that aren't code: choosing who holds which piece so your heirs can't act without you,
-      writing down where the backups are and what proof releases them, running a rehearsal with your family,
-      and keeping all of it current when a device is lost, a piece is reissued, or someone joins or leaves the family.
-      If you'd rather do that yourself, Self-Guided gives you the templates.</p>
-
-    <h3 class="mt-10 text-xl font-semibold">Will you hold any of my keys?</h3>
-    <p class="mt-3 text-slate-300 leading-relaxed">No, not a single one. This is where we differ from Casa and Unchained, who each hold a backup key
-      for recovery or emergency co-signing. Our setup has no Vastlink key at all.
-      The trade-off is that <strong class="text-white">we can't recover your funds for you</strong>, which is why every setup includes a real rehearsal.</p>
-
-    <h3 class="mt-10 text-xl font-semibold">When I die, how will my family know who to contact?</h3>
-    <p class="mt-3 text-slate-300 leading-relaxed">That's why the first step of setup is a list of people, not technology: who is the executor, who helps
-      with the technical side, and who is the backup contact. The list goes in the handbook. Your will points to the handbook, never to a seed phrase.</p>
   </section>
 
   <!-- Pricing -->
   <section id="pricing" class="max-w-7xl mx-auto px-6 py-16">
-    <h2 class="text-2xl md:text-3xl font-semibold section-underline">Pricing</h2>
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">Pricing</h2>
     <div class="mt-8 grid md:grid-cols-3 gap-6">
-      <div class="p-8 rounded-3xl border border-slate-800 bg-slate-900/50 flex flex-col">
+      <div class="card-fx reveal p-8 rounded-3xl border border-slate-800 bg-slate-900/50 flex flex-col" style="--d:0ms">
         <h3 class="text-lg font-semibold">Self-Guided</h3>
         <div class="mt-2 text-3xl font-semibold">$249<span class="text-base text-slate-400 font-normal"> / year</span></div>
         <ul class="mt-6 space-y-2 text-slate-300 text-sm flex-1">
@@ -386,11 +480,11 @@
         </ul>
         <p class="mt-6 text-sm text-slate-400">For people who can set it up themselves and just need a document to give their family.</p>
       </div>
-      <div class="relative p-8 rounded-3xl border-2 border-green-500/60 bg-slate-900/80 glow flex flex-col">
+      <div class="card-fx reveal relative p-8 rounded-3xl border-2 border-green-500/60 bg-slate-900/80 glow flex flex-col" style="--d:140ms">
         <span class="absolute -top-3 left-8 px-3 py-0.5 rounded-full text-xs font-semibold brand-gradient text-white">Most popular</span>
         <h3 class="text-lg font-semibold">Guided</h3>
-        <div class="mt-2 text-3xl font-semibold">$499<span class="text-base text-slate-400 font-normal"> first year</span></div>
-        <div class="text-sm text-slate-400">then $249 / year</div>
+        <div class="mt-2 text-3xl font-semibold">$249<span class="text-base text-slate-400 font-normal"> / year</span></div>
+        <div class="text-sm text-slate-400">+ $249 one-time setup</div>
         <ul class="mt-6 space-y-2 text-slate-300 text-sm flex-1">
           <li>&#10003; Everything in Self-Guided</li>
           <li>&#10003; A 60-minute one-to-one setup session: we watch over screen share while you set it up</li>
@@ -399,21 +493,21 @@
         </ul>
         <p class="mt-6 text-sm text-slate-400">For people who want their family to have run the process once while they're still here.</p>
       </div>
-      <div class="p-8 rounded-3xl border border-slate-800 bg-slate-900/50 flex flex-col">
+      <div class="card-fx reveal p-8 rounded-3xl border border-slate-800 bg-slate-900/50 flex flex-col" style="--d:280ms">
         <h3 class="text-lg font-semibold">Legacy</h3>
         <div class="mt-2 text-3xl font-semibold">$1,900<span class="text-base text-slate-400 font-normal"> / year</span></div>
         <ul class="mt-6 space-y-2 text-slate-300 text-sm flex-1">
           <li>&#10003; Everything in Guided</li>
-          <li>&#10003; Annual review covering changes to your assets, beneficiaries and the rules that apply</li>
+          <li>&#10003; Annual review covering changes to your crypto, beneficiaries and the rules that apply</li>
           <li>&#10003; We work with your own lawyer or estate planner</li>
           <li>&#10003; Setups for multiple assets and jurisdictions</li>
         </ul>
         <p class="mt-6 text-sm text-slate-400">For larger holdings, or families with assets in more than one country.</p>
       </div>
     </div>
-    <div class="mt-8 p-6 rounded-2xl border border-green-500/30 bg-green-500/5">
+    <div class="reveal mt-8 p-6 rounded-2xl border border-green-500/30 bg-green-500/5">
       <h3 class="font-semibold text-white">Founding families offer</h3>
-      <p class="mt-2 text-slate-300">The first 20 families who sign up for Guided or Legacy pay <strong class="text-white">$299 for the first year</strong>, heir rehearsal included.
+      <p class="mt-2 text-slate-300">The first 20 families who choose Guided get the <strong class="text-white">$249 setup fee waived</strong>, so it's $249 a year with the setup session and heir rehearsal included.
         <strong class="text-white">100% refundable, at any time, no reason needed.</strong> You don't pay anything on this page:
         we only send an invoice after your free gap review, once you've decided this is right for you.</p>
     </div>
@@ -421,66 +515,122 @@
 
   <!-- FAQ (mirrors FAQPage schema) -->
   <section id="faq" class="max-w-4xl mx-auto px-6 py-16">
-    <h2 class="text-2xl md:text-3xl font-semibold section-underline">Frequently asked questions</h2>
-    <div class="mt-8 space-y-8">
-      <div>
-        <h3 class="text-lg font-semibold">Can my family inherit my crypto if they can't log in to my wallet?</h3>
-        <p class="mt-2 text-slate-300 leading-relaxed">Yes. There's nothing to log in to and no seed phrase to find. Control is split into pieces kept on different devices, and no complete key ever exists.
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">Frequently asked questions</h2>
+    <div class="mt-8 space-y-5">
+      <div class="faq-card card-fx reveal" style="--d:0ms">
+        <div class="faq-ico"><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">Can my family inherit my crypto if they can't log in to my wallet?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed">Yes. There's nothing to log in to and no seed phrase or private key to find. "The key" is split into pieces kept on different devices, and no complete key ever exists.
           That's why a plan has to state which pieces are held by whom and in what order they are combined. The full procedure goes in a handbook written for your heirs.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="text-lg font-semibold">Should I put my seed phrase in my will?</h3>
-        <p class="mt-2 text-slate-300 leading-relaxed">It's the most common approach and the most dangerous one. After death, a will usually goes through probate,
-          and many people may see it. <strong class="text-white">Anyone who sees a seed phrase can take everything.</strong>
-          Your will should say who inherits and where to find the pieces, not the seed phrase itself.</p>
+      <div class="faq-card card-fx reveal" style="--d:80ms">
+        <div class="faq-ico"><i class="fa-solid fa-address-book" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">When I die, how will my family know who to contact?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed">That's why the first step of setup is a list of people, not technology: who is the executor, who helps
+          with the technical side, and who is the backup contact. The list goes in the handbook. Your will points to the handbook, never to a seed phrase.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="text-lg font-semibold">How is this different from a crypto trust?</h3>
-        <p class="mt-2 text-slate-300 leading-relaxed">A trust deals with <strong class="text-white">legal title</strong>: who is legally entitled to inherit.
-          A key-split plan deals with <strong class="text-white">technical execution</strong>: how your family actually gets the coins.
+      <div class="faq-card card-fx reveal" style="--d:0ms">
+        <div class="faq-ico"><i class="fa-solid fa-scroll" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">Should I put my seed phrase in my will?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed">It's the most common approach and the most dangerous one. After death, a will usually goes through probate,
+          and many people may see it. <strong class="text-white">Anyone who sees a seed phrase / private key can take everything.</strong>
+          Your will should say who inherits and where to find the pieces, not the seed phrase / private key itself.</p>
+        </div>
+      </div>
+      <div class="faq-card card-fx reveal" style="--d:80ms">
+        <div class="faq-ico"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">How is this different from a crypto trust?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed">A trust deals with <strong class="text-white">legal title</strong>: who is legally entitled to inherit.
+          A key-split plan deals with <strong class="text-white">technical execution</strong>: how your family actually gets the assets.
           They don't conflict, and you need both. If you already have a trust or a will, this plan is the execution layer underneath it.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="text-lg font-semibold">I hold ETH and stablecoins, not bitcoin. Does this work for me?</h3>
-        <p class="mt-2 text-slate-300 leading-relaxed">Yes. The same inheritance logic applies to Bitcoin, Ethereum and the major stablecoins (USDT, USDC).
-          Tell us what you hold during the gap review and we'll confirm the setup for each asset.</p>
+      <div class="faq-card card-fx reveal" style="--d:0ms">
+        <div class="faq-ico"><i class="fa-solid fa-people-group" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">Isn't a social recovery wallet enough?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed">Social recovery helps <em>you</em> get back into your own wallet if you lose a device. Inheritance is a different problem:
+          someone else needs access after you're gone, with legal authority and instructions they can follow. A recovery setup can be part of an inheritance plan, but on its own it isn't one.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="text-lg font-semibold">Do I need to be technical?</h3>
-        <p class="mt-2 text-slate-300 leading-relaxed">No. Creating the wallet takes a few minutes in a mobile app, and approving a transfer means scanning a QR code with a second phone.
-          The app handles the cryptography. What it can't decide for you is who holds which piece, where the backups are kept, and what your family does first.
-          That's what the plan and the short handbook cover, tested in a real rehearsal.</p>
+      <div class="faq-card card-fx reveal" style="--d:80ms">
+        <div class="faq-ico"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">Can't I just set up multisig myself with Sparrow or other free tools?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed">Yes, as long as you'll always be around, always clear-headed, and willing to write a handbook for your family.
+          We don't sell software. Multisig tools like Sparrow, and the tools we use, are free and open source, and you can use them yourself whenever you like.
+          You pay for the parts that aren't code: choosing who holds which piece so your heirs can't act without you, writing down where the backups are
+          and what proof releases them, running a rehearsal with your family, and keeping all of it current when a device is lost, a piece is reissued,
+          or someone joins or leaves the family. The result: <strong class="text-white">on the day something happens to you, your family has a document they can follow and a person they can ask.</strong>
+          If you'd rather do that yourself, Self-Guided gives you the templates.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="text-lg font-semibold">How much does crypto inheritance planning cost?</h3>
-        <p class="mt-2 text-slate-300 leading-relaxed">Self-Guided is $249 per year. Guided is $499 for the first year, then $249 per year. Legacy is $1,900 per year.
-          The first 20 founding families pay $299 for the first year of Guided, 100% refundable. For comparison, Casa's inheritance plans are listed at
-          $250, $2,100 and $7,500 per year, and a lawyer-drafted crypto trust typically costs $2,000 to $10,000 one-off.</p>
+      <div class="faq-card card-fx reveal" style="--d:0ms">
+        <div class="faq-ico"><i class="fa-solid fa-key" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">Will you hold any of my keys?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed">No, not a single one. This is where we differ from Casa and Unchained, who each hold a backup key
+          for recovery or emergency co-signing.
+          The trade-off is that <strong class="text-white">we can't recover your funds for you</strong>, but our user-friendly and self-managed backup and recovery process helps to minimize the risk.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="text-lg font-semibold">Could someone claim my crypto while I'm still alive?</h3>
-        <p class="mt-2 text-slate-300 leading-relaxed">No. No single piece can move funds, and there is no company backup key. Pieces are placed so your heirs can't reach the threshold without you.
+      <div class="faq-card card-fx reveal" style="--d:80ms">
+        <div class="faq-ico"><i class="fa-solid fa-user-shield" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">Could someone claim my crypto while I'm still alive?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed">No. No single piece can move funds, and there is no company backup key. Pieces are placed so your heirs can't reach the threshold without you.
           For example, in a 3-of-4 setup you hold two pieces (your phone and a backup in your own safe), so an heir and your lawyer together hold only two of the three needed.
           Your backup is released to your executor under your will.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="text-lg font-semibold">What happens if Vastlink shuts down?</h3>
-        <p class="mt-2 text-slate-300 leading-relaxed">Nothing changes for your coins. We never hold a key, the tools are
+      <div class="faq-card card-fx reveal" style="--d:0ms">
+        <div class="faq-ico"><i class="fa-solid fa-power-off" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">What happens if Vastlink shuts down?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed">Nothing changes for your crypto. We never hold a key, the tools are
           <a class="body-link" href="https://github.com/vastlink-xyz" target="_blank" rel="noopener">open source</a>, and the handbook only uses software
           your family can get for free. Signing happens between your own devices: a relay can pass encrypted messages between phones that are far apart,
           but it can't move funds, it can be self-hosted, and phones on the same WiFi can sign without it. Your plan keeps working without us.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="text-lg font-semibold">Isn't a social recovery wallet enough?</h3>
-        <p class="mt-2 text-slate-300 leading-relaxed">Social recovery helps <em>you</em> get back into your own wallet if you lose a device. Inheritance is a different problem:
-          someone else needs access after you're gone, with legal authority and instructions they can follow. A recovery setup can be part of an inheritance plan, but on its own it isn't one.</p>
+      <div class="faq-card card-fx reveal" style="--d:80ms">
+        <div class="faq-ico"><i class="fa-solid fa-coins" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">I hold ETH and stablecoins, not Bitcoin. Does this work for me?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed">Yes. The same inheritance logic applies to Bitcoin, Ethereum and the major stablecoins (USDT, USDC).
+          Tell us what you hold during the gap review and we'll confirm the setup for each asset.</p>
+        </div>
+      </div>
+      <div class="faq-card card-fx reveal" style="--d:0ms">
+        <div class="faq-ico"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">Do I need to be technical?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed">No. Creating the wallet takes a few minutes in a mobile app, and approving a transfer means scanning a QR code with a second phone.
+          The app handles the cryptography. What it can't decide for you is who holds which piece, where the backups are kept, and what your family does first.
+          That's what the plan and the short handbook cover, tested in a real rehearsal.</p>
+        </div>
+      </div>
+      <div class="faq-card card-fx reveal" style="--d:80ms">
+        <div class="faq-ico"><i class="fa-solid fa-tag" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">How much does crypto inheritance planning cost?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed">Self-Guided is $249 per year. Guided is $249 per year plus a one-time $249 setup fee. Legacy is $1,900 per year.
+          The first 20 founding families get the Guided setup fee waived, 100% refundable. For comparison, Casa's inheritance plans are listed at
+          $250, $2,100 and $7,500 per year, and a lawyer-drafted crypto trust typically costs $2,000 to $10,000 one-off.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Checklist (email capture) -->
   <section id="checklist" class="max-w-4xl mx-auto px-6 py-12">
-    <div class="p-8 rounded-3xl border border-slate-800 bg-slate-900/60">
+    <div class="card-fx reveal p-8 rounded-3xl border border-slate-800 bg-slate-900/60">
       <h2 class="text-2xl font-semibold">The Crypto Inheritance Checklist</h2>
       <p class="mt-3 text-slate-300">A free 4-page checklist that covers each of the three problems above: what to secure, what to write down, and what your family must be able to do.
         Ask for it by email and we'll send it to you. No newsletter, no spam.</p>
@@ -492,7 +642,7 @@
 
   <!-- Final CTA -->
   <section id="book" class="max-w-4xl mx-auto px-6 py-16">
-    <div class="p-8 md:p-10 rounded-3xl border border-green-500/30 bg-slate-900/80 glow">
+    <div class="reveal p-8 md:p-10 rounded-3xl border border-green-500/30 bg-slate-900/80 glow">
       <h2 class="text-2xl md:text-3xl font-semibold">Find out what your plan is missing before you decide to buy anything</h2>
       <p class="mt-4 text-slate-300 leading-relaxed">Not sure where to start? Spend 15 minutes telling us three things:</p>
       <ol class="mt-3 list-decimal list-inside text-slate-200 space-y-1">
@@ -521,7 +671,7 @@
     </ul>
     <p class="mt-10 text-xs text-slate-500 leading-relaxed">Last updated: <time datetime="2026-10-23">October 23, 2026</time>, by Vastlink.
       This page is general information and isn't legal, tax or financial advice. Inheritance law differs between jurisdictions, so work with a qualified estate lawyer for the legal side of your plan.
-      Vastlink never holds custody of your assets, and we never ask for your seed phrase or private keys.</p>
+      Vastlink never holds custody of your crypto, and we never ask for your seed phrase or private keys.</p>
   </section>
   </main>
 
@@ -555,6 +705,7 @@
     </div>
     <div class="text-center text-slate-500 pb-8">Dubai &middot; Hong Kong &middot; Singapore &middot; Sydney &middot; &copy; Vastlink 2024 ~ 2026</div>
   </footer>
+  <a href="#" id="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
 
   <script>
     // Header shadow on scroll
@@ -574,6 +725,52 @@
         }
       });
     });
+    // ===== Visual effects =====
+    (() => {
+      const root = document.documentElement;
+      // Scroll progress + back-to-top
+      const bar = document.getElementById('scroll-progress');
+      const toTop = document.getElementById('to-top');
+      const onScrollFx = () => {
+        const max = root.scrollHeight - root.clientHeight;
+        bar.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+        toTop.classList.toggle('show', window.scrollY > 900);
+      };
+      document.addEventListener('scroll', onScrollFx, { passive: true });
+      onScrollFx();
+      toTop.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+      // Reveal on scroll
+      const items = document.querySelectorAll('.reveal');
+      if (root.classList.contains('js')) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        items.forEach((el) => io.observe(el));
+      } else {
+        items.forEach((el) => el.classList.add('in'));
+      }
+
+      // Active nav link
+      const links = [...document.querySelectorAll('header nav a[href^="#"]')];
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id));
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      links.forEach((a) => { const t = document.querySelector(a.getAttribute('href')); if (t) spy.observe(t); });
+
+      // Cursor spotlight on cards
+      document.querySelectorAll('.card-fx').forEach((card) => {
+        card.addEventListener('pointermove', (e) => {
+          const r = card.getBoundingClientRect();
+          card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+          card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        });
+        card.addEventListener('pointerleave', () => { card.style.removeProperty('--mx'); card.style.removeProperty('--my'); });
+      });
+    })();
   </script>
 </body>
 </html>
