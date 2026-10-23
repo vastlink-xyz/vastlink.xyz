@@ -22,7 +22,7 @@ Key facts:
 - [Whitepaper](https://vastlink.gitbook.io/vastlink-whitepaper): architecture, design and tokenomics of Vastlink
 - [Vastbase](https://vastbase.vastlink.xyz/): next-generation multisig wallet built on Vastlink
 - [Vastbase product explainer](https://vastbase.vastlink.xyz/product-explainer.html): how Vastbase works, step by step
-- [Crypto inheritance](https://vastlink.xyz/crypto-inheritance/): a non-custodial crypto and bitcoin inheritance plan. You keep your keys and Vastlink holds none. It includes a key-split and beneficiary setup, a step-by-step handbook for non-technical heirs, and a real rehearsal with your family. Plans: Self-Guided $249/year, Guided $499 first year then $249/year, Legacy $1,900/year. Founding families pay $299 for the first year, 100% refundable
+- [Crypto inheritance](https://vastlink.xyz/crypto-inheritance/): a non-custodial crypto and bitcoin inheritance plan. You keep your keys and Vastlink holds none. It includes a key-split and beneficiary setup, a step-by-step handbook for non-technical heirs, and a real rehearsal with your family. Plans: Self-Guided $249/year, Guided $499 first year then $249/year, Legacy $1,900/year. Founding families pay $299 for the first year
 - [Blog](https://vastlink.xyz/blog/): all articles from the Vastlink team
 - [Full text of all articles](https://vastlink.xyz/llms-full.txt): every blog article as Markdown, in one file
 
