@@ -532,6 +532,7 @@ def build_blog_html(articles: list) -> str:
       <nav class="hidden md:flex gap-6 text-slate-300">
         <a href="https://vastlink.xyz/#features" class="link-brand">Features</a>
         <a href="https://vastlink.xyz/#use-cases" class="link-brand">Use cases</a>
+        <a href="https://vastlink.xyz/crypto-inheritance/" class="link-brand">Inheritance</a>
         <a href="https://vastlink.xyz/blog/" class="link-brand">Blog</a>
         <a href="https://vastlink.xyz/#faq" class="link-brand">FAQ</a>
       </nav>
