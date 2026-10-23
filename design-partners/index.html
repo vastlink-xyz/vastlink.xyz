@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crypto Custody for RIAs (2026) | Vastlink Design Partners</title>
+  <meta name="description" content="Help shape a verifiable crypto custody governance approach for RIAs. Explore our eight-part policy framework and join Vastlink's six-week design-partner program." />
+  <link rel="icon" href="/assets/img/favicon.png" />
+  <link rel="canonical" href="https://vastlink.xyz/design-partners/" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Beyond the wallet: help shape verifiable crypto custody controls" />
+  <meta property="og:description" content="Vastlink is inviting 1–3 smaller RIAs and wealth teams to a six-week, no-fee design-partner program on crypto custody governance. No client assets, no private keys." />
+  <meta property="og:url" content="https://vastlink.xyz/design-partners/" />
+  <meta property="og:image" content="https://vastlink.xyz/assets/img/Vastlink_logo/Dark%20mode.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@thevastlink" />
+  <meta name="twitter:title" content="Beyond the wallet: help shape verifiable crypto custody controls" />
+  <meta name="twitter:description" content="A six-week, no-fee design-partner program for smaller RIAs: an eight-part crypto custody policy framework, tested with tabletop exercises. No client assets, no private keys." />
+  <meta name="twitter:image" content="https://vastlink.xyz/assets/img/Vastlink_logo/Dark%20mode.png" />
+
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" crossorigin="anonymous"></script>
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Schema.org JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://vastlink.xyz/#organization",
+    "name": "Vastlink",
+    "url": "https://vastlink.xyz/",
+    "logo": "https://vastlink.xyz/assets/img/Vastlink_logo/Dark%20mode.png",
+    "email": "johnny@vastlink.xyz",
+    "areaServed": ["Dubai", "Hong Kong", "Singapore", "Sydney", "Worldwide"],
+    "sameAs": [
+      "https://x.com/thevastlink",
+      "https://www.linkedin.com/company/104843132/",
+      "https://github.com/vastlink-xyz",
+      "https://vastlink.medium.com/",
+      "https://t.me/VastlinkCommunity",
+      "https://www.youtube.com/@vastlink"
+    ]
+  }
+  </script>
+
+  <!-- Schema.org JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://vastlink.xyz/design-partners/",
+    "name": "Crypto Custody for RIAs: Vastlink Design Partner Program",
+    "description": "A six-week, no-fee design-partner program for 1–3 smaller registered investment advisory firms and wealth teams to help shape an open, verifiable crypto custody-governance approach, built around an eight-part custody policy framework.",
+    "url": "https://vastlink.xyz/design-partners/",
+    "inLanguage": "en",
+    "datePublished": "2026-10-24",
+    "dateModified": "2026-10-24",
+    "isPartOf": {"@type": "WebSite", "name": "Vastlink", "url": "https://vastlink.xyz/"},
+    "publisher": {"@id": "https://vastlink.xyz/#organization"},
+    "about": ["crypto custody for RIAs", "RIA crypto custody policy", "digital asset custody governance", "crypto custody controls", "investment adviser self custody"]
+  }
+  </script>
+
+  <!-- Schema.org JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vastlink.xyz/"},
+      {"@type": "ListItem", "position": 2, "name": "Design partners", "item": "https://vastlink.xyz/design-partners/"}
+    ]
+  }
+  </script>
+
+  <!-- Schema.org JSON-LD: FAQPage (must mirror the visible FAQ below) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Has the SEC approved adviser self-custody of client crypto assets?",
+       "acceptedAnswer": {"@type": "Answer", "text": "Not through the October 2026 proposal. The SEC published proposed changes on 1 October 2026, but they are not a final rule. The contemplated self-custody path is limited and conditional, including a documented determination that a qualified custodian is unavailable. Firms should rely on current requirements and qualified legal advice when making custody decisions today."}},
+      {"@type": "Question", "name": "What belongs in an RIA crypto custody policy?",
+       "acceptedAnswer": {"@type": "Answer", "text": "A useful policy should connect custody choices to accountable people and reviewable evidence. Typical sections cover approved custodians, conditions for self-custody, signing authority, transfer verification, reconciliation and client reporting, incident response, continuity, and independent-control review. The right detail depends on the firm's assets, custody arrangement, risk profile, and legal obligations."}},
+      {"@type": "Question", "name": "Does a design partner have to custody crypto today?",
+       "acceptedAnswer": {"@type": "Answer", "text": "No. We are interested in firms that are considering client digital-asset exposure as well as firms with existing workflows. Questions about who would hold assets, approve transfers, or document controls can be explored without a live wallet. The program is about clarifying requirements before making a technology commitment."}},
+      {"@type": "Question", "name": "Is the program free? Is there a product to buy?",
+       "acceptedAnswer": {"@type": "Answer", "text": "The six-week design-partner program has no fee, and there is no production Vastlink custody product for sale through this program. We are asking for your experience and feedback, not a purchase order. Any future commercial proposal would be a separate discussion with terms shared explicitly rather than assumed at the outset."}},
+      {"@type": "Question", "name": "Will we transfer assets or share private keys?",
+       "acceptedAnswer": {"@type": "Answer", "text": "No. The proposed collaboration uses policy documents, interviews, and simulated scenarios. We will not ask for seed phrases, private keys, production credentials, or custody of your clients' assets. If sensitive business information needs to be discussed, we can first agree on suitable confidentiality arrangements and restrict what information is shared."}},
+      {"@type": "Question", "name": "Is this legal, compliance, or audit advice?",
+       "acceptedAnswer": {"@type": "Answer", "text": "No. Vastlink is exploring a governance workflow and may prepare a working policy draft for discussion. The draft will not certify compliance, serve as an independent internal control report, or replace the judgment of your chief compliance officer, qualified legal advisers, auditors, or regulated custodians. Final decisions and obligations remain with the appropriate professionals and the firm."}},
+      {"@type": "Question", "name": "What happens after six weeks?",
+       "acceptedAnswer": {"@type": "Answer", "text": "You keep the working documents, and you decide whether further collaboration makes sense. We will share what we learned and which product ideas merit exploration. You are under no obligation to buy, deploy, endorse, or continue. We will not name your firm publicly without separate written permission."}}
+    ]
+  }
+  </script>
+
+  <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window)document.documentElement.classList.add('js');</script>
+  <style>
+    :root { --brand-start: #52C41A; --brand-end: #3AA312; }
+    .glow { box-shadow: 0 0 80px rgba(82,196,26,0.25); }
+    .brand-gradient { background-image: linear-gradient(90deg, var(--brand-start), var(--brand-end)); }
+    .brand-text { background: linear-gradient(90deg, var(--brand-start), var(--brand-end)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .section-underline::after { content: ""; display: block; width: 72px; height: 4px; border-radius: 9999px; margin-top: 12px; background-image: linear-gradient(90deg, var(--brand-start), var(--brand-end)); }
+    .link-brand{position:relative;transition:color .2s ease;}
+    .link-brand:hover{color:#fff}
+    .link-brand::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background-image:linear-gradient(90deg,var(--brand-start),var(--brand-end));transition:width .25s ease}
+    .link-brand:hover::after{width:100%}
+    .body-link{color:#52C41A;text-decoration:underline;text-underline-offset:3px}
+    .body-link:hover{color:#86efac}
+    [id] { scroll-margin-top: 5rem; }
+    table.compare th, table.compare td { padding: .75rem 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid #1e293b; }
+    table.compare th { color: #e2e8f0; font-weight: 600; }
+    table.compare tbody tr{transition:background-color .2s ease}
+    table.compare tbody tr:hover{background:rgba(148,163,184,.06)}
+    table.compare td.mixed{position:relative;padding-left:2.6rem;background:rgba(245,158,11,.10);color:#fef3c7}
+    table.compare td.mixed::before{content:"!";position:absolute;left:.9rem;top:.8rem;width:1.15rem;height:1.15rem;border-radius:9999px;display:grid;place-items:center;font-size:.7rem;font-weight:700;line-height:1;background:rgba(245,158,11,.25);color:#fbbf24;box-shadow:0 0 0 1px rgba(251,191,36,.4)}
+    table.compare tr.ours td{background:rgba(82,196,26,.14)}
+    table.compare tr.ours td:first-child{box-shadow:inset 4px 0 0 #52C41A}
+    /* ===== Visual effects ===== */
+    #scroll-progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background-image:linear-gradient(90deg,var(--brand-start),#86efac);z-index:60;pointer-events:none}
+    .js .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+    .js .reveal.in{opacity:1;transform:none}
+    .js .section-underline::after{width:0;transition:width .9s cubic-bezier(.2,.7,.2,1) .25s}
+    .js .section-underline.in::after{width:72px}
+    .blob{position:absolute;border-radius:9999px;filter:blur(70px);opacity:.35;pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+    .blob-a{width:420px;height:420px;background:#52C41A;top:-140px;right:-80px}
+    .blob-b{width:300px;height:300px;background:#0ea5e9;top:22%;left:-170px;opacity:.14;animation-duration:24s}
+    @keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-40px,30px) scale(1.08)}100%{transform:translate(30px,-20px) scale(.95)}}
+    .chip{transition:transform .2s ease,border-color .2s ease,background-color .2s ease}
+    .chip:hover{transform:translateY(-2px);border-color:rgba(82,196,26,.55);background-color:rgba(82,196,26,.18)}
+    .card-fx{position:relative;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s ease,box-shadow .35s ease;
+      background-image:radial-gradient(420px circle at var(--mx,-999px) var(--my,-999px),rgba(82,196,26,.11),transparent 45%)}
+    .card-fx:hover{transform:translateY(-6px);border-color:rgba(82,196,26,.45);box-shadow:0 18px 50px -18px rgba(82,196,26,.35)}
+    a.brand-gradient,button.brand-gradient{position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease}
+    a.brand-gradient:hover,button.brand-gradient:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(82,196,26,.6)}
+    a.brand-gradient::after,button.brand-gradient::after{content:"";position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .6s ease}
+    a.brand-gradient:hover::after,button.brand-gradient:hover::after{left:130%}
+    nav a.link-brand.active{color:#fff}
+    nav a.link-brand.active::after{width:100%}
+    .tt-tag{display:inline-block;white-space:nowrap;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#86efac;padding:.2rem .6rem;border-radius:9999px;background:rgba(82,196,26,.1);border:1px solid rgba(82,196,26,.25)}
+    /* Icon tiles (framework + layers) */
+    .ico-tile{flex:none;width:2.75rem;height:2.75rem;border-radius:.9rem;display:grid;place-items:center;color:#fff;font-size:1.05rem;
+      background-image:linear-gradient(135deg,var(--brand-start),var(--brand-end));box-shadow:0 8px 24px -8px rgba(82,196,26,.7);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+    .card-fx:hover .ico-tile{transform:rotate(-8deg) scale(1.1)}
+    /* Six-week timeline */
+    .week-time{font-size:.75rem;color:#94a3b8}
+    /* FAQ cards */
+    .faq-card{display:flex;gap:1.25rem;align-items:flex-start;padding:1.5rem 1.5rem 1.5rem 1.75rem;border-radius:1.25rem;border:1px solid #1e293b;background-color:rgba(15,23,42,.55);overflow:hidden}
+    .faq-card::before{content:"";position:absolute;left:0;top:0;width:4px;height:0;background-image:linear-gradient(180deg,var(--brand-start),#86efac);border-radius:0 4px 4px 0;transition:height .6s cubic-bezier(.2,.7,.2,1) .2s}
+    .faq-card.in::before,.faq-card:hover::before{height:100%}
+    .faq-card:hover{transform:translateX(4px) translateY(-3px)}
+    .faq-ico{flex:none;width:2.75rem;height:2.75rem;border-radius:.9rem;display:grid;place-items:center;color:#fff;font-size:1.05rem;
+      background-image:linear-gradient(135deg,var(--brand-start),var(--brand-end));box-shadow:0 8px 24px -8px rgba(82,196,26,.7);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+    .faq-card:hover .faq-ico{transform:rotate(-8deg) scale(1.1)}
+    .faq-card h3{transition:color .25s ease}
+    .faq-card:hover h3{color:#bbf7d0}
+    /* Form */
+    .field{width:100%;margin-top:.4rem;padding:.7rem .9rem;border-radius:.75rem;background:#020617;border:1px solid #334155;color:#f1f5f9;transition:border-color .2s ease,box-shadow .2s ease}
+    .field:focus{outline:none;border-color:rgba(82,196,26,.7);box-shadow:0 0 0 3px rgba(82,196,26,.2)}
+    .field::placeholder{color:#64748b}
+    /* Back to top */
+    #to-top{position:fixed;right:1.25rem;bottom:1.25rem;width:2.75rem;height:2.75rem;border-radius:9999px;display:grid;place-items:center;color:#fff;z-index:55;
+      background-image:linear-gradient(135deg,var(--brand-start),var(--brand-end));box-shadow:0 10px 30px -10px rgba(82,196,26,.8);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+    #to-top.show{opacity:1;transform:none;pointer-events:auto}
+    #to-top:hover{transform:translateY(-3px)}
+    @media (prefers-reduced-motion: reduce){
+      *,*::before,*::after{animation:none!important;transition:none!important}
+      .js .reveal{opacity:1;transform:none}
+      .js .section-underline::after{width:72px}
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y830MJMX1L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y830MJMX1L');
+  </script>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+  <div id="scroll-progress" aria-hidden="true"></div>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2"><img src="https://vastlink.xyz/assets/img/Vastlink_logo/Dark%20mode.png" alt="Vastlink" class="h-8 w-auto rounded"/><span class="sr-only">Vastlink</span></a>
+      <nav class="hidden md:flex gap-6 text-slate-300">
+        <a href="#why-now" class="link-brand">Why now</a>
+        <a href="#framework" class="link-brand">Framework</a>
+        <a href="#program" class="link-brand">Program</a>
+        <a href="#faq" class="link-brand">FAQ</a>
+      </nav>
+      <div class="flex gap-3">
+        <a href="#apply" data-cta="header_apply" class="px-4 py-2 rounded-xl brand-gradient text-white font-medium hover:opacity-90 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500/60"><span class="sm:hidden">Apply</span><span class="hidden sm:inline">Become a design partner</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-green-500/10 via-transparent to-transparent"></div>
+    <div class="blob blob-a" aria-hidden="true"></div><div class="blob blob-b" aria-hidden="true"></div>
+    <div class="relative max-w-4xl mx-auto px-6 pt-20 pb-14">
+      <p class="text-sm uppercase tracking-widest text-green-400 font-medium reveal" style="--d:90ms">Vastlink Design Partner Program &middot; 2026 &middot; Inviting 1&ndash;3 firms</p>
+      <h1 class="mt-4 text-4xl md:text-5xl font-semibold leading-tight reveal" style="--d:180ms">
+        <span class="brand-text">Crypto custody for RIAs:</span><br/>help build the controls behind it.
+      </h1>
+      <p class="mt-6 text-lg text-slate-300 leading-relaxed reveal" style="--d:270ms">
+        A secure wallet is only part of a responsible crypto custody arrangement. Investment advisers also need to decide
+        <strong class="text-white">who can move assets, which safeguards apply, what evidence is retained, and what happens when a key decision-maker is unavailable.</strong>
+      </p>
+      <p class="mt-4 text-lg text-slate-300 leading-relaxed reveal" style="--d:360ms">
+        We are looking for 1&ndash;3 smaller registered investment advisory firms and wealth advisory teams to help shape an open, verifiable
+        custody-governance approach, <strong class="text-white">before we build a production product.</strong>
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 reveal" style="--d:450ms">
+        <a href="#apply" data-cta="hero_apply" class="px-6 py-3 rounded-xl brand-gradient text-white font-semibold text-center hover:opacity-90 shadow-md">Discuss becoming a design partner</a>
+        <a href="#framework" data-cta="hero_framework" class="px-6 py-3 rounded-xl border border-slate-700 text-slate-200 text-center hover:border-green-500/40 hover:text-white">See the working policy framework</a>
+      </div>
+      <ul class="mt-8 flex flex-wrap gap-3 text-sm text-slate-300 reveal" style="--d:540ms" aria-label="Key facts">
+        <li class="chip px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">Six-week collaboration</li>
+        <li class="chip px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">No program fee</li>
+        <li class="chip px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">No transfer of client assets</li>
+        <li class="chip px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">No private keys or seed phrases requested</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Short answer (quotable summary) -->
+  <section class="max-w-4xl mx-auto px-6 pb-12">
+    <div class="card-fx reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/60">
+      <h2 class="font-semibold text-white">What is a crypto custody policy for an RIA?</h2>
+      <p class="mt-2 text-slate-300 leading-relaxed">
+        A practical crypto custody policy defines permitted custody arrangements, safeguards, decision rights, transfer procedures,
+        reporting, continuity, and evidence of control effectiveness. It should let a firm answer one question at any time:
+        <strong class="text-white">who approved this transfer, under which policy, based on what evidence, and what would happen if that person could not act tomorrow?</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- Why now -->
+  <section id="why-now" class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">Why this conversation matters in 2026</h2>
+    <p class="reveal mt-6 text-lg text-slate-200 leading-relaxed"><strong class="text-white">The SEC proposed a new crypto custody framework on 1 October 2026. It has not become a final rule.</strong></p>
+    <p class="reveal mt-4 text-slate-300 leading-relaxed">The proposal would provide limited paths for investment advisers and regulated funds to maintain certain crypto assets in self-custody, subject to conditions.
+      In particular, an adviser would need to document, for each relevant asset and at least quarterly, why no qualified custodian is available.
+      The proposed requirements also address safeguarding systems, joint authorization, client reporting, and independent control assessment.</p>
+    <p class="reveal mt-4 text-slate-300 leading-relaxed">For an advisory firm, that makes the central question bigger than <em>&ldquo;Which wallet or custodian should we choose?&rdquo;</em>
+      It becomes <em class="text-white">&ldquo;Can we explain, operate, and demonstrate our custody decisions, consistently, even when something goes wrong?&rdquo;</em></p>
+
+    <div class="mt-8 grid sm:grid-cols-3 gap-4">
+      <div class="card-fx reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/50" style="--d:0ms">
+        <div class="text-2xl font-semibold brand-text">1 Oct 2026</div>
+        <p class="mt-2 text-sm text-slate-300">SEC announces the proposal (press release 2026-100).</p>
+      </div>
+      <div class="card-fx reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/50" style="--d:120ms">
+        <div class="text-2xl font-semibold brand-text">6 months</div>
+        <p class="mt-2 text-sm text-slate-300">Proposed deadline for an independent internal control report after taking self-custody, then at least annually.</p>
+      </div>
+      <div class="card-fx reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/50" style="--d:240ms">
+        <div class="text-2xl font-semibold brand-text">7 Dec 2026</div>
+        <p class="mt-2 text-sm text-slate-300">The SEC's published public comment deadline.</p>
+      </div>
+    </div>
+
+    <p class="reveal mt-8 text-slate-300 leading-relaxed">Under the proposal, an adviser relying on the self-custody exception would, among other things, need an internal control report
+      from an independent public accountant within six months after taking self-custody and at least once each calendar year thereafter.
+      <strong class="text-white">These are proposed conditions, not obligations newly in force today.</strong></p>
+    <p class="reveal mt-4 text-sm text-slate-400 leading-relaxed"><strong class="text-slate-200">Primary sources:</strong>
+      <a class="body-link" href="https://www.sec.gov/rules-regulations/2026/10/s7-2026-35" target="_blank" rel="noopener">SEC proposed-rule docket (S7-2026-35)</a> &middot;
+      <a class="body-link" href="https://www.sec.gov/newsroom/press-releases/2026-100-sec-proposal-would-address-how-investment-advisers-funds-can-custody-crypto-assets-under-federal" target="_blank" rel="noopener">SEC announcement, 1 October 2026</a> &middot;
+      <a class="body-link" href="https://www.ropesgray.com/en/insights/alerts/2026/10/sec-proposes-new-crypto-asset-custody-rules-and-overhaul-of-adviser-registered-fund-and-bdc-custody" target="_blank" rel="noopener">Ropes &amp; Gray analysis, 16 October 2026</a></p>
+    <div class="reveal mt-6 p-5 rounded-2xl border border-amber-500/30 bg-amber-500/5 text-sm text-amber-100/90 leading-relaxed">
+      <i class="fa-solid fa-circle-info mr-1.5 text-amber-400" aria-hidden="true"></i>
+      <strong>Regulatory note:</strong> the proposal is subject to change. Whether existing or proposed custody requirements apply depends on the firm, assets, activities, and applicable law.
+      Your legal and compliance advisers should make that determination.
+    </div>
+  </section>
+
+  <!-- Three layers -->
+  <section id="layers" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">A custody strategy has three layers</h2>
+    <div class="reveal mt-8 overflow-x-auto rounded-2xl border border-slate-800">
+      <table class="compare w-full text-sm text-slate-300 min-w-[720px]">
+        <thead class="bg-slate-900">
+          <tr>
+            <th scope="col">Layer</th>
+            <th scope="col">The question it answers</th>
+            <th scope="col">What can still go wrong without governance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="font-medium text-slate-100"><i class="fa-solid fa-building-columns fa-fw mr-2 text-green-400" aria-hidden="true"></i>Custody arrangement</td>
+            <td>Who holds or controls the assets, and under what legal arrangement?</td>
+            <td class="mixed">Responsibilities or provider dependencies are unclear.</td>
+          </tr>
+          <tr>
+            <td class="font-medium text-slate-100"><i class="fa-solid fa-microchip fa-fw mr-2 text-green-400" aria-hidden="true"></i>Security technology</td>
+            <td>How are keys protected and transactions authorized?</td>
+            <td class="mixed">Strong technology is configured around weak human processes.</td>
+          </tr>
+          <tr class="ours">
+            <td class="font-semibold text-white"><i class="fa-solid fa-file-shield fa-fw mr-2 text-green-400" aria-hidden="true"></i>Policy and evidence</td>
+            <td>Who may act, under what conditions, and how is every exception reviewed?</td>
+            <td class="mixed">Decisions are hard to reconstruct when clients, auditors, or successors ask.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="reveal mt-8 text-lg text-slate-200 max-w-4xl">Good providers may address all three layers. Our premise is that firms should be able to
+      <strong class="text-white">understand, review, and retain their own control decisions</strong>, rather than depend on opaque workflows or scattered conversations.</p>
+  </section>
+
+  <!-- Framework -->
+  <section id="framework" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">The working crypto custody policy framework</h2>
+    <p class="reveal mt-6 text-slate-300 max-w-3xl">These eight sections form a discussion framework, not a substitute for a firm-approved policy or legal advice.</p>
+    <ol class="mt-8 grid md:grid-cols-2 gap-6">
+      <li class="card-fx reveal p-7 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:0ms">
+        <div class="flex items-center gap-4"><div class="ico-tile"><i class="fa-solid fa-list-check" aria-hidden="true"></i></div><span class="text-2xl font-semibold brand-text">01</span></div>
+        <h3 class="mt-4 text-lg font-semibold">Permitted custodians and custody-option reviews</h3>
+        <p class="mt-2 text-slate-300">Document which providers and arrangements are acceptable for each asset, why they were selected, who approved the assessment, and when it must be revisited.
+          Capture the alternatives considered rather than just the final provider name.</p>
+      </li>
+      <li class="card-fx reveal p-7 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:120ms">
+        <div class="flex items-center gap-4"><div class="ico-tile"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div><span class="text-2xl font-semibold brand-text">02</span></div>
+        <h3 class="mt-4 text-lg font-semibold">Conditions for adviser self-custody</h3>
+        <p class="mt-2 text-slate-300">If relevant, identify the legal basis, an asset-by-asset qualified-custodian availability assessment, segregation of client assets, designated key holders, and a scheduled review.
+          <strong class="text-white">Treat adviser self-custody as a conditional exception, not a default recommendation.</strong></p>
+      </li>
+      <li class="card-fx reveal p-7 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:0ms">
+        <div class="flex items-center gap-4"><div class="ico-tile"><i class="fa-solid fa-user-check" aria-hidden="true"></i></div><span class="text-2xl font-semibold brand-text">03</span></div>
+        <h3 class="mt-4 text-lg font-semibold">Signing authority and separation of duties</h3>
+        <p class="mt-2 text-slate-300">Define who can propose, approve, and execute a transaction; when two-person authorization is required; who acts as a management approver;
+          and how permissions change when staff join, leave, or become unavailable.</p>
+      </li>
+      <li class="card-fx reveal p-7 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:120ms">
+        <div class="flex items-center gap-4"><div class="ico-tile"><i class="fa-solid fa-right-left" aria-hidden="true"></i></div><span class="text-2xl font-semibold brand-text">04</span></div>
+        <h3 class="mt-4 text-lg font-semibold">Transfer limits and independent verification</h3>
+        <p class="mt-2 text-slate-300">Set rules for new destination addresses, unusual amounts, emergency transfers, independent confirmation, and escalation.
+          Record how an exception was authorized, not just that a transaction succeeded.</p>
+      </li>
+      <li class="card-fx reveal p-7 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:0ms">
+        <div class="flex items-center gap-4"><div class="ico-tile"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></div><span class="text-2xl font-semibold brand-text">05</span></div>
+        <h3 class="mt-4 text-lg font-semibold">Client reporting and reconciliation</h3>
+        <p class="mt-2 text-slate-300">Specify the transaction records, address-level evidence, reconciliation checks, statement frequency, exception handling,
+          and responsibilities for explaining discrepancies to clients.</p>
+      </li>
+      <li class="card-fx reveal p-7 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:120ms">
+        <div class="flex items-center gap-4"><div class="ico-tile"><i class="fa-solid fa-people-arrows" aria-hidden="true"></i></div><span class="text-2xl font-semibold brand-text">06</span></div>
+        <h3 class="mt-4 text-lg font-semibold">Continuity, incapacity, and succession</h3>
+        <p class="mt-2 text-slate-300">Identify backup decision-makers, access-recovery boundaries, documentation locations, service-provider dependencies,
+          and a rehearsal process that never exposes live credentials.</p>
+      </li>
+      <li class="card-fx reveal p-7 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:0ms">
+        <div class="flex items-center gap-4"><div class="ico-tile"><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i></div><span class="text-2xl font-semibold brand-text">07</span></div>
+        <h3 class="mt-4 text-lg font-semibold">Independent assurance and evidence readiness</h3>
+        <p class="mt-2 text-slate-300">Organize approvals, policy versions, exceptions, technical logs, and reconciliations so a qualified independent accountant and the firm's advisers can review the controls.
+          A policy draft does not replace an independent control report.</p>
+      </li>
+      <li class="card-fx reveal p-7 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:120ms">
+        <div class="flex items-center gap-4"><div class="ico-tile"><i class="fa-solid fa-rotate" aria-hidden="true"></i></div><span class="text-2xl font-semibold brand-text">08</span></div>
+        <h3 class="mt-4 text-lg font-semibold">Annual review, incidents, and corrective action</h3>
+        <p class="mt-2 text-slate-300">Assign owners for periodic reassessment of providers, key management, cyber risks, authorizations, and operational incidents.
+          Track what changed, why, who approved it, and whether the fix worked.</p>
+      </li>
+    </ol>
+    <div class="reveal mt-8 p-6 rounded-2xl border border-green-500/30 bg-green-500/5">
+      <h3 class="font-semibold text-white">The outcome we want to test</h3>
+      <p class="mt-2 text-slate-300">A firm should be able to answer <strong class="text-white">who approved this transfer, under which policy, based on what evidence,
+        and what would happen if that person could not act tomorrow?</strong></p>
+    </div>
+  </section>
+
+  <!-- Fit -->
+  <section id="fit" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">Who this is for, and who it is not</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
+      <div class="card-fx reveal p-8 rounded-3xl border border-green-500/40 bg-slate-900/60" style="--d:0ms">
+        <div class="flex items-center justify-between"><h3 class="text-lg font-semibold">This may be a good fit if&hellip;</h3><span class="tt-tag">Good fit</span></div>
+        <ul class="mt-5 space-y-3 text-slate-300">
+          <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-green-400" aria-hidden="true"></i><span>You are a smaller SEC- or state-registered advisory firm, multi-family office, or specialist wealth team</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-green-400" aria-hidden="true"></i><span>You already face client questions about crypto exposure or custody</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-green-400" aria-hidden="true"></i><span>A principal or compliance lead can participate</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-green-400" aria-hidden="true"></i><span>You want to explore choices before committing client assets to an unproven product</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-green-400" aria-hidden="true"></i><span><strong class="text-white">You do not need to hold crypto today</strong></span></li>
+        </ul>
+      </div>
+      <div class="card-fx reveal p-8 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:140ms">
+        <div class="flex items-center justify-between"><h3 class="text-lg font-semibold">It is probably not the right fit if&hellip;</h3><span class="tt-tag" style="color:#fca5a5;background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.3)">Not a fit</span></div>
+        <ul class="mt-5 space-y-3 text-slate-300">
+          <li class="flex gap-3"><i class="fa-solid fa-xmark mt-1 text-red-400" aria-hidden="true"></i><span>You need a production-ready custody provider immediately</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-xmark mt-1 text-red-400" aria-hidden="true"></i><span>You want someone else to assume your regulatory responsibility</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-xmark mt-1 text-red-400" aria-hidden="true"></i><span>You are looking for a consumer wallet (for personal plans, see <a class="body-link" href="/crypto-inheritance/">crypto inheritance</a>)</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-xmark mt-1 text-red-400" aria-hidden="true"></i><span>You already have a mature custody-governance program with no unresolved operational questions</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="reveal mt-8 text-lg text-slate-200 max-w-4xl">We are especially interested in firms willing to discuss actual workflows and trade-offs,
+      <strong class="text-white">even if the eventual conclusion is that an existing qualified custodian is the appropriate choice.</strong></p>
+  </section>
+
+  <!-- Give / get -->
+  <section id="exchange" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">What you receive, and what we ask</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
+      <div class="card-fx reveal relative p-8 rounded-3xl border-2 border-green-500/60 bg-slate-900/80 glow flex flex-col" style="--d:0ms">
+        <span class="absolute -top-3 left-8 px-3 py-0.5 rounded-full text-xs font-semibold brand-gradient text-white">You receive</span>
+        <ul class="mt-2 space-y-2 text-slate-300 text-sm flex-1">
+          <li>&#10003; A working custody-policy draft tailored to the questions raised by your firm</li>
+          <li>&#10003; A signing-authority and escalation outline</li>
+          <li>&#10003; A written list of decisions, gaps, and assumptions to review with your counsel and compliance team</li>
+          <li>&#10003; A <strong class="text-white">tabletop exercise</strong> covering an unusual transfer or an unavailable decision-maker</li>
+        </ul>
+        <p class="mt-6 text-sm text-slate-400">You can keep the materials whether or not we continue together.</p>
+      </div>
+      <div class="card-fx reveal p-8 rounded-3xl border border-slate-800 bg-slate-900/50 flex flex-col" style="--d:140ms">
+        <span class="absolute -top-3 left-8 px-3 py-0.5 rounded-full text-xs font-semibold bg-slate-700 text-white">We ask</span>
+        <ul class="mt-2 space-y-2 text-slate-300 text-sm flex-1">
+          <li>&#10003; Roughly <strong class="text-white">three hours over six weeks</strong></li>
+          <li>&#10003; Candid feedback about how decisions are made today</li>
+          <li>&#10003; Your perspective on which controls would be genuinely useful in software</li>
+        </ul>
+        <p class="mt-6 text-sm text-slate-400">We will not request wallet seed phrases, private keys, production credentials, or control of client assets.
+          We can agree on confidentiality terms before sensitive discussions.</p>
+      </div>
+    </div>
+    <div class="reveal mt-8 p-6 rounded-2xl border border-green-500/30 bg-green-500/5">
+      <h3 class="font-semibold text-white">There is no program fee</h3>
+      <p class="mt-2 text-slate-300">Participation does not require a purchase commitment, product deployment, endorsement, or permission to use your firm's name publicly.</p>
+    </div>
+  </section>
+
+  <!-- Six weeks -->
+  <section id="program" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">How the first six weeks work</h2>
+    <ol class="mt-8 grid md:grid-cols-3 gap-6">
+      <li class="card-fx reveal p-7 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:0ms">
+        <div class="flex items-baseline justify-between"><div class="text-3xl font-semibold brand-text">01</div><span class="tt-tag">Listen</span></div>
+        <p class="mt-3 text-slate-300">Discuss your client demand, current custody choices, approval process, and operational concerns.</p>
+        <p class="mt-4 week-time"><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i>45 minutes</p>
+      </li>
+      <li class="card-fx reveal p-7 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:120ms">
+        <div class="flex items-baseline justify-between"><div class="text-3xl font-semibold brand-text">02</div><span class="tt-tag">Map</span></div>
+        <p class="mt-3 text-slate-300">Vastlink prepares a first working policy and decision map from what we learned.</p>
+        <p class="mt-4 week-time"><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i>20&ndash;30-minute review</p>
+      </li>
+      <li class="card-fx reveal p-7 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:240ms">
+        <div class="flex items-baseline justify-between"><div class="text-3xl font-semibold brand-text">03</div><span class="tt-tag">Test controls</span></div>
+        <p class="mt-3 text-slate-300">Walk through a transaction approval, exception, and escalation scenario.</p>
+        <p class="mt-4 week-time"><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i>45 minutes</p>
+      </li>
+      <li class="card-fx reveal p-7 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:0ms">
+        <div class="flex items-baseline justify-between"><div class="text-3xl font-semibold brand-text">04</div><span class="tt-tag">Refine</span></div>
+        <p class="mt-3 text-slate-300">Revise the policy, noting open legal, technical, and operational questions.</p>
+        <p class="mt-4 week-time"><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i>20&ndash;30-minute review</p>
+      </li>
+      <li class="card-fx reveal p-7 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:120ms">
+        <div class="flex items-baseline justify-between"><div class="text-3xl font-semibold brand-text">05</div><span class="tt-tag">Rehearse</span></div>
+        <p class="mt-3 text-slate-300">Run a tabletop continuity or succession exercise using fictional or test scenarios. <strong class="text-white">No funds moved.</strong></p>
+        <p class="mt-4 week-time"><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i>30 minutes</p>
+      </li>
+      <li class="card-fx reveal p-7 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:240ms">
+        <div class="flex items-baseline justify-between"><div class="text-3xl font-semibold brand-text">06</div><span class="tt-tag">Decide</span></div>
+        <p class="mt-3 text-slate-300">Share your working draft, gap register, and product priorities. Decide independently whether to stay involved.</p>
+        <p class="mt-4 week-time"><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i>Optional conversation</p>
+      </li>
+    </ol>
+    <p class="reveal mt-8 text-slate-300 max-w-4xl">The schedule is a starting point. We will adapt it to the constraints of a small advisory team rather than turn it into another compliance project.</p>
+  </section>
+
+  <!-- What Vastlink is today -->
+  <section id="today" class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">What Vastlink is today</h2>
+    <div class="reveal mt-8 p-6 rounded-2xl border border-amber-500/30 bg-amber-500/5">
+      <p class="text-amber-50 leading-relaxed"><strong>Vastlink is at the design and validation stage, not a production crypto custodian or an available custody software service.</strong></p>
+    </div>
+    <p class="reveal mt-6 text-slate-300 leading-relaxed">We have <a class="body-link" href="/">a website</a> and <a class="body-link" href="/blog/">research articles</a>
+      and a <a class="body-link" href="https://vastlink.fystack.io/" target="_blank" rel="noopener">demonstration application built in collaboration with Fystack</a>.
+      The demo is for exploration, not evidence that the proposed design-partner solution is deployable for client assets.</p>
+    <p class="reveal mt-4 text-slate-300 leading-relaxed">We are evaluating open-source building blocks, including approaches associated with Vultisig and NEAR.
+      No final architecture, independent audit, certification, or general-availability date should be assumed.
+      Our intended direction is <strong class="text-white">transparent controls, verifiable actions, self-hosting options, and reduced dependence on any one vendor</strong>.
+      The design partners will help determine which of those priorities solve real problems, and what should be built first.</p>
+
+    <figure class="card-fx reveal mt-10 p-8 rounded-3xl border border-slate-800 bg-slate-900/60">
+      <div class="flex items-center gap-3"><div class="ico-tile"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div><h3 class="text-lg font-semibold">A note from the founder</h3></div>
+      <blockquote class="mt-5 space-y-4 text-slate-300 leading-relaxed">
+        <p>I've spent a lot of time trying to find a way to hold digital assets with confidence over the long term. Exchanges, hardware wallets, multisig, and institutional services each solve part of the problem.
+          But I kept coming back to the same questions: <em class="text-white">What if one person is unavailable? Who can authorize an exception? How can someone else verify what happened?</em></p>
+        <p>That is why we are starting with conversations and a written policy rather than another product demo. I would rather build something narrow and useful with a few thoughtful teams
+          than promise a complete platform before we understand the decisions those teams face.</p>
+      </blockquote>
+      <figcaption class="mt-5 text-sm text-slate-400">&mdash; <strong class="text-slate-200">Founder, Vastlink</strong></figcaption>
+    </figure>
+  </section>
+
+  <!-- FAQ (mirrors FAQPage schema) -->
+  <section id="faq" class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">Frequently asked questions</h2>
+    <div class="mt-8 space-y-5">
+      <div class="faq-card card-fx reveal" style="--d:0ms">
+        <div class="faq-ico"><i class="fa-solid fa-landmark" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">Has the SEC approved adviser self-custody of client crypto assets?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed"><strong class="text-white">Not through the October 2026 proposal.</strong> The SEC published proposed changes on 1 October 2026, but they are not a final rule.
+          The contemplated self-custody path is limited and conditional, including a documented determination that a qualified custodian is unavailable.
+          Firms should rely on current requirements and qualified legal advice when making custody decisions today.</p>
+        </div>
+      </div>
+      <div class="faq-card card-fx reveal" style="--d:80ms">
+        <div class="faq-ico"><i class="fa-solid fa-book" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">What belongs in an RIA crypto custody policy?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed"><strong class="text-white">A useful policy should connect custody choices to accountable people and reviewable evidence.</strong>
+          Typical sections cover approved custodians, conditions for self-custody, signing authority, transfer verification, reconciliation and client reporting, incident response,
+          continuity, and independent-control review. The right detail depends on the firm's assets, custody arrangement, risk profile, and legal obligations
+          (see the <a class="body-link" href="#framework">working framework</a>).</p>
+        </div>
+      </div>
+      <div class="faq-card card-fx reveal" style="--d:0ms">
+        <div class="faq-ico"><i class="fa-solid fa-wallet" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">Does a design partner have to custody crypto today?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed"><strong class="text-white">No.</strong> We are interested in firms that are considering client digital-asset exposure as well as firms with existing workflows.
+          Questions about who would hold assets, approve transfers, or document controls can be explored without a live wallet.
+          The program is about clarifying requirements before making a technology commitment.</p>
+        </div>
+      </div>
+      <div class="faq-card card-fx reveal" style="--d:80ms">
+        <div class="faq-ico"><i class="fa-solid fa-tag" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">Is the program free? Is there a product to buy?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed"><strong class="text-white">The six-week design-partner program has no fee, and there is no production Vastlink custody product for sale through this program.</strong>
+          We are asking for your experience and feedback, not a purchase order. Any future commercial proposal would be a separate discussion with terms shared explicitly rather than assumed at the outset.</p>
+        </div>
+      </div>
+      <div class="faq-card card-fx reveal" style="--d:0ms">
+        <div class="faq-ico"><i class="fa-solid fa-key" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">Will we transfer assets or share private keys?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed"><strong class="text-white">No.</strong> The proposed collaboration uses policy documents, interviews, and simulated scenarios.
+          We will not ask for seed phrases, private keys, production credentials, or custody of your clients' assets.
+          If sensitive business information needs to be discussed, we can first agree on suitable confidentiality arrangements and restrict what information is shared.</p>
+        </div>
+      </div>
+      <div class="faq-card card-fx reveal" style="--d:80ms">
+        <div class="faq-ico"><i class="fa-solid fa-gavel" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">Is this legal, compliance, or audit advice?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed"><strong class="text-white">No.</strong> Vastlink is exploring a governance workflow and may prepare a working policy draft for discussion.
+          The draft will not certify compliance, serve as an independent internal control report, or replace the judgment of your chief compliance officer, qualified legal advisers,
+          auditors, or regulated custodians. Final decisions and obligations remain with the appropriate professionals and the firm.</p>
+        </div>
+      </div>
+      <div class="faq-card card-fx reveal" style="--d:0ms">
+        <div class="faq-ico"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="text-lg font-semibold">What happens after six weeks?</h3>
+          <p class="mt-2 text-slate-300 leading-relaxed"><strong class="text-white">You keep the working documents, and you decide whether further collaboration makes sense.</strong>
+          We will share what we learned and which product ideas merit exploration. You are under no obligation to buy, deploy, endorse, or continue.
+          We will not name your firm publicly without separate written permission.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apply -->
+  <section id="apply" class="max-w-4xl mx-auto px-6 py-16">
+    <div class="reveal p-8 md:p-10 rounded-3xl border border-green-500/30 bg-slate-900/80 glow">
+      <h2 class="text-2xl md:text-3xl font-semibold">Apply to help shape Vastlink</h2>
+      <p class="mt-4 text-slate-300 leading-relaxed"><strong class="text-white">Tell us where custody decisions feel hardest today.</strong>
+        A short note is enough to start. We do not need a detailed asset list or confidential client information.</p>
+
+      <form id="apply-form" class="mt-8 grid sm:grid-cols-2 gap-5" novalidate>
+        <label class="text-sm text-slate-300">Name <span class="text-green-400">*</span>
+          <input class="field" name="name" type="text" autocomplete="name" required />
+        </label>
+        <label class="text-sm text-slate-300">Work email <span class="text-green-400">*</span>
+          <input class="field" name="email" type="email" autocomplete="email" required />
+        </label>
+        <label class="text-sm text-slate-300">Firm <span class="text-green-400">*</span>
+          <input class="field" name="firm" type="text" autocomplete="organization" required />
+        </label>
+        <label class="text-sm text-slate-300">Your role <span class="text-green-400">*</span>
+          <input class="field" name="role" type="text" autocomplete="organization-title" placeholder="e.g. Principal, CCO, COO" required />
+        </label>
+        <label class="text-sm text-slate-300 sm:col-span-2">Approximate AUM range <span class="text-slate-500">(optional)</span>
+          <select class="field" name="aum">
+            <option value="">Prefer not to say</option>
+            <option>Under $100M</option>
+            <option>$100M&ndash;$500M</option>
+            <option>$500M&ndash;$2B</option>
+            <option>Over $2B</option>
+          </select>
+        </label>
+        <label class="text-sm text-slate-300 sm:col-span-2">The custody decision you most want to make clearer <span class="text-green-400">*</span>
+          <textarea class="field" name="decision" rows="5" required placeholder="e.g. How we'd document why no qualified custodian is available for a given asset, or who approves a transfer when our principal is away."></textarea>
+          <span class="mt-1 block text-xs text-slate-500"><span id="word-count">0</span> / 200 words</span>
+        </label>
+        <p id="form-error" class="sm:col-span-2 text-sm text-red-400 hidden" role="alert"></p>
+        <div class="sm:col-span-2 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+          <button type="submit" data-cta="apply_submit" class="px-6 py-3 rounded-xl brand-gradient text-white font-semibold text-center hover:opacity-90 shadow-md">Request a 20-minute introductory conversation</button>
+          <span class="text-xs text-slate-500">Opens a pre-filled email to johnny@vastlink.xyz. Nothing is stored on this page.</span>
+        </div>
+      </form>
+
+      <p class="mt-6 text-sm text-slate-300"><strong class="text-white">Please don't include client names, wallet addresses, keys, or confidential account details.</strong> We will never ask for a seed phrase or private key.
+        See our <a class="body-link" href="/privacy.html" target="_blank">privacy policy</a>.</p>
+      <p class="mt-4 text-sm text-slate-400">Prefer chat? Message us on <a class="body-link" href="https://t.me/VastlinkCommunity" target="_blank" rel="noopener" data-cta="telegram">Telegram</a>,
+        <a class="body-link" href="https://www.linkedin.com/company/104843132/" target="_blank" rel="noopener" data-cta="linkedin">LinkedIn</a> or <a class="body-link" href="https://x.com/thevastlink" target="_blank" rel="noopener" data-cta="x">X</a>.</p>
+    </div>
+  </section>
+
+  <!-- Related reading -->
+  <section class="max-w-4xl mx-auto px-6 pb-16">
+    <h2 class="text-xl font-semibold">Related reading</h2>
+    <ul class="mt-4 space-y-2 text-slate-300">
+      <li><a class="body-link" href="/blog/crypto-custody-for-business/">Crypto custody for business</a></li>
+      <li><a class="body-link" href="/blog/digital-asset-custody-platforms-compared-2026/">Digital asset custody platforms compared (2026)</a></li>
+      <li><a class="body-link" href="/blog/coldcard-entropy-bug-88m-lessons/">What the $88 Million Coldcard Hack Teaches Us About Single-Vendor Custody Risk</a></li>
+    </ul>
+    <p class="mt-10 text-xs text-slate-500 leading-relaxed">Published for discussion as of <time datetime="2026-10-24">October 24, 2026</time>, by Vastlink. Regulatory statements last reviewed <time datetime="2026-10-24">October 24, 2026</time>.
+      This page contains forward-looking product intentions and general educational information, not investment, legal, tax, custody, or compliance advice.
+      Regulatory proposals and interpretations may change. Refer to the <a class="body-link" href="https://www.sec.gov/rules-regulations/2026/10/s7-2026-35" target="_blank" rel="noopener">SEC rulemaking docket</a> for current status.
+      Vastlink never holds custody of client assets, and we never ask for seed phrases or private keys.</p>
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-6 text-slate-400">
+      <div>
+        <div class="text-white font-semibold">Vastlink</div>
+        <p class="mt-2">A next generation digital asset operating system for humans and AI.</p>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200">Company</div>
+        <ul class="mt-2 space-y-2">
+          <li><a href="/terms_and_conditions.html" class="link-brand" target="_blank">Terms and conditions</a></li>
+          <li><a href="/privacy.html" class="link-brand" target="_blank">Privacy</a></li>
+          <li><a href="/blog/" class="link-brand">Blog</a></li>
+          <li><a href="/crypto-inheritance/" class="link-brand">Crypto inheritance</a></li>
+          <li><a href="/design-partners/" class="link-brand">Design partners</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200">Follow</div>
+        <ul class="mt-2 space-y-2">
+          <li><a class="link-brand" href="https://x.com/thevastlink" target="_blank"><i class="fab fa-fw fa-twitter"></i> Twitter</a></li>
+          <li><a class="link-brand" href="https://www.linkedin.com/company/104843132" target="_blank"><i class="fab fa-fw fa-linkedin"></i> LinkedIn</a></li>
+          <li><a class="link-brand" href="https://github.com/vastlink-xyz" target="_blank"><i class="fab fa-fw fa-github"></i> GitHub</a></li>
+          <li><a class="link-brand" href="https://vastlink.medium.com/" target="_blank"><i class="fab fa-fw fa-medium"></i> Medium</a></li>
+          <li><a class="link-brand" href="https://t.me/VastlinkCommunity" target="_blank"><i class="fab fa-fw fa-telegram"></i> Telegram</a></li>
+          <li><a class="link-brand" href="https://www.youtube.com/@vastlink" target="_blank"><i class="fab fa-fw fa-youtube"></i> YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center text-slate-500 pb-8">Dubai &middot; Hong Kong &middot; Singapore &middot; Sydney &middot; &copy; Vastlink 2024 ~ 2026</div>
+  </footer>
+  <a href="#" id="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+
+  <script>
+    // Header shadow on scroll
+    const header = document.querySelector('header');
+    const onScrollHeader = () => {
+      if (window.scrollY > 10) header.classList.add('shadow-lg','border-slate-700');
+      else header.classList.remove('shadow-lg','border-slate-700');
+    };
+    document.addEventListener('scroll', onScrollHeader, { passive: true });
+    onScrollHeader();
+
+    // GA4 funnel events: every CTA carries data-cta="<name>"
+    document.querySelectorAll('[data-cta]').forEach((el) => {
+      el.addEventListener('click', () => {
+        if (typeof gtag === 'function') {
+          gtag('event', 'design_partner_cta_click', { cta: el.dataset.cta, page: 'design-partners' });
+        }
+      });
+    });
+
+    // Application form -> pre-filled email (static site, no data stored)
+    (() => {
+      const form = document.getElementById('apply-form');
+      const err = document.getElementById('form-error');
+      const ta = form.elements.decision;
+      const wc = document.getElementById('word-count');
+      const words = (s) => (s.trim().match(/\S+/g) || []).length;
+      ta.addEventListener('input', () => {
+        const n = words(ta.value);
+        wc.textContent = n;
+        wc.parentElement.classList.toggle('text-red-400', n > 200);
+      });
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const f = form.elements;
+        const missing = ['name','email','firm','role','decision'].filter((k) => !f[k].value.trim());
+        if (missing.length) { err.textContent = 'Please fill in all required fields.'; err.classList.remove('hidden'); f[missing[0]].focus(); return; }
+        if (!f.email.checkValidity()) { err.textContent = 'Please enter a valid work email.'; err.classList.remove('hidden'); f.email.focus(); return; }
+        if (words(f.decision.value) > 200) { err.textContent = 'Please keep the custody decision to 200 words or fewer.'; err.classList.remove('hidden'); f.decision.focus(); return; }
+        err.classList.add('hidden');
+        const body = [
+          'Hi Vastlink,', '',
+          "I'd like a 20-minute introductory conversation about the design partner program.", '',
+          'Name: ' + f.name.value.trim(),
+          'Work email: ' + f.email.value.trim(),
+          'Firm: ' + f.firm.value.trim(),
+          'Role: ' + f.role.value.trim(),
+          'Approximate AUM range: ' + (f.aum.value || 'Prefer not to say'), '',
+          'The custody decision I most want to make clearer:',
+          f.decision.value.trim(), '',
+          '(No client names, wallet addresses, keys or confidential account details included.)'
+        ].join('\n');
+        const subject = 'Design partner application: ' + f.firm.value.trim();
+        if (typeof gtag === 'function') gtag('event', 'design_partner_apply', { page: 'design-partners' });
+        window.location.href = 'mailto:johnny@vastlink.xyz?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      });
+    })();
+
+    // ===== Visual effects =====
+    (() => {
+      const root = document.documentElement;
+      const bar = document.getElementById('scroll-progress');
+      const toTop = document.getElementById('to-top');
+      const onScrollFx = () => {
+        const max = root.scrollHeight - root.clientHeight;
+        bar.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+        toTop.classList.toggle('show', window.scrollY > 900);
+      };
+      document.addEventListener('scroll', onScrollFx, { passive: true });
+      onScrollFx();
+      toTop.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+      const items = document.querySelectorAll('.reveal');
+      if (root.classList.contains('js')) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        items.forEach((el) => io.observe(el));
+      } else {
+        items.forEach((el) => el.classList.add('in'));
+      }
+
+      const links = [...document.querySelectorAll('header nav a[href^="#"]')];
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id));
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      links.forEach((a) => { const t = document.querySelector(a.getAttribute('href')); if (t) spy.observe(t); });
+
+      document.querySelectorAll('.card-fx').forEach((card) => {
+        card.addEventListener('pointermove', (e) => {
+          const r = card.getBoundingClientRect();
+          card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+          card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        });
+        card.addEventListener('pointerleave', () => { card.style.removeProperty('--mx'); card.style.removeProperty('--my'); });
+      });
+    })();
+  </script>
+</body>
+</html>

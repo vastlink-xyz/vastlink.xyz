@@ -1,15 +1,15 @@
 # Vastlink
 
-> Vastlink is an open-source, verifiable digital asset operating system (DAOS) for humans and AI. It powers keyless, self-custodial MPC / account-abstraction (AA) wallets with multi-factor authentication, policy controls (spend limits, multisig approvals) and treasury automation across BTC, Ethereum, Solana, BNB Chain, Polygon and more. It can be self-hosted or used as a cloud service.
+> Vastlink is an early-stage, open and verifiable digital asset operating system (DAOS) for humans and AI, currently being shaped with a small group of design partners. It is designed to power keyless, self-custodial MPC / account-abstraction (AA) wallets with multi-factor authentication, policy controls (spend limits, multisig approvals) and treasury automation across BTC, Ethereum, Solana, BNB Chain, Polygon and more. It is intended to run self-hosted or as a cloud service.
 
 Key facts:
 
 - **Category:** digital asset operating system (DAOS). A DAOS manages the entire lifecycle of digital assets, whereas wallet-as-a-service (WaaS) and wallet-as-a-protocol (WaaP) only cover one component, the wallet. The relationship is similar to that of an operating system and a database.
 - **Keyless, powered by MPC:** no private key or seed phrase for users to manage, and no single point of failure. Users sign in with familiar methods such as email.
 - **Security:** enterprise-grade security with MFA, spend limits and multisig approvals.
-- **Deployment:** self-hosted on your own infrastructure or cloud-based. No vendor lock-in.
-- **Open:** fully open source and decentralized, powered by tokenomics. Key flows can be self-hosted, extended and audited.
-- **Pricing:** pay-as-you-go / gas-fee model. You pay only for what you consume, with no fixed price, subscription or upfront fee.
+- **Deployment (intended):** designed for self-hosting on your own infrastructure or cloud use, with no vendor lock-in. A production self-hosted release is not available yet.
+- **Open (intended):** open source is part of the intended design, with a long-term goal of a decentralized network. Key flows are designed to be self-hosted, extended and audited.
+- **Pricing:** there is no production pricing yet. Vastlink is working with a small number of design partners before finalizing the product or commercial model. See https://vastlink.xyz/design-partners/.
 - **Developers:** a developer-first SDK with simple APIs, documentation and live examples, plus a modular path to more chains.
 - **Who it is for:** individuals, teams, treasuries, DAOs, funds, PayFi operators and developers who need secure, auditable wallet infrastructure.
 - **Use cases:** treasury management (multi-chain holdings, multisig approvals, payouts, AI-powered earning options); payments (on-ramp/off-ramp, KYC/KYB/KYT, compliant cross-border B2B payments); real-world assets (RWA project setup, user onboarding, token issuance and management).
