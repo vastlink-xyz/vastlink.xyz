@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Crypto Custody for RIAs (2026) | Vastlink Design Partners</title>
-  <meta name="description" content="Crypto custody for RIAs in 2026: explore our eight-part framework for custody policy and controls, and help shape it as a Vastlink design partner." />
+  <meta name="description" content="Crypto custody for RIAs (Registered Investment Advisor) in 2026: explore our eight-part framework for custody policy and controls, and help shape it as a Vastlink design partner." />
   <link rel="icon" href="/assets/img/favicon.png" />
   <link rel="canonical" href="https://vastlink.xyz/design-partners/" />
   <meta name="robots" content="index,follow" />
@@ -621,7 +621,7 @@
         <p id="form-error" class="sm:col-span-2 text-sm text-red-400 hidden" role="alert"></p>
         <div class="sm:col-span-2 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
           <button type="submit" data-cta="apply_submit" class="px-6 py-3 rounded-xl brand-gradient text-white font-semibold text-center hover:opacity-90 shadow-md">Request a 20-minute introductory conversation</button>
-          <span class="text-xs text-slate-500">Opens a pre-filled email to johnny@vastlink.xyz. Nothing is stored on this page.</span>
+          <span class="text-xs text-slate-500">Your application is sent securely to Vastlink (via our email provider, Loops) and used only to reply to you.</span>
         </div>
       </form>
 
@@ -702,6 +702,8 @@
     // Application form -> pre-filled email (static site, no data stored)
     (() => {
       const form = document.getElementById('apply-form');
+      // Loops form endpoint (Loops > Forms > Settings > Form Endpoint). Leave empty to use the mailto flow.
+      const LOOPS_FORM_ENDPOINT = 'https://app.loops.so/api/newsletter-form/cmvk71i8203bj0jzaefsjkms6'; // e.g. 'https://app.loops.so/api/newsletter-form/<FORM_ID>'
       const err = document.getElementById('form-error');
       const ta = form.elements.decision;
       const wc = document.getElementById('word-count');
@@ -732,8 +734,50 @@
           '(No client names, wallet addresses, keys or confidential account details included.)'
         ].join('\n');
         const subject = 'Design partner application: ' + f.firm.value.trim();
-        if (typeof gtag === 'function') gtag('event', 'design_partner_apply', { page: 'design-partners' });
-        window.location.href = 'mailto:johnny@vastlink.xyz?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        const mailtoFallback = () => {
+          window.location.href = 'mailto:johnny@vastlink.xyz?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        };
+        const track = (method) => { if (typeof gtag === 'function') gtag('event', 'design_partner_apply', { page: 'design-partners', method }); };
+        if (!LOOPS_FORM_ENDPOINT) { track('mailto'); mailtoFallback(); return; }
+
+        const [firstName, ...rest] = f.name.value.trim().split(/\s+/);
+        const data = new URLSearchParams({
+          email: f.email.value.trim(),
+          firstName,
+          lastName: rest.join(' '),
+          firm: f.firm.value.trim(),
+          role: f.role.value.trim(),
+          aum: f.aum.value || 'Prefer not to say',
+          decision: f.decision.value.trim(),
+          userGroup: 'design-partner-applicant',
+          source: 'design-partners-page'
+        });
+        const btn = form.querySelector('button[type=submit]');
+        const label = btn.textContent;
+        btn.disabled = true; btn.textContent = 'Sending…';
+        fetch(LOOPS_FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: data.toString()
+        })
+          .then((r) => r.json().catch(() => ({})).then((j) => ({ ok: r.ok, status: r.status, j })))
+          .then(({ ok, status, j }) => {
+            if (!ok || !j.success) {
+              // Already-registered email: Loops won't update the contact, so send the answers by email instead.
+              const e2 = new Error(j.message || ('HTTP ' + status)); e2.status = status; throw e2;
+            }
+            track('loops');
+            form.innerHTML = '<p class="sm:col-span-2 text-green-400" role="status">Thanks, your application is in. We\'ll reply by email within a few business days.</p>';
+          })
+          .catch((ex) => {
+            btn.disabled = false; btn.textContent = label;
+            err.textContent = ex.status === 429
+              ? 'Too many attempts. Opening an email instead so your application still reaches us.'
+              : 'We couldn\'t submit the form. Opening a pre-filled email instead.';
+            err.classList.remove('hidden');
+            track('mailto_fallback');
+            mailtoFallback();
+          });
       });
     })();
 
