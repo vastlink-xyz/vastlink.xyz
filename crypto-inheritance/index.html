@@ -89,7 +89,7 @@
        "priceSpecification": {"@type": "UnitPriceSpecification", "price": "249", "priceCurrency": "USD", "unitText": "year"}},
       {"@type": "Offer", "name": "Guided", "price": "249", "priceCurrency": "USD", "url": "https://vastlink.xyz/crypto-inheritance/#pricing", "availability": "https://schema.org/PreOrder",
        "priceSpecification": {"@type": "UnitPriceSpecification", "price": "249", "priceCurrency": "USD", "unitText": "year"},
-       "description": "$249 per year plus a one-time $249 setup fee. First 20 founding families: setup fee waived, 100% refundable."},
+       "description": "$249 per year plus a one-time $249 setup fee. First 20 founding families: setup fee waived."},
       {"@type": "Offer", "name": "Legacy", "price": "1900", "priceCurrency": "USD", "url": "https://vastlink.xyz/crypto-inheritance/#pricing", "availability": "https://schema.org/PreOrder",
        "priceSpecification": {"@type": "UnitPriceSpecification", "price": "1900", "priceCurrency": "USD", "unitText": "year"}}
     ]
@@ -104,9 +104,9 @@
     "name": "How a non-custodial crypto inheritance plan works",
     "totalTime": "PT2H",
     "step": [
-      {"@type": "HowToStep", "position": 1, "name": "Set up", "text": "Creating the wallet takes a few minutes in a free mobile app. Control is split into 3 pieces, and any 2 can move funds. You hold two (your phone and a second device), so you can spend on your own. Your heir's phone holds the third, which can't move anything by itself. If the unfortunate happens, your will passes your second device's piece to your heir. The rest of the sitting (about two hours) goes on the key-split and beneficiary plan and the family rehearsal."},
+      {"@type": "HowToStep", "position": 1, "name": "Set up", "text": "Creating the wallet takes a few minutes in a free mobile app. Control is split into 3 pieces, and any 2 can move funds. You hold two (your phone and another device), so you can spend on your own. Your heir's phone holds the third, which can't move anything by itself. After the unfortunate happens, your will passes your another device's piece to your heir. The rest of the sitting (about two hours) goes on the key-split and beneficiary plan and the family rehearsal."},
       {"@type": "HowToStep", "position": 2, "name": "Maintain", "text": "Every 6 months, confirm three things: the pieces are still where they should be, the beneficiary list is current, and your family can still find the handbook."},
-      {"@type": "HowToStep", "position": 3, "name": "Execute", "text": "Your heirs use the same free mobile app. A short handbook tells them who to contact, where the pieces are, and how your second device's piece reaches them through your will. They rehearse this once with you during setup."}
+      {"@type": "HowToStep", "position": 3, "name": "Execute", "text": "Your heirs use the same free mobile app. A short handbook tells them who to contact, where the pieces are, and how your another device's piece reaches them through your will. They rehearse this once with you during setup."}
     ]
   }
   </script>
@@ -131,7 +131,7 @@
     "mainEntity": [
       {"@type": "Question", "name": "Can my family inherit my crypto if they can't log in to my wallet?",
        "acceptedAnswer": {"@type": "Answer", "text": "Yes. There's nothing to log in to and no seed phrase or private key to find. Control is split into pieces kept on different devices, and no complete key ever exists. That's why a plan has to state which pieces are held by whom and in what order they are combined. The full procedure goes in a handbook written for your heirs."}},
-      {"@type": "Question", "name": "If the unfortunate happens, how will my family know who to contact?",
+      {"@type": "Question", "name": "When the unfortunate happens, how will my family know who to contact?",
        "acceptedAnswer": {"@type": "Answer", "text": "That's why the first step of setup is a list of people, not technology: who is the executor, who helps with the technical side, and who is the backup contact. The list goes in the handbook. Your will points to the handbook, never to a seed phrase."}},
       {"@type": "Question", "name": "Should I put my seed phrase in my will?",
        "acceptedAnswer": {"@type": "Answer", "text": "It's the most common approach and the most dangerous one. After death, a will usually goes through probate, and many people may see it. Anyone who sees a seed phrase can take everything. Your will should say who inherits and where to find the pieces, not the seed phrase itself."}},
@@ -144,10 +144,7 @@
       {"@type": "Question", "name": "Will you hold any of my keys?",
        "acceptedAnswer": {"@type": "Answer", "text": "No, not a single one. This is where we differ from Casa and Unchained, who each hold a backup key for recovery or emergency co-signing. Our setup has no Vastlink key at all. The trade-off is that we can't recover your funds for you, which is why every setup includes a real rehearsal."}},
       {"@type": "Question", "name": "Could someone claim my crypto while I'm still alive?",
-       "acceptedAnswer": {"@type": "Answer", "text": "No. No single piece can move funds, and there is no company backup key. In a 2-of-3 setup you hold two pieces, so you can spend on your own, and your heir holds one, which is not enough. The piece your heir is missing is your second device's, and it passes to them through your will if the unfortunate happens. That's the same trust you already place in whoever holds your will."}},
-      {"@type": "Question", "name": "If the unfortunate happens, how exactly does my heir get the missing piece?", "acceptedAnswer": {"@type": "Answer", "text": "We aren't part of this step, so the release is arranged between you and your lawyer. We give you the template and walk you through it. In outline: 1. Who holds what: your second device's piece is backed up as an encrypted file. Your lawyer keeps the file with your will, and your heir keeps its password. The lawyer can't open the file, and without it your heir has only their own piece and a password, which can't move anything. 2. What your lawyer is told: you sign a short letter of instruction (we provide the template) naming who receives the file and what proof the lawyer must see first. 3. What proof releases it: you choose, on your lawyer's advice. The quicker option is a certified death certificate plus your executor's ID. The stricter option is to wait for the court's grant of probate (or letters of administration), which confirms the executor's authority. 4. How long it takes: with a death certificate, usually days to a few weeks. Probate often takes several months and varies by country and state. Your lawyer can tell you whether your executor must wait for probate before anyone moves estate assets. 5. Moving the funds: your heir opens the file in the free app with the password. That gives them 2 of 3 pieces, and the handbook takes them through moving the funds to where your will says. Nothing is at risk while they wait: your heir's one piece can't move funds, and the file at your lawyer's office can't be opened without the password."}},
-      {"@type": "Question", "name": "What if I lose my key shares?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Losing one device isn't a disaster. With 3 pieces and any 2 able to move funds, your two remaining pieces can issue a fresh set of 3, and the lost piece stops working. No backup is needed for that. Backups are for the rarer case where two pieces are gone at once, for example a house fire that takes your phone and your second device. Each backup is an encrypted file protected by a password. Pick one place per piece: your phone's cloud (iCloud Drive or Google Drive, with the password in iCloud Keychain or Google Password Manager); a file you manage yourself; a USB stick or SD card in a home safe or bank safe-deposit box; your lawyer, kept with your will, with the password kept somewhere else; or a QR code printed on paper. The one rule: never put two backups behind the same lock. The same cloud account, the same password or the same safe counts as one lock. If your phone and second device both back up to one iCloud account, anyone who gets into that account has 2 of 3 pieces and can move your funds. A simple default: your phone's backup goes in your phone's cloud, and your second device's backup is an encrypted file held by your lawyer, with the password held by your heir. We never hold a piece or a backup ourselves."}},
+       "acceptedAnswer": {"@type": "Answer", "text": "No. No single piece can move funds, and there is no company backup key. In a 2-of-3 setup you hold two pieces, so you can spend on your own, and your heir holds one, which is not enough. The piece your heir is missing is your another device's, and it passes to them through your will after you die. That's the same trust you already place in whoever holds your will."}},
       {"@type": "Question", "name": "What happens if Vastlink shuts down?",
        "acceptedAnswer": {"@type": "Answer", "text": "Nothing changes for your coins. We never hold a key, the tools are open source, and the handbook only uses software your family can get for free. Signing happens between your own devices: a relay can pass encrypted messages between phones that are far apart, but it can't move funds, it can be self-hosted, and phones on the same WiFi can sign without it. Your plan keeps working without us."}},
       {"@type": "Question", "name": "I hold ETH and stablecoins, not bitcoin. Does this work for me?",
@@ -155,7 +152,7 @@
       {"@type": "Question", "name": "Do I need to be technical?",
        "acceptedAnswer": {"@type": "Answer", "text": "No. Creating the wallet takes a few minutes in a mobile app, and approving a transfer means scanning a QR code with a second phone. The app handles the cryptography. What it can't decide for you is who holds which piece, where the backups are kept, and what your family does first. That's what the plan and the short handbook cover, tested in a real rehearsal."}},
       {"@type": "Question", "name": "How much does crypto inheritance planning cost?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Self-Guided is $249 per year. Guided is $249 per year plus a one-time $249 setup fee. Legacy is $1,900 per year. The first 20 founding families get the Guided setup fee waived, 100% refundable. For comparison, Casa's inheritance plans are listed at $250, $2,100 and $7,500 per year, and a lawyer-drafted crypto trust typically costs $2,000 to $10,000 one-off."}}
+       "acceptedAnswer": {"@type": "Answer", "text": "Self-Guided is $249 per year. Guided is $249 per year plus a one-time $249 setup fee. Legacy is $1,900 per year. The first 20 founding families get the Guided setup fee waived. For comparison, Casa's inheritance plans are listed at $250, $2,100 and $7,500 per year, and a lawyer-drafted crypto trust typically costs $2,000 to $10,000 one-off."}}
     ]
   }
   </script>
@@ -300,9 +297,9 @@
       <h1 class="mt-4 text-4xl md:text-5xl font-semibold leading-tight reveal" style="--d:180ms">
         <span class="brand-text">Your crypto should outlive you.</span><br/>
       </h1>
-      <h1 class="mt-4 text-2xl md:text-3xl font-semibold leading-tight reveal" style="--d:270ms">
-        No one else, but you and your trust (e.g.: your family, lawyer or accountant), should ever hold your key shares.
-      </h1>
+      <h2 class="mt-4 text-2xl md:text-3xl font-semibold leading-tight reveal" style="--d:270ms">
+        No one else, but you and your trusted (e.g.: your family, lawyer or accountant), should ever hold your key shares.
+      </h2>
               
       <p class="mt-6 text-lg text-slate-300 leading-relaxed reveal" style="--d:360ms">
         A crypto inheritance plan built for <strong class="text-white">your family members who aren't technical</strong>.
@@ -316,8 +313,7 @@
       <ul class="mt-8 flex flex-wrap gap-3 text-sm text-slate-300 reveal" style="--d:540ms" aria-label="Key facts">
         <li class="chip px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">Open source</li>
         <li class="chip px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">Non-custodial: we hold zero keys</li>
-        <li class="chip px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">BTC &middot; ETH &middot; USDT &middot; USDC</li>
-        <li class="chip px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">100% refundable</li>
+        <li class="chip px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-400/20">BTC &middot; ETH &middot; Stablecoins</li>
       </ul>
     </div>
   </section>
@@ -327,7 +323,7 @@
     <div class="card-fx reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/60">
       <h2 class="font-semibold text-white">What is crypto inheritance planning?</h2>
       <p class="mt-2 text-slate-300 leading-relaxed">
-        Crypto inheritance planning makes sure the right people can access your Bitcoin and other digital assets if the unfortunate happens,
+        Crypto inheritance planning makes sure the right people can access your Bitcoin and other digital assets after you die,
         and that nobody can access them while you're alive. A complete plan covers three things: keeping control of your keys
         during your lifetime, making sure your heirs can find what you left, and giving them a way to actually move the funds.
         Without a plan, crypto held in self-custody is usually lost for good when its owner dies.
@@ -351,7 +347,7 @@
         </div>
         <h3 class="mt-6 text-lg font-semibold">Nobody can take it while you're alive</h3>
         <p class="mt-3 text-slate-300">Your keys stay with you. Your heir holds one piece, which can't move anything on its own.
-          The second piece only reaches them through your will if the unfortunate happens. No company holds a spare key, and there's no &ldquo;emergency co-sign&rdquo; backdoor.</p>
+          The second piece only reaches them through your will after you die. No company holds a spare key, and there's no &ldquo;emergency co-sign&rdquo; backdoor.</p>
       </div>
       <div class="card-fx reveal p-8 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:140ms">
         <div class="flex items-center justify-between">
@@ -398,8 +394,8 @@
         <div class="text-3xl font-semibold brand-text">01</div>
         <h3 class="mt-2 text-lg font-semibold">Set up (wallet in minutes, full plan in one sitting)</h3>
         <p class="mt-3 text-slate-300">Creating the wallet takes a few minutes in a free mobile app. Control is split into 3 pieces, and any 2 can move funds.
-          You hold two (your phone and a second device), so you can spend on your own. Your heir's phone holds the third, which can't move anything by itself.
-          If the unfortunate happens, your will passes your second device's piece to your heir.
+          You hold two (your phone and another device), so you can spend on your own. Your heir's phone holds the third, which can't move anything by itself.
+          After you die, your will passes your another device's piece to your heir.
           The rest of the sitting (about two hours) goes on the <em>key-split and beneficiary plan</em> and the family rehearsal.</p>
       </li>
       <li class="card-fx reveal p-8 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:140ms">
@@ -412,11 +408,56 @@
         <div class="text-3xl font-semibold brand-text">03</div>
         <h3 class="mt-2 text-lg font-semibold">Execute (no technical skills needed)</h3>
         <p class="mt-3 text-slate-300">Your family uses the same free mobile app: open it on two phones and approve with a QR code.
-          A short handbook covers what the app can't: who to contact, where the pieces are, and how your second device's piece reaches them through your will (<a class="body-link" href="#after-death">see the release steps</a>).
+          A short handbook covers what the app can't: who to contact, where the pieces are, and how your another device's piece reaches them through your will.
           They don't have to read it for the first time on the day it matters,
           because <strong class="text-white">during setup we walk your heirs through the whole process once, with you there.</strong></p>
       </li>
     </ol>
+  </section>
+
+  <!-- Lost key shares / backups -->
+  <section id="lost-key-shares" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">What if I lose my key shares?</h2>
+    <p class="reveal mt-6 text-lg text-slate-300 max-w-4xl"><strong class="text-white">Losing one device isn't a disaster.</strong>
+      With 3 pieces and any 2 able to move funds, your two remaining pieces can issue a fresh set of 3, and the lost piece stops working.
+      No backup is needed for that. Backups are for the rarer case where two pieces are gone at once, for example a house fire that takes your phone and your another device.</p>
+    <h3 class="reveal mt-10 text-xl font-semibold">Where to keep a backup of each piece</h3>
+    <p class="reveal mt-2 text-slate-400 max-w-4xl">Each backup is an encrypted file protected by a password. Pick one place per piece:</p>
+    <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card-fx reveal p-6 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:0ms">
+        <h4 class="text-lg font-semibold">Your phone's cloud</h4>
+        <p class="mt-2 text-slate-300">Save the file to iCloud Drive or Google Drive, with the password in iCloud Keychain or Google Password Manager. The easiest option, with nothing to remember.</p>
+        <p class="mt-3 text-sm text-slate-400">Watch out: you're trusting your Apple or Google account.</p>
+      </div>
+      <div class="card-fx reveal p-6 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:80ms">
+        <h4 class="text-lg font-semibold">A file you manage yourself</h4>
+        <p class="mt-2 text-slate-300">Keep the password-encrypted file on your own computer or storage, with the password somewhere you'll remember. Full control.</p>
+        <p class="mt-3 text-sm text-slate-400">Watch out: lose the password and the backup is useless.</p>
+      </div>
+      <div class="card-fx reveal p-6 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:160ms">
+        <h4 class="text-lg font-semibold">A USB stick in a safe</h4>
+        <p class="mt-2 text-slate-300">Put the encrypted file on a USB stick or SD card in a home safe or bank safe-deposit box. Offline, so it's out of reach of online attacks.</p>
+        <p class="mt-3 text-sm text-slate-400">Watch out: storage can fail, so check it at the 6-month check-in.</p>
+      </div>
+      <div class="card-fx reveal p-6 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:0ms">
+        <h4 class="text-lg font-semibold">With your lawyer</h4>
+        <p class="mt-2 text-slate-300">Your lawyer keeps the encrypted file with your will, and the password is kept somewhere else. This is also how your another device's piece can reach your heir.</p>
+        <p class="mt-3 text-sm text-slate-400">Watch out: never give the lawyer the password too.</p>
+      </div>
+      <div class="card-fx reveal p-6 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:80ms">
+        <h4 class="text-lg font-semibold">On paper</h4>
+        <p class="mt-2 text-slate-300">Print the encrypted file as a QR code. Paper lasts for decades and needs no device to survive.</p>
+        <p class="mt-3 text-sm text-slate-400">Watch out: store it as carefully as you would cash.</p>
+      </div>
+      <div class="card-fx reveal p-6 rounded-3xl border border-slate-800 bg-slate-900/50" style="--d:160ms">
+        <h4 class="text-lg font-semibold">What we don't do</h4>
+        <p class="mt-2 text-slate-300">Some services keep one of the pieces on their own server so they can help you recover. We never hold a piece or a backup, so no company can be hacked, pressured or shut down with your key inside.</p>
+      </div>
+    </div>
+    <p class="reveal mt-8 text-lg text-slate-200 max-w-4xl"><strong class="text-white">The one rule: never put two backups behind the same lock.</strong>
+      The same cloud account, the same password or the same safe counts as one lock. If your phone and another device both back up to one iCloud account,
+      anyone who gets into that account has 2 of 3 pieces and can move your funds. A simple default: your phone's backup goes in your phone's cloud,
+      and your another device's backup is an encrypted file held by your lawyer.</p>
   </section>
 
   <!-- Comparison -->
@@ -480,7 +521,6 @@
           <li>&#10003; Open-source tooling</li>
           <li>&#10003; Key-split and beneficiary setup guide</li>
           <li>&#10003; Heir handbook template</li>
-          <li>&#10003; Letter of instruction template for your lawyer</li>
         </ul>
         <p class="mt-6 text-sm text-slate-400">For people who can set it up themselves and just need a document to give their family.</p>
       </div>
@@ -512,14 +552,12 @@
     <div class="reveal mt-8 p-6 rounded-2xl border border-green-500/30 bg-green-500/5">
       <h3 class="font-semibold text-white">Founding families offer</h3>
       <p class="mt-2 text-slate-300">The first 20 families who choose Guided get the <strong class="text-white">$249 setup fee waived</strong>, so it's $249 a year with the setup session and heir rehearsal included.
-        <strong class="text-white">100% refundable, at any time, no reason needed.</strong> You don't pay anything on this page:
-        we only send an invoice after your free gap review, once you've decided this is right for you.</p>
     </div>
   </section>
 
   <!-- FAQ (mirrors FAQPage schema) -->
   <section id="faq" class="max-w-4xl mx-auto px-6 py-16">
-    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">FAQ</h2>
+    <h2 class="text-2xl md:text-3xl font-semibold section-underline reveal">Frequently asked questions</h2>
     <div class="mt-8 space-y-5">
       <div class="faq-card card-fx reveal" style="--d:0ms">
         <div class="faq-ico"><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i></div>
@@ -532,7 +570,7 @@
       <div class="faq-card card-fx reveal" style="--d:80ms">
         <div class="faq-ico"><i class="fa-solid fa-address-book" aria-hidden="true"></i></div>
         <div>
-          <h3 class="text-lg font-semibold">If the unfortunate happens, how will my family know who to contact?</h3>
+          <h3 class="text-lg font-semibold">When the unfortunate happens, how will my family know who to contact?</h3>
           <p class="mt-2 text-slate-300 leading-relaxed">That's why the first step of setup is a list of people, not technology: who is the executor, who helps
           with the technical side, and who is the backup contact. The list goes in the handbook. Your will points to the handbook, never to a seed phrase.</p>
         </div>
@@ -589,49 +627,8 @@
         <div>
           <h3 class="text-lg font-semibold">Could someone claim my crypto while I'm still alive?</h3>
           <p class="mt-2 text-slate-300 leading-relaxed">No. No single piece can move funds, and there is no company backup key. In a 2-of-3 setup you hold two pieces, so you can spend on your own,
-          and your heir holds one, which is not enough. The piece your heir is missing is your second device's,
-          and it passes to them through your will if the unfortunate happens. That's the same trust you already place in whoever holds your will.</p>
-        </div>
-      </div>
-      <div class="faq-card card-fx reveal" style="--d:0ms">
-        <div class="faq-ico"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></div>
-        <div>
-          <h3 id="after-death" class="text-lg font-semibold">If the unfortunate happens, how exactly does my heir get the missing piece?</h3>
-          <p class="mt-2 text-slate-300 leading-relaxed"><strong class="text-white">We aren't part of this step, so the release is arranged between you and your lawyer.
-          We give you the template and walk you through it.</strong> In outline:</p>
-          <ol class="mt-2 space-y-1.5 text-slate-300 leading-relaxed list-decimal pl-5">
-            <li><strong class="text-white">Who holds what:</strong> your second device's piece is backed up as an encrypted file. Your lawyer keeps the file with your will, and your heir keeps its password.
-            The lawyer can't open the file, and without it your heir has only their own piece and a password, which can't move anything.</li>
-            <li><strong class="text-white">What your lawyer is told:</strong> you sign a short letter of instruction (we provide the template) naming who receives the file and what proof the lawyer must see first.</li>
-            <li><strong class="text-white">What proof releases it:</strong> you choose, on your lawyer's advice. The quicker option is a certified death certificate plus your executor's ID.
-            The stricter option is to wait for the court's grant of probate (or letters of administration), which confirms the executor's authority.</li>
-            <li><strong class="text-white">How long it takes:</strong> with a death certificate, usually days to a few weeks. Probate often takes several months and varies by country and state.
-            Your lawyer can tell you whether your executor must wait for probate before anyone moves estate assets.</li>
-            <li><strong class="text-white">Moving the funds:</strong> your heir opens the file in the free app with the password. That gives them 2 of 3 pieces,
-            and the handbook takes them through moving the funds to where your will says.</li>
-          </ol>
-          <p class="mt-3 text-slate-300 leading-relaxed">Nothing is at risk while they wait: your heir's one piece can't move funds, and the file at your lawyer's office can't be opened without the password.</p>
-        </div>
-      </div>
-      <div class="faq-card card-fx reveal" style="--d:80ms">
-        <div class="faq-ico"><i class="fa-solid fa-life-ring" aria-hidden="true"></i></div>
-        <div>
-          <h3 id="lost-key-shares" class="text-lg font-semibold">What if I lose my key shares?</h3>
-          <p class="mt-2 text-slate-300 leading-relaxed"><strong class="text-white">Losing one device isn't a disaster.</strong>
-          With 3 pieces and any 2 able to move funds, your two remaining pieces can issue a fresh set of 3, and the lost piece stops working.
-          No backup is needed for that. Backups are for the rarer case where two pieces are gone at once, for example a house fire that takes your phone and your second device.</p>
-          <p class="mt-3 text-slate-300 leading-relaxed">Each backup is an encrypted file protected by a password. Pick one place per piece:</p>
-          <ul class="mt-2 space-y-1.5 text-slate-300 leading-relaxed list-disc pl-5">
-            <li><strong class="text-white">Your phone's cloud:</strong> the file in iCloud Drive or Google Drive, the password in iCloud Keychain or Google Password Manager. Easiest, but you're trusting your Apple or Google account.</li>
-            <li><strong class="text-white">A file you manage yourself:</strong> full control, but lose the password and the backup is useless.</li>
-            <li><strong class="text-white">A USB stick in a safe:</strong> on a USB stick or SD card in a home safe or bank safe-deposit box. Offline, but check it at the 6-month check-in in case the storage fails.</li>
-            <li><strong class="text-white">With your lawyer:</strong> kept with your will, with the password kept somewhere else. This is also how your second device's piece can reach your heir.</li>
-            <li><strong class="text-white">On paper:</strong> the encrypted file printed as a QR code. Lasts for decades, so store it as carefully as you would cash.</li>
-          </ul>
-          <p class="mt-3 text-slate-300 leading-relaxed"><strong class="text-white">The one rule: never put two backups behind the same lock.</strong>
-          The same cloud account, the same password or the same safe counts as one lock. If your phone and second device both back up to one iCloud account,
-          anyone who gets into that account has 2 of 3 pieces and can move your funds. A simple default: your phone's backup goes in your phone's cloud,
-          and your second device's backup is an encrypted file held by your lawyer, with the password held by your heir (see <a class="body-link" href="#after-death">how it's released</a>). We never hold a piece or a backup ourselves.</p>
+          and your heir holds one, which is not enough. The piece your heir is missing is your another device's,
+          and it passes to them through your will after the unfortunate happens. That's the same trust you already place in whoever holds your will.</p>
         </div>
       </div>
       <div class="faq-card card-fx reveal" style="--d:0ms">
@@ -666,7 +663,7 @@
         <div>
           <h3 class="text-lg font-semibold">How much does crypto inheritance planning cost?</h3>
           <p class="mt-2 text-slate-300 leading-relaxed">Self-Guided is $249 per year. Guided is $249 per year plus a one-time $249 setup fee. Legacy is $1,900 per year.
-          The first 20 founding families get the Guided setup fee waived, 100% refundable. For comparison, Casa's inheritance plans are listed at
+          The first 20 founding families get the Guided setup fee waived. For comparison, Casa's inheritance plans are listed at
           $250, $2,100 and $7,500 per year, and a lawyer-drafted crypto trust typically costs $2,000 to $10,000 one-off.</p>
         </div>
       </div>
