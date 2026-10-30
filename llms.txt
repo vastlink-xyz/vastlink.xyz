@@ -29,6 +29,7 @@ Key facts:
 
 ## Blog articles
 
+- [A New Incident, but a Very Old Story: What the Binance Hack Says About Crypto Custody](https://vastlink.xyz/blog/a-new-incident-but-a-very-old-story/): Billions drained in the Binance hack are a reminder that crypto custody fails on operations and over-concentration, not cryptography. Two principles every custody setup still needs. (2026-10-30)
 - [Digital Asset Custody Platforms Compared: Why Security Technology Is No Longer the Differentiator](https://vastlink.xyz/blog/digital-asset-custody-platforms-compared-2026/): Ridgeway Financial Services compared 10 institutional custody platforms — Fireblocks, BitGo, Copper, Anchorage and more. The finding: security tech is commoditized. Audit-readiness, controls, and reconciliation now decide the winner. (2026-09-09)
 - [What the $88 Million Coldcard Hack Teaches Us About Single-Vendor Custody Risk](https://vastlink.xyz/blog/coldcard-entropy-bug-88m-lessons/): A firmware bug silently weakened Coldcard wallet seeds for five years, leading to an $88.6M Bitcoin theft. What single-vendor custody risk really means — and why governance closes the gap. (2026-08-05)
 - [Crypto Custody for Business: A Practical Guide for 2026](https://vastlink.xyz/blog/crypto-custody-for-business/): 61% of businesses holding crypto use multiple custodians but have no unified governance. A practical guide to choosing, implementing, and governing crypto custody for your business. (2026-07-05)

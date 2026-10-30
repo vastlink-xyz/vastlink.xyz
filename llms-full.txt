@@ -20,6 +20,42 @@ This file contains the full text of every article on the Vastlink blog. The inde
 
 ---
 
+## A New Incident, but a Very Old Story: What the Binance Hack Says About Crypto Custody
+
+Source: https://vastlink.xyz/blog/a-new-incident-but-a-very-old-story/  
+Published: 2026-10-30
+
+*A new incident, but a very old story.*
+
+![Binance exhibition booth at a crypto conference](https://vastlink.xyz/blog/a-new-incident-but-a-very-old-story/binance.jpg)
+
+The crypto industry just witnessed what’s being called the largest bank heist in human history, with billions drained in the recent Binance hack.
+
+At **Vastlink**, this is a sobering reminder of a point we’ve been making for a while now — digital asset security isn’t just a technical challenge you can solve with code alone.
+
+Two core principles we keep coming back to:
+
+### 1. Operations are critical
+
+Segregation of duties, clear approval workflows, and strict change management are the bedrock of real custody. At the end of the day, your security is only as strong as the day-to-day processes backing it up.
+
+### 2. Over-concentration is a magnet for trouble
+
+Holding massive pools of funds in single, centralized targets creates irresistible honeypots for attackers. Spreading out risk and strictly capping exposure are basic, non-negotiable risk management habits.
+
+### We’ve broken down these failure points before
+
+- [Digital Asset Custody: Moving from a Security Problem to an Operational-Finance Problem](https://vastlink.xyz/blog/digital-asset-custody-platforms-compared-2026/) 
+- [What Can We Learn from the Bybit $1.4B Hack?](https://vastlink.xyz/blog/bybit-hack-crypto-security/) 
+
+### The takeaway
+
+The takeaway couldn’t be clearer: great cryptography doesn’t automatically mean a secure custody setup. Even as the industry shifts away from traditional private keys toward keyless solutions like MPC and TSS, operational discipline hasn’t become obsolete — it’s actually become far more critical.
+
+If the industry is going to mature, we need sharper operational governance, smarter risk management, and far better infrastructure design across the board.
+
+---
+
 ## Digital Asset Custody Platforms Compared: Why Security Technology Is No Longer the Differentiator
 
 Source: https://vastlink.xyz/blog/digital-asset-custody-platforms-compared-2026/  
@@ -192,6 +228,8 @@ Notably, even coverage of this incident pointed at the fix that was hiding in pl
 That’s the principle worth generalizing, and it’s a governance principle before it’s a cryptography one: **no single vendor, device, or implementation should be a single point of failure for control of an asset — no matter how trusted that vendor is.** Multi-party computation, multisig across independent hardware, and threshold key generation all express the same underlying idea in different technical forms: split trust so that one silent bug, one compromised employee, or one bad firmware push cannot unilaterally compromise the funds.
 
 To be clear, that alone doesn’t make an organization safe. Distributed key generation still needs to be paired with the operational discipline to catch this class of failure — independent audits of the code paths that generate entropy, monitoring for anomalous fund movement, a real incident-response process, and a documented answer to “how do we know our key generation is doing what we think it’s doing?” Coinkite is a serious, open-source vendor, and the bug still went undetected in production for five years. Verification has to be a process, not a one-time assumption made at purchase.
+
+The same logic applies to a failure no firmware patch can fix: the holder. If one person is the only one who can sign — one device, one seed, one memory of where the backup is — then when that person is gone, the funds are gone too. Splitting key shares across trusted people closes that gap without handing your keys to a custodian. That is the idea behind [Vastlink's crypto estate planning](https://vastlink.xyz/crypto-inheritance/).
 
 ### Questions worth asking about any wallet’s key generation
 
@@ -858,6 +896,8 @@ Published: 2025-10-29
 
 It is what crypto is all about. Somehow on the flip side, it means “if I lose my keys, I lose my coins”.
 
+Flip it once more: if I am gone, who can get to my keys? If nobody can, my family loses the coins. If someone can do it alone, that is a risk while I am still here. This is what [crypto estate planning without giving up your keys](https://vastlink.xyz/crypto-inheritance/) is for.
+
 Managing keys (private keys and seed phrases) is hard for everyone, yes everyone, from crypto natives to new comers.
 
 **2. “Is it possible that I lose my keys, I don’t lose my coins?”**
@@ -993,6 +1033,8 @@ Threshold signatures require a subset of parties authorised to produce signature
 ![](https://cdn-images-1.medium.com/max/1024/0*cNUOQcOpC5T-AyPd)
 
 In the first generation MPC protocols, for example in a 2 of 3 scheme, there are 3 key shares generated and kept by 3 parties, normally the user, the vender and the backup (managed by the user). Any 2 out of the 3 key shares can work together to complete transaction signing. It is much safer, also it mitigates the risk of single point of failure, compared to single private keys where you lose the key you lose everything. Somehow the user needs to put trust in a third party, also managing key shares is still a burden and risk for the user.
+
+The same threshold idea is also the basis for crypto inheritance. If key shares are held by you and the people you trust, no single person can move the funds while you are alive, and your heirs can still reach the threshold when you are not. See [crypto estate planning with MPC key shares](https://vastlink.xyz/crypto-inheritance/).
 
 In the next generation MPC protocols, instead of a fixed number of parties managing the key shares, there would be a group of nodes running and forming a network, the key shares would be generated and managed among the nodes. Signing can be performed only when the access conditions are met and agreed by a certain percentage (as a threshold) of nodes.
 
